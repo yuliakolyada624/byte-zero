@@ -1,0 +1,160 @@
+.human-body-areas {
+  min-height: 0;
+  position: relative;
+  &-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+
+    transition: grid-template-rows 0.3s ease;
+
+    .human-body-areas_male,
+    .human-body-areas_female {
+      display: none;
+    }
+
+    &.active {
+      grid-template-rows: 1fr;
+
+      .human-body-areas {
+        width: 100%;
+        display: flex;
+        gap: 26px;
+        margin-top: 26px;
+
+        @media (max-width: 577px) {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    &.male {
+      .human-body-areas_male {
+        display: block;
+      }
+      .human-body-areas_female {
+        display: none;
+      }
+    }
+    &.female {
+      .human-body-areas_male {
+        display: none;
+      }
+      .human-body-areas_female {
+        display: block;
+      }
+    }
+  }
+
+  &_area {
+    flex-basis: calc(50% - 13px);
+    width: calc(50% - 13px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: var(--ligh-gray-bg);
+    border-radius: 10px;
+    padding: 40px 24px 30px;
+
+    @media (max-width: 577px) {
+      flex-basis: 100%;
+      width: 100%;
+      padding: 40px 0 30px;
+    }
+
+    &-title {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+    }
+  }
+
+  &_male , &_female{
+    transition: all 0.3s ease;
+    path {
+      transition: all 0.3s ease;
+    }
+    g {
+      cursor: pointer;
+    }
+    .nerv-system {
+      &:hover,
+      &.clicked {
+        path {
+          stroke: var(--light-blue);
+        }
+      }
+      &.active {
+        path {
+          stroke: var(--main-blue);
+          border: 0.4px solid var(--main-blue);
+        }
+      }
+    }
+
+    .head-and-neck,
+    .upper-extremity,
+    .torso,
+    .shoulders,
+    .lower-extremity,
+    .torso-full,
+    .back {
+      &:hover,
+      &.clicked {
+        path {
+          fill: var(--main-blue);
+        }
+      }
+      &.active {
+        path {
+          fill: var(--main-blue);
+        }
+      }
+    }
+    .skin.active {
+      path {
+        fill: var(--main-blue);
+      }
+    }
+
+    .upper-extremity:hover ~ .shoulders,
+    .upper-extremity.clicked ~ .shoulders {
+      path {
+        fill: var(--main-blue);
+      }
+    }
+    .upper-extremity.active ~ .shoulders {
+      path {
+        fill: var(--main-blue);
+      }
+    }
+
+    .torso-full:hover ~ .torso,
+    /*.torso-full:hover ~ .shoulders,*/
+    .torso-full.clicked ~ .torso,
+    .torso-full.clicked ~ .shoulders {
+      path {
+        fill: var(--main-blue);
+      }
+    }
+    .torso-full.active ~ .torso,
+    /*.torso-full.active ~ .shoulders*/ {
+      path {
+        fill: var(--main-blue);
+      }
+    }
+
+    &:has(.shoulders:hover) {
+      .upper-extremity {
+        path {
+          fill: var(--main-blue);
+        }
+      }
+    }
+  }
+
+  @import './injury-popup';
+}

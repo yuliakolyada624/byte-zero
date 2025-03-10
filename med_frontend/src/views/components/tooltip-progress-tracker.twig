@@ -1,0 +1,28 @@
+<div class="tooltip-popup {{ direction ? ' ' ~ direction : null }}{{ class ? ' ' ~ class : null }}">
+    <div class="tooltip-popup__header">
+        Progress Tracker
+        <span class="{% if status == 'Ready' %} successful {% endif %}">{{ status }}</span>
+    </div>
+    <div class="tooltip-popup__body">
+        <div class="d-flex justify-content-between mb-3">
+            <div class="checkbox">{{ media.icon('checkbox') }}</div>
+            <div class="w-50">Order Received</div>
+            <div class="w-50 text-end">05-10-2024 <span class="separator">|</span> 18:35 EST</div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <div class="checkbox">{{ media.icon('checkbox') }}</div>
+            <div class="w-50">AI Processed</div>
+            <div class="w-50 text-end">05-10-2024 <span class="separator">|</span> 18:35 EST</div>
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <div class="checkbox">{{ media.icon('checkbox') }}</div>
+            <div class="w-50">Reviewer Analyzed</div>
+            <div class="w-50 text-end">05-10-2024 <span class="separator">|</span> 20:35 EST</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div class="checkbox">{{ media.icon('checkbox-empty') }}</div>
+            <div class="w-50">Attorney Approved</div>
+            <div class="w-50 text-end">05-10-2024 <span class="separator">|</span> 20:35 EST</div>
+        </div>
+    </div>
+</div>

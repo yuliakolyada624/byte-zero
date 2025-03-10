@@ -1,0 +1,160 @@
+{% set radio_group_data = json('payment-method/radio-group') %}
+{% set form_card_type = json('payment-method/form-card-type') %}
+<!-- Modal -->
+<div class="modal fade {{ class }}" id="{{ id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="staticBackdropLabel">{{ title }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-4">{{ text }}</p>
+                <form method="POST">
+                    <div class="card p-3 bg-main-light border-0 mb-4 rounded-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            {% include '../form/form-radio-group.twig' with radio_group_data %}
+                            <p><span class="me-1">We accept</span> {{ media.img('payment-systems/visa', 'png', 'input-card-type', "28", "16") }}
+                                {{ media.img('payment-systems/mastercard', 'png', 'input-card-type', "28", "16") }}
+                                {{ media.img('payment-systems/american-express', 'png', 'input-card-type', "28", "16") }}
+                            </p>
+                        </div>
+                        <hr>
+                        <div class="form-group__fields row">
+                            {{form.fieldsForm('payment-method/form-card-number')}}
+                            {% for formField in form_card_type %}
+                                {{ form[formField.macro](formField) }}
+                            {% endfor %}
+                            {{form.fieldsForm('payment-method/form-data')}}
+                        </div>
+                        <div class="auth-page__form row mt-4">
+                            {% include '../form/form-dropdown-select2.twig' with {
+                                id: 'expirationDate',
+                                class: 'col-4',
+                                name: 'expiration_date',
+                                title: 'Expiration Date*',
+                                isRequired: true,
+                                clearSelectionBtn: true,
+                                placeholder: 'Month',
+                                options: [
+                                    {
+                                        title: '01',
+                                        value: '01',
+                                    },
+                                    {
+                                        title: '02',
+                                        value: '02',
+                                    },
+                                    {
+                                        title: '03',
+                                        value: '03',
+                                    },
+                                    {
+                                        title: '04',
+                                        value: '04',
+                                    },
+                                    {
+                                        title: '05',
+                                        value: '05',
+                                    },
+                                    {
+                                        title: '06',
+                                        value: '06',
+                                    },
+                                    {
+                                        title: '07',
+                                        value: '07',
+                                    },
+                                    {
+                                        title: '08',
+                                        value: '08',
+                                    },
+                                    {
+                                        title: '09',
+                                        value: '09',
+                                    },
+                                    {
+                                        title: '10',
+                                        value: '10',
+                                    },
+                                    {
+                                        title: '11',
+                                        value: '11',
+                                    },
+                                    {
+                                        title: '12',
+                                        value: '12',
+                                    }
+                                ],
+                                error: 'Required field',
+                            } %}
+                            {% include '../form/form-dropdown-select2.twig' with {
+                                id: 'expirationDateYear',
+                                class: 'col-4',
+                                name: 'expiration_date_year',
+                                title: 'Year',
+                                isRequired: true,
+                                clearSelectionBtn: true,
+                                placeholder: 'Year',
+                                options: [
+                                    {
+                                        title: '2025',
+                                        value: '2025',
+                                    },
+                                    {
+                                        title: '2026',
+                                        value: '2026',
+                                    }
+                                ],
+                                error: 'Required field',
+                            } %}
+                            {{form.fieldsForm('payment-method/form-payment-security-code')}}
+                        </div>
+                        <div class="row mt-4">
+                            {{form.fieldsForm('payment-method/form-payment-billing-address')}}
+                            {% include '../form/form-dropdown-select2.twig' with {
+                                id: 'billingCountry',
+                                class: 'col-4',
+                                name: 'billing_country',
+                                title: 'Billing Country*',
+                                isRequired: true,
+                                clearSelectionBtn: true,
+                                placeholder: 'Select',
+                                options: [
+                                    {
+                                        title: 'USA',
+                                        value: 'USA',
+                                    },
+                                    {
+                                        title: 'Canada',
+                                        value: 'Canada',
+                                    }
+                                ],
+                                error: 'Required field',
+                            } %}
+                            {{form.fieldsForm('payment-method/form-payment-postal-code')}}
+                        </div>
+                        <div class="form-footer d-flex justify-content-between align-items-center mt-1">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="primary_card">
+                                <label class="form-check-label fs-12" for="primary_card">
+                                    As the primary card owner, I authorize<br> Med-Test.AI to charge this card for future orders.
+                                </label>
+                            </div>
+                            <div class="btn-wrap d-flex gap-3">
+                                {{ btn.link({ class: 'btn-link--thin js-reset-form', inner: 'Reset Fields' }) }}
+                                {{
+                                btn.primary({ type: 'submit', class: 'modal__submit-button', inner: 'Save and Continue', data_id_modal: "credit-card-selection" })
+                                }}
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="medical-chronology-request-footer-content">
+                    {{ media.icon('shield') }}
+                    <p class="fs-12">We protect your payment information using encryption to provide bank-level security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

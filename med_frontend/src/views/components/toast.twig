@@ -1,0 +1,16 @@
+<div class="toast align-items-center show {{ class }}" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex justify-content-between align-items-center">
+        <div class="toast-body me-4">
+            {% if iconNameLeft %}
+                {{ media.icon(iconNameLeft) }}
+            {% endif %}
+            <p>{{ text }}</p>
+        </div>
+        {% if iconName %}
+            {{ media.icon(iconName) }}
+        {% endif %}
+        {% if buttonClose %}
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        {% endif %}
+    </div>
+</div>

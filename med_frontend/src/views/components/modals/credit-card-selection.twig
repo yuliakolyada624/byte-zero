@@ -1,0 +1,94 @@
+{% set company_payment_methods =
+    json('payment-method/company-payment-methods')
+%}
+{% set personal_payment_methods =
+    json('payment-method/personal-payment-methods')
+%}
+<!-- Modal -->
+<div class="modal fade {{ class }}" id="{{ id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title" id="staticBackdropLabel">{{ title }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="mb-4">{{ text }}</p>
+
+                {% include '../payment-methods-block.twig' with company_payment_methods %}
+                {% include '../payment-methods-block.twig' with personal_payment_methods %}
+                <div class="info d-flex gap-2 mb-3">
+                    {{ media.icon('shield') }}
+                    <p class="fs-12">We protect your payment information using encryption to provide bank-level security.</p>
+                </div>
+                <div class="card p-3 bg-main-light border-0 mb-4 rounded-3">
+                    <h4 class="mb-2">Payment Summary</h4>
+                    <p>Based on the number of pages uploaded, a fee of $250 will be charged to the selected payment method. Please allow 1-2 business days for the report to be generated, reviewed by our team, and made available for download and access online.</p>
+                    <hr>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="pb-2">Order ID:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">ORDZKY</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Claim Number:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">5946P527F</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Report Type:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">Medical Chronology</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Claim Type:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">Bodily Injury</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Plaintiff Full Name:</td>
+                                <th class="text-end fw-semibold" scope="row">Alexander Phillips</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Plaintiff DOB (Date of Birth):</td>
+                                <th class="text-end fw-semibold" scope="row">03-14-1987</th>
+                            </tr>
+                            <tr>
+                                <td>Case Name:</td>
+                                <th class="text-end fw-semibold" scope="row">Alexander Phillips vs. John Doe Sr.</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="pb-2">Ordered By:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">Adrian Medina, Esq.</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Payment Method:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">Visa ending in 3241</th>
+                            </tr>
+                            <tr>
+                                <td class="pb-2">Amount:</td>
+                                <th class="text-end pb-2 fw-semibold" scope="row">$250</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="form-footer d-flex justify-content-between align-items-center mt-1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="primary_card">
+                        <label class="form-check-label fs-12" for="primary_card">
+                            I have reviewed and accept Med-Test’s <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    <div class="btn-wrap d-flex gap-3">
+                        {{
+                        btn.primary({ type: 'submit', class: 'modal__submit-button', inner: 'Complete Purchase', data_id_modal: "failed" })
+                        }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

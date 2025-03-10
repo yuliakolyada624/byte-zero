@@ -1,0 +1,42 @@
+{% extends 'layouts/main/layout-main.twig' %}
+
+{% set tab_triggers = json('tab-triggers') %}
+{% set table = json('table') %}
+
+{% block variables %}
+    {% set title = 'Cases page' %}
+{% endblock variables %}
+{% set modals_path = 'components/modals/' %}
+{% set modules = 'modules/cases/' %}
+{% set sidebars_path = 'modules/cases/sidebars/' %}
+
+{% block content %}
+    <section class="cases">
+        {% include modules ~ 'cases-heading.twig' %}
+        {% include modules ~ 'cases-body.twig' %}
+    </section>
+{% endblock content %}
+
+{% block modals %}
+    {% include modals_path ~ 'report-type.twig' with {
+        id:'report-type',
+        class: "report",
+        title: 'Select Report Type',
+        text: 'Please specify the product you wish to order.'
+    }%}
+    {% include modals_path ~ 'modal-delete.twig' with {
+        id:'delete-report',
+        title: 'Confirm Deletion of Report',
+        text: 'Please verify that you wish to permanently delete report Henry Jones vs. Ivy Davis_V1 from your account.'
+    }%}
+{% endblock modals %}
+
+{% block sidebars %}
+    {% include sidebars_path ~ 'cases.twig' %}
+    {% include sidebars_path ~ 'order-reports.twig' %}
+    {% include sidebars_path ~ 'add-assignees.twig' %}
+    {% include sidebars_path ~ 'order-details.twig' %}
+{% endblock sidebars %}
+
+{% block scripts %}
+{% endblock scripts %}

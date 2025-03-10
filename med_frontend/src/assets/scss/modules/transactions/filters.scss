@@ -1,0 +1,31 @@
+.transactions-filters {
+    &__tab {
+        overflow: hidden;
+        margin-bottom: 32px;
+        padding: 14px;
+        background: var(--ligh-gray-bg);
+        border-radius: 10px;
+    }
+    &__body {
+        .transactions-filter__select-component{
+            position: relative;
+            margin-top: 23px;
+            .form-label{
+                z-index: 2;
+                display: block;
+                position: absolute;
+                top: -9px;
+                left: 15px;
+                padding: 0 4px;
+                background: #fff;
+                border-radius: 4px;
+                font-family: Poppins;
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 18px;
+                text-align: left;
+            }
+    }
+    }
+
+}

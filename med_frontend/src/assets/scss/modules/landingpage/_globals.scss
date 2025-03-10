@@ -1,0 +1,114 @@
+.global-section-with-bg {
+  background-color: var(--light-blue-bg);
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 17.4 / 1;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--white);
+    mask-image: url("./../svg/top-mask-main.svg");
+    mask-size: cover;
+    mask-position: center;
+
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    aspect-ratio: 12.6 / 1;
+    width: 100%;
+    // height: 108px;
+    z-index: 1;
+    background-color: var(--white);
+    // mask-image: url('./../img/content/bottom-sphere-bg.png');
+    mask-image: url("./../svg/bottom-mask.svg");
+    mask-size: cover;
+    mask-position: center;
+
+  }
+}
+.global-section-with-bg-reverse {
+  background-color: var(--light-blue-bg);
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    aspect-ratio: 16 / 1;
+    width: 100%;
+    z-index: 1;
+
+    background-color: var(--white);
+    mask-image: url("./../svg/top-mask.svg");
+    mask-size: cover;
+    mask-position: center;
+  }
+}
+
+.global-section-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  row-gap: 60px;
+  width: 100%;
+  margin-bottom: 31px;
+}
+
+.global-section-card-with-icon-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  position: relative;
+
+  padding: 45px 26px 23px;
+
+  background-color: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+
+  &__icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -30px;
+    left: 26px;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.04em;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--main-color);
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+}
+.landing-content {
+  overflow: hidden;
+  .container {
+    max-width: 1176px;
+    .main-title, h3, h2 {
+      @media (max-width: 768px) {
+        font-size: 26px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+.pt-header-height {
+  padding-top: var(--header-height);
+}

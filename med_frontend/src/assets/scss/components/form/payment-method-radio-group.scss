@@ -1,0 +1,49 @@
+.payment-method-radio-group {
+  &__list {
+    border: var(--base-border-line);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+}
+
+.payment-method-radio-group-item {
+  &:not(:last-child) {
+    border-bottom: var(--base-border-line);
+  }
+
+  &__label {
+    gap: 15px;
+    padding: 23px 20px;
+    cursor: pointer;
+  }
+
+  & img {
+    max-width: 36px;
+    max-height: 22px;
+    object-fit: cover;
+  }
+
+  &__details {
+    @include display(flex, center);
+  }
+
+  &__details-item {
+    @include display(flex, center);
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        display: inline-block;
+        margin: 0 10px;
+        width: 1px;
+        height: 17px;
+        background-color: var(--base-border);
+      }
+    }
+
+    & b {
+      font-weight: 600;
+    }
+  }
+}

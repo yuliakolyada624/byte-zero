@@ -1,0 +1,16 @@
+
+<tr>
+    <td><input name="user" class="form-check-input user" type="checkbox" value="" id="user"></td>
+    <td data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">
+        <span class="{{ item.status }}"></span>
+        {{ media.img(item.icon, 'png', 'user', 44, 44) }}
+        {{ item.name }}
+    </td>
+    <td data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">{{ item.email }}</td>
+    <td data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">{{ item.phone }}</td>
+    <td class="bordered" data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight"><span>{{ item.role }}</span></td>
+    <td data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">{{ item.job }}</td>
+    <td data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">
+        {{ item.date }}
+    </td>
+</tr>

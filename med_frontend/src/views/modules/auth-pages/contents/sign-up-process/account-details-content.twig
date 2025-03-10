@@ -1,0 +1,66 @@
+<div class="auth-page__section-header">
+  {% include '../../components/component-backbtn.twig' %}
+  {% include '../../components/auth-progress-steps.twig' with {
+    steps: [
+      {
+        label: "Email Confirmation",
+        done: true
+      },
+      {
+        label: "2FA",
+        done: true
+      },
+      {
+        label: "Password",
+        done: true
+      },
+      {
+        label: "Account Details ",
+        done: false
+      }
+    ]
+  } %}
+</div>
+
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Account Holder Details</h2>
+  <p class="auth-page-subtitle">Please provide just a few more details.</p>
+  <div class="d-flex mx-auto auth-page__form-wrap">
+    <form class="form js-form auth-page__form" data-href="sign-up-email-verification.html">
+      {{form.fieldsForm('form-fields-account-details')}}
+      {% include '../../../../components/form/form-dropdown-select2.twig' with {
+        id: 'ddServiceIndustry',
+        class: 'auth-page__dropdown',
+        name: 'service_industry',
+        title: 'Service Industry',
+        isRequired: true,
+        placeholder: 'Please select',
+        options: [
+          {
+            title: 'Healthcare Services',
+            value: 'healthcare_services',
+          },
+          {
+            title: 'Insurance Services',
+            value: 'insurence_services',
+          },
+          {
+            title: 'Legal Services',
+            value: 'legal_services',
+          }
+        ],
+        error: 'Required field',
+      } %}
+      {% include '../../../../components/form/form-iti-dropdown.twig' with {
+        id: "phone",
+        title: "Phone Number",
+        name: "phone",
+        class: "auth-page__form-field",
+        isRequired: true,
+        error: "Valid company phone required",
+        placeholder: "000-000-0000"
+      } %}
+      <button class="btn btn-primary auth-page-btn auth-page__form-btn" type="submit" aria-label="Complete Registration">Complete Registration</button>
+    </form>
+  </div>
+</div>

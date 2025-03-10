@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Office Name*",
+    "name": "office_name",
+    "class": "col col-6 profile--input js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Legal Entity Name*",
+    "name": "legal_entity_name",
+    "class": "col col-6 profile--input js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Address Line 1*",
+    "name": "address_line_1",
+    "class": "col col-6 profile--input js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Address Line 2",
+    "name": "address_line_2",
+    "class": "col col-6 profile--input js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": false,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "City*",
+    "name": "city",
+    "class": "col col-6 profile--input js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  }
+]

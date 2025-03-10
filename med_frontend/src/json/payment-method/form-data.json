@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Name on Credit Card*",
+    "name": "name_on_credit_card",
+    "type": "text",
+    "isRequired": true,
+    "error": "First Name required",
+    "class": "col-6",
+    "fieldType": "text",
+    "placeholder": "First Name"
+  },
+  {
+    "title": "",
+    "name": "name_on_credit_card_last",
+    "class": "col-6 mt-2",
+    "fieldType": "name",
+    "type": "text",
+    "placeholder": "Last Name",
+    "error": "Last Name required",
+    "isRequired": true
+  },
+  {
+    "title": "Nickname (Optional)",
+    "name": "nickname",
+    "type": "text",
+    "class": "col-12"
+  }
+]

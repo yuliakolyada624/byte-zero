@@ -1,0 +1,11 @@
+
+[
+  {
+    "macro": "card_type",
+    "isInForm": true,
+    "formFieldClass": "w-half",
+    "label": "Credit Card Type",
+    "name": "add_credit_card_type"
+  }
+]
+

@@ -1,0 +1,30 @@
+
+<header>
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="d-flex gap-4">
+            {{btn.link({
+                inner: "Back",
+                icon:"arrow",
+                class:"back-btn"
+            })}}
+            <div>
+                <h2>Henry Jones vs. Ivy Davis</h2>
+                <span>Claim No. 5946P527F</span> <span class="separator">|</span> <span>Medical Chronology + Billing Summary Report</span>
+            </div>
+        </div>
+        <div class="button-wrap d-flex gap-2">
+            <button type="button" class="btn active">{{ media.icon('eye') }}View Mode</button>
+            <button type="button" class="btn">{{ media.icon('edit') }}Edit Mode</button>
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex gap-4 filter flex-wrap">
+        <a href="#" class="btn">Submission summary</a>
+        <a href="#" class="btn">Medical synopsis</a>
+        <a href="#" class="btn">Medical Visit History</a>
+        <a href="#" class="btn">Key Diagnostic Findings</a>
+        <a href="#" class="btn">Medical Chronology</a>
+        <a href="#" class="btn">Medical Billing Summary</a>
+        <a href="#" class="btn">Source Docs</a>
+    </div>
+</header>

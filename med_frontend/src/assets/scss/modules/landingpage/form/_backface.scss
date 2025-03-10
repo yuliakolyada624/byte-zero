@@ -1,0 +1,23 @@
+.icon-check-success {
+  width: 36px;
+  height: 36px;
+  fill: var(--base-green);
+  margin-bottom: 20px;
+}
+
+&-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: var(--main-color);
+  margin-bottom: 17px;
+}
+&-subtitle {
+  font-size: 16px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 14px;
+}

@@ -1,0 +1,40 @@
+.filter-btn {
+  gap: 7px;
+  padding: 11px 14px;
+  color: var(--main-blue);
+  font-weight: 400;
+  line-height: 20px;
+  background-color: var(--white);
+  border-color: var(--main-blue);
+  transition: .3s;
+  &:hover {
+    border-color: var(--main-blue);
+    color: var(--main-blue);
+    opacity: .7;
+  }
+
+  &.collapsed {
+    border-color: var(--base-border);
+    color: var(--main-color);
+    & .icon {
+      stroke: var(--icon-gray);
+    }
+    &:hover {
+      opacity: 1;
+      border-color: var(--main-blue);
+      color: var(--main-blue);
+      & .icon {
+        stroke: var(--main-blue);
+      }
+    }
+  }
+
+  & .icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: var(--main-blue);
+    stroke-linecap: round;
+    stroke-width: 2px;
+  }
+}

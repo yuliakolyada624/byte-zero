@@ -1,0 +1,29 @@
+{% extends 'layouts/landing/layout-main.twig' %}
+
+{% block variables %}
+    {% set title = 'Home page' %}
+    {% set page_class = 'index-page js-index-page' %}
+    {% set content_class = 'landing-content' %}
+{% endblock variables %}
+
+{% set home_page_modules_path = 'modules/landing/' %}
+{% block content %}
+    {% include home_page_modules_path ~ 'hero.twig' %}
+    {% include home_page_modules_path ~ 'benefits.twig' %}
+    {% include home_page_modules_path ~ 'steps.twig' %}
+    {% include home_page_modules_path ~ 'provides.twig' %}
+    {% include home_page_modules_path ~ 'testimonials.twig' %}
+    {% include home_page_modules_path ~ 'preferences.twig' %}
+    {% include home_page_modules_path ~ 'advantages.twig' %}
+    {% include home_page_modules_path ~ 'faq.twig' %}
+    {% include home_page_modules_path ~ 'feedback.twig' %}
+{% endblock content %}
+
+{% block modals %}
+{% endblock modals %}
+
+{% block sidebars %}
+{% endblock sidebars %}
+
+{% block scripts %}
+{% endblock scripts %}

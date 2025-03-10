@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "initials": "AD",
+    "name": "Asari Dokumbo",
+    "email": "asari@slglaw.com",
+    "position": "Attorney"
+  },
+  {
+    "id": "2",
+    "initials": "OD",
+    "name": "Ollie Duncan",
+    "email": "ollie@slglaw.com",
+    "position": "Associate Attorney"
+  },
+  {
+    "id": "3",
+    "initials": "JD",
+    "name": "Josh Daker",
+    "email": "josh@slglaw.com",
+    "position": "Paralegal"
+  },
+  {
+    "id": "4",
+    "initials": "LB",
+    "name": "Linda Bennett",
+    "email": "linda@slglaw.com",
+    "position": "Legal Assistant"
+  },
+  {
+    "id": "5",
+    "initials": "MD",
+    "name": "Mike Donovan",
+    "email": "mike@slglaw.com",
+    "position": "Senior Attorney"
+  },
+  {
+    "id": "6",
+    "initials": "CG",
+    "name": "Chloe Graham",
+    "email": "chloe@slglaw.com",
+    "position": "Junior Associate"
+  },
+  {
+    "id": "7",
+    "initials": "EB",
+    "name": "Emma Brown",
+    "email": "emma@slglaw.com",
+    "position": "Legal Intern"
+  },
+  {
+    "id": "8",
+    "initials": "SD",
+    "name": "Samuel Douglas",
+    "email": "samuel@slglaw.com",
+    "position": "Legal Secretary"
+  }
+]

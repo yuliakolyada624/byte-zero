@@ -1,0 +1,164 @@
+.offcanvas {
+  &.persolnal-info {
+    width: 561px;
+    .photo__img {
+      border-radius: 50%;
+    }
+    .btn.edit {
+      color: var(--main-blue);
+      padding: 5px 13px;
+      line-height: 1.2;
+      border-radius: 6px;
+    }
+    .email {
+      color: var(--main-blue);
+    }
+    .role {
+      border: 1px solid var(--base-border);
+      border-radius: 6px;
+      padding: 0px 6px;
+      background-color: var(--white);
+    }
+    .status {
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      display: inline-block;
+      position: absolute;
+      border: 1px solid var(--white);
+      left: 1px;
+      top: 1px;
+      &.registered {
+        background-color: var(--darker-green);
+      }
+      &.invited {
+        background-color: var(--main-blue);
+      }
+      &.suspended {
+        background-color: var(--icon-gray);
+      }
+    }
+    .table-borderless {
+      tr {
+        td {
+          background-color: transparent;
+          padding: 5px 0;
+          .phone-icon {
+            margin-right: 5px;
+          }
+        }
+        &:last-child {
+          td {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .btn-link {
+        display: inline-block;
+        .icon {
+          stroke: var(--main-blue);
+          fill: transparent;
+          width: 12px;
+          height: 14px;
+          margin-top: -1px;
+        }
+        &.empty {
+          .icon {
+            stroke: var(--icon-gray);
+          }
+        }
+        &:hover {
+          .icon {
+            stroke: var(--main-color);
+          }
+        }
+      }
+    }
+  }
+  &.invite-users {
+    width: 680px;
+    .component__dropdown2 {
+      width: 50%;
+    }
+    label[for="job-title"] {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .btn-link {
+        font-weight: 400;
+      }
+    }
+    a {
+      color: var(--main-blue);
+    }
+    .photo__img {
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+    }
+    .btn-link {
+      font-weight: 400;
+      .icon {
+        stroke: var(--main-blue);
+        fill: transparent;
+        width: 20px;
+        height: 20px;
+      }
+      &.delete {
+        margin-top: 26px;
+      }
+    }
+  }
+  &.job-title {
+    width: 680px;
+    .table {
+      .icon {
+        width: 19px;
+        height: 19px;
+        &-block {
+          fill: transparent;
+          stroke: var(--icon-gray)
+        }
+        &-delete {
+          fill: transparent;
+          stroke: var(--main-blue);
+          &:hover {
+            stroke: var(--errors);
+          }
+        }
+      }
+      button.full {
+        .icon {
+          stroke: var(--errors);
+        }
+      }
+    }
+    .card {
+      border: 1px solid var(--lightGray);
+    }
+  }
+
+  &.edit-user-details__offcanvas {
+    width: 561px;
+    .form-field {
+      margin-bottom: 18px;
+    }
+    .component__itidropdown {
+      margin-bottom: 18px;
+    }
+    .component__dropdown2 {
+      margin-bottom: 18px;
+    }
+    .form-field__error {
+      display: none;
+    }
+    .form-field._invalid .form-field__error {
+      display: block;
+    }
+    .js__select-to-custom-add-job-title .form-label {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

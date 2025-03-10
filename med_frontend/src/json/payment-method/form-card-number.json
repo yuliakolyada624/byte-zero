@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Credit Card Number*",
+    "name": "number_credit_card",
+    "type": "card",
+    "isRequired": true,
+    "validateOnBlur": true,
+    "error": "Card Number required",
+    "inputClass": "js-card-input",
+    "class": "col-6",
+    "fieldType": "card",
+    "placeholder": "– – – –    – – – –    – – – –    – – – –"
+  }
+]

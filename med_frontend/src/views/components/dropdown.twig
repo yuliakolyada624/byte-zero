@@ -1,0 +1,29 @@
+{#
+class?: string,
+holder: string,
+options: [
+  {
+    title: string,
+    href: string ,
+    value: string
+  }
+]
+#}
+<div class="dropdown {{ class }}">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ devaultValue }}
+            {% if iconName %}
+                {{ media.icon(iconName) }}
+            {% endif %}
+        </button>
+        <ul class="dropdown-menu">
+                {% for option in options %}
+                        <li class="dropdown-item">
+                                <a href="{{ option.href }}" {% if option.disabled %} class="disabled" {% endif %}>
+                                    {% if option.icon %}{{ media.icon(option.icon) }}{% endif %}<span class="fw-medium">{{ option.title }}</span>
+                                    {% if option.text %}<p>{{ option.text }}</p>{% endif %}
+                                </a>
+                        </li>
+                {% endfor %}
+        </ul>
+</div>

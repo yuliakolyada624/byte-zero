@@ -1,0 +1,11 @@
+<div class="d-flex justify-content-between overview-heading">
+    <div class="d-flex align-items-center">
+        <h1 class="overview-heading__title mb-0">Hi Adrian, Welcome!</h1>
+    </div>
+    <div class="d-flex align-items-center">
+        {% include '../../components/filter-daterange.twig' with {
+            id: "overviewDateRange",
+            class: "overview-daterange",
+        }%}
+    </div>
+</div>

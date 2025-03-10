@@ -1,0 +1,32 @@
+{#
+  id: string, In order to have unique elements identifiers
+  class: string,
+  name: string,
+  leight: number,
+#}
+
+<div class="component__scode {{ class }}" data-total-time="60" data-timeout="300" data-resend-url="http://med-test.ls/accounts/resend">
+  <input 
+    id="{{ id }}"
+    class="js__scode-main-input"
+    type="hidden"
+    name="{{ name }}"
+    aria-describedby=""
+  >
+  <p id="jsComponentSCode_label_{{ id }}" class="w-100 text-center component__scode-label js__scode-label" 
+    data-default-text="Enter Security Code" 
+    data-timeout-text="Security Code Timed Out">
+    Enter Security Code
+  </p>
+  <div class="d-flex justify-content-between component__scode-line">
+    {% for i in 1..leight %}
+      <div class="justify-content-center align-items-center component__scode-wrap">
+        <input type="text" maxlength="1" class="form-control component__scode-input js__scode-input js-input__sc{{i}}" required>
+      </div>
+    {% endfor %}
+  </div>
+  <button class="btn btn-secondary w-100 component__scode-btn js__scode-btn-submit" type="submit" aria-label="Continue" disabled >Continue</button>
+  <button class="btn btn-link component__scode-resend-btn d-none js__resend-2fa-btn js__scode-btn-resend">Resend code</button>
+  <p class="component__scode-resend-status js__scode-timer-wrap">Resend code in <span class="js__scode-timer">60</span> s</p>
+  <p id="jsComponentSCode_errorFeedback_{{ id }}" class="invalid-feedback component__scode-error js__scode-error">{{ error }}</p>
+</div>

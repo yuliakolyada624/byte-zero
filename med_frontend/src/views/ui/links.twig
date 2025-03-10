@@ -1,0 +1,22 @@
+{% import './media.twig' as media %}
+
+{# Primary link #}
+{% macro primary(params) %}
+  <a class="primary-link{{ ' ' ~ params.class }}"
+    href="{{ params.href|default('#') }}"
+    {{ params.attr }}>
+    {{ params.inner }}
+  </a>
+{% endmacro %}
+{# Primary link end #}
+
+{% macro button(params) %}
+  <a class="btn btn-primary{{ params.class ? ' ' ~ params.class : '' }}"
+    href="{{ params.href|default('#') }}"
+    {{ params.attr }}>
+    {% if params.icon %}
+      {{ media.icon(params.icon) }}
+    {% endif %}
+    {{ params.inner }}
+  </a>
+{% endmacro %}

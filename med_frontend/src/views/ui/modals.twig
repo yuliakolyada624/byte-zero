@@ -1,0 +1,25 @@
+{% import './media.twig' as media %}
+{% import './buttons.twig' as btn %}
+
+{% macro notification(params) %}
+  <div class="modal notification-modal js-modal important_none" id="{{ params.id }}">
+    <div class="modal__dialog modal__dialog--common notification-modal__dialog">
+      {{ media.icon('alert-circle') }}
+
+      <h3 class="notification-modal__title">
+        {{ params.title }}
+      </h3>
+
+      <p class="notification-modal__text">
+        {{ params.text }}
+      </p>
+
+      {{
+        btn.primary({
+          class: 'notification-modal__close-button js-modal-close-trigger',
+          inner: 'Close'
+        })
+      }}
+    </div>
+  </div>
+{% endmacro %}

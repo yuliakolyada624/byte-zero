@@ -1,0 +1,32 @@
+@import "tabs";
+@import "table";
+@import "pagination";
+@import "tooltip";
+@import "toast";
+@import "tags";
+@import "search-field";
+@import "user-search-item";
+@import "selected-user-item";
+@import "filter-daterange";
+@import "tooltips";
+
+
+//modals
+@import "modals/modal";
+@import "modals/report-type";
+@import "modals/payment-method";
+
+// form
+@import "form/form-security-code";
+@import "form/form-dropdown-select2.scss";
+@import "form/form-iti-dropdown.scss";
+@import "form/form-tel-input";
+@import "form/switch";
+@import "form/form-field";
+@import "form/form-autocomplete";
+@import "form/form-input-card";
+@import "form/form-radio";
+@import "form/form-radio-group";
+@import "form/payment-method-radio-group";
+
+@import "info-popup";

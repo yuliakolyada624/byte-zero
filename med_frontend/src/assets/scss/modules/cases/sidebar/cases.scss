@@ -1,0 +1,100 @@
+.offcanvas {
+  .offcanvas-header {
+    border-bottom: 1px solid var(--base-border);
+    margin: 20px 26px 20px 26px;
+    padding: 0 0 20px 0;
+    position: relative;
+    .btn-close {
+      border: 1px solid var(--base-border);
+      border-radius: 100%;
+      background-size: 10px;
+    }
+    .icon {
+      width: 25px;
+      height: 22px;
+      stroke-width: 2px;
+      stroke: var(--main-color);
+      fill: transparent;
+      transform: rotate(90deg);
+    }
+  }
+  .offcanvas-body {
+    padding: 10px 26px 26px 26px;
+    .sidebar-btn {
+      background-color: var(--main-color);
+      border: 1px solid var(--main-color);
+      width: 100%;
+      &:hover {
+        background-color: var(--white);
+        color: var(--main-color);
+        .icon {
+          stroke: var(--main-color);
+        }
+      }
+      &.light {
+        background-color: var(--white);
+        color: var(--main-color);
+        .icon {
+          stroke: var(--main-color);
+        }
+      }
+    }
+  }
+  .offcanvas-footer {
+    padding: 10px 26px 26px 26px;
+    .icon-share {
+      stroke: var(--main-blue);
+      fill: transparent;
+      width: 16px;
+      height: 16px;
+    }
+    a {
+      color: var(--main-blue);
+    }
+  }
+  &.cases {
+    width: 560px;
+    .order-progress {
+      text-wrap: nowrap;
+      div:last-child {
+        .checkbox {
+          &:after {
+            content: none;
+          }
+        }
+      }
+      .icon-checkbox {
+        width: 16px;
+        height: 16px;
+        stroke-width: 1.1px;
+        stroke: var(--darker-green);
+        fill: transparent;
+        margin-right: 7px;
+      }
+      .icon-checkbox-empty {
+        width: 16px;
+        height: 16px;
+        stroke-width: 1.1px;
+        stroke: var(--icon-gray);
+        margin-right: 7px;
+        fill: transparent;
+      }
+      .separator {
+        color: var(--base-border);
+        margin: 0 10px;
+      }
+      .checkbox {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 55%;
+          background-color: var(--darker-green);
+          left: 8px;
+          top: 23px;
+        }
+      }
+    }
+  }
+}

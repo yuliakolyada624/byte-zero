@@ -1,0 +1,132 @@
+.info-popup {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  // margin-left: 3px;
+  margin-bottom: auto;
+  cursor: default;
+
+  // &--alt {
+  //   margin-left: 0;
+
+  //   & .info-popup__content {
+  //     padding: 8px 10px;
+  //   }
+  // }
+
+  // &.w-346 {
+  //   & .info-popup__content {
+  //     width: 346px;
+  //   }
+  // }
+  // &.w-361 {
+  //   & .info-popup__content {
+  //     width: 361px;
+  //   }
+  // }
+  // &.w-339 {
+  //   & .info-popup__content {
+  //     width: 339px;
+  //   }
+  // }
+
+  &:has(img) {
+    & .info-popup__content {
+      padding: 0;
+      width: fit-content;
+      background-color: unset;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: calc(100% + 5px);
+    right: 50%;
+    padding: 16px 20px;
+    width: 442px;
+    color: var(--white);
+    border-radius: 8px 8px 0 8px;
+    transition: all var(--base-transition);
+    transform-origin: right bottom;
+    z-index: 10;
+
+    opacity: 0;
+    scale: 0.5;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &.right {
+    .info-popup__content {
+      right: unset;
+      left: 50%;
+      border-radius: 8px 8px 8px 0;
+      transform-origin: left bottom;
+    }
+  }
+
+  &:hover {
+    .info-popup__content {
+      opacity: 1;
+      scale: 1;
+      visibility: visible;
+    }
+    // .icon-info-circle {
+    //   stroke: var(--baseLightBlue) !important;
+    // }
+  }
+
+  & .icon-info-circle {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: var(--main-blue);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.2px;
+  }
+
+  // & .icon-exclamation-mark {
+  //   width: 12px;
+  //   height: 12px;
+  //   fill: var(--baseLightBlue);
+  // }
+
+  // &.table-status {
+  //   & .info-popup__content {
+  //     padding: 12px;
+  //     width: fit-content;
+  //     text-wrap: nowrap;
+  //   }
+  // }
+
+  // &__status {
+  //   display: flex;
+  //   gap: 4px;
+  //   align-items: center;
+  //   margin-bottom: 4px;
+  //   padding-inline: 5px;
+  //   width: fit-content;
+  //   border-radius: 3px;
+
+  //   &--confirmed {
+  //     background-color: var(--textGreen);
+  //   }
+  //   &--pending {
+  //     background-color: var(--pending);
+  //   }
+  //   &--failed {
+  //     background-color: var(--errors);
+  //   }
+  //   &--cancelled {
+  //     background-color: var(--errors);
+  //   }
+  //   &--review-required {
+  //     background-color: var(--baseLightBlue);
+
+  //     & .icon {
+  //       fill: var(--white);
+  //     }
+  //   }
+  // }
+}

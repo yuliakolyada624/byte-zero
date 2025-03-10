@@ -1,0 +1,14 @@
+.component__backbtn {
+  position: relative;
+  &-wrap {
+    position: absolute;
+    top: 2px;
+  }
+  &-btn {
+    color: var(--baseLightBlue);
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

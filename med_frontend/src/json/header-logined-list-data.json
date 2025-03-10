@@ -1,0 +1,38 @@
+[
+  {
+    "icon": "user",
+    "text": "My Profile",
+    "href": "#",
+    "icon_fill_type": "fill"
+  },
+  {
+    "icon": "clipboard",
+    "text": "Price Plan",
+    "href": "#",
+    "icon_fill_type": "fill"
+  },
+  {
+    "icon": "users",
+    "text": "User Management",
+    "href": "#",
+    "icon_fill_type": "fill"
+  },
+  {
+    "icon": "credit-card",
+    "text": "Payment Methods",
+    "href": "#",
+    "icon_fill_type": "fill"
+  },
+  {
+    "icon": "transaction",
+    "text": "Transactions",
+    "href": "#",
+    "icon_fill_type": "fill"
+  },
+  {
+    "icon": "settings",
+    "text": "Settings",
+    "href": "#",
+    "icon_fill_type": "fill"
+  }
+]

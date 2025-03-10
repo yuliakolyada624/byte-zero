@@ -1,0 +1,24 @@
+<tr>
+    <td class="bordered"><span>{{ item.order }}<br>{{ item.claim }}{% if item.new %} <span class="new-item">New</span> {% endif %}</span></td>
+    <td>{{ item.date }}</td>
+    <td>{{ item.case }}</td>
+    <td>{{ item.report }}</td>
+    <td>{{ item.submitted }}</td>
+    <td>
+        <div class="tooltip-trigger">
+            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" style="height: 7px" aria-valuemax="100">
+                <div class="progress-bar {% if item.start %}start {% endif %}{% if item.success %}success {% endif %}{% if item.warning %}warning {% endif %}" style="width: {{ item.tracker }}%"></div>
+            </div>
+            {% include '../components/tooltip-progress-tracker.twig' with {
+                status: item.status,
+                direction: 'center'
+            } %}
+        </div>
+    </td>
+    <td><p>{{ item.tracker }}%</p></td>
+    <td class="text-center">
+        <button class="details" type="button" data-bs-toggle="offcanvas" data-bs-target="#{{ item.id }}" aria-controls="offcanvasRight">{{ media.icon('input-details') }}</button>
+    </td>
+</tr>
+
+

@@ -1,0 +1,129 @@
+<div class="offcanvas reports offcanvas-end" tabindex="-1" id="viewReports" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#1" aria-controls="offcanvasRight">{{ media.icon('arrow') }}</button>
+            Order Summary
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h1 class="mb-0">Order ORDZKY Reports</h1>
+            <p class="fw-medium fs-16">1 Result</p>
+        </div>
+        <p class="mb-4">The reports below are available for PDF download or online viewing. Note that the System Generated report can be edited and saved if modifications are needed.</p>
+        <div class="bg-main-light p-4 rounded-3 d-flex flex-column gap-3">
+            <div class="card p-3 pt-4 rounded-3">
+                {% include '../../../components/tags/step.twig' with {
+                    class: 'review',
+                    text: 'System Report'
+                } %}
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="fw-medium">Henry Jones vs. Ivy Davis_ORIGNAL</p>
+                    <div>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="Download PDF Report">
+                            {{ media.icon('download') }}
+                        </button>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="View/Edit Report Online">
+                            {{ media.icon('globe') }}
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="fs-12">By: Med-Test.AI</p>
+                        <p class="fs-12">Created: 05-10-2024 <span class="separator">|</span> 10:35 AM EST</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn-link" data-bs-toggle="offcanvas" data-bs-target="#viewAssignees" aria-controls="viewAssignees">
+                            Add assignes
+                            <img src="./svg/add-button.svg" alt="">
+                            <img src="./svg/add-button-blue.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-3 pt-4 rounded-3">
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="fw-medium">Henry Jones vs. Ivy Davis_V1</p>
+                    <div class="d-flex align-items-center justify-content-between gap-2">
+                        <button type="button" class="btn-action"  data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="Download PDF Report">
+                            {{ media.icon('download') }}
+                        </button>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="View/Edit Report Online">
+                            {{ media.icon('globe') }}
+                        </button>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="Delete Report">
+                            <span data-bs-target="#delete-report" data-bs-toggle="modal">{{ media.icon('delete') }}</span>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="fs-12">By: Med-Test.AI</p>
+                        <p class="fs-12">Created: 05-10-2024 <span class="separator">|</span> 10:35 AM EST</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn-link" data-bs-toggle="offcanvas" data-bs-target="#viewAssignees" aria-controls="viewAssignees">
+                            Add assignes
+                            <img src="./svg/add-button.svg" alt="">
+                            <img src="./svg/add-button-blue.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-3 pt-4 rounded-3">
+                {% include '../../../components/tags/step.twig' with {
+                    class: 'bg-success',
+                    text: 'New'
+                } %}
+                <div class="d-flex align-items-center justify-content-between">
+                    <p class="fw-medium">Henry Jones Mediation Highlights</p>
+                    <div class="d-flex align-items-center justify-content-between gap-2">
+                        <button type="button" class="btn-action"  data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="Download PDF Report">
+                            {{ media.icon('download') }}
+                        </button>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="View/Edit Report Online">
+                            {{ media.icon('globe') }}
+                        </button>
+                        <button type="button" class="btn-action" data-bs-toggle="tooltip" data-bs-placement="top"
+                                data-bs-custom-class="sidebar-tooltip"
+                                data-bs-title="Delete Report">
+                            <span data-bs-target="#delete-report" data-bs-toggle="modal">{{ media.icon('delete') }}</span>
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="fs-12">By: Med-Test.AI</p>
+                        <p class="fs-12">Created: 05-10-2024 <span class="separator">|</span> 10:35 AM EST</p>
+                    </div>
+                    <div>
+                        <button type="button" class="btn-link" data-bs-toggle="offcanvas" data-bs-target="#viewAssignees" aria-controls="viewAssignees">
+                            Add assignes
+                            <img src="./svg/add-button.svg" alt="">
+                            <img src="./svg/add-button-blue.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

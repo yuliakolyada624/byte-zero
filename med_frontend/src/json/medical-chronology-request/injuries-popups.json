@@ -1,0 +1,92 @@
+[
+  {
+    "title": "HEAD AND NECK",
+    "class": "popup-head-and-neck js-head-and-neck",
+    "target_name": "head-and-neck",
+    "list": [
+      {
+        "chapter": "Components:",
+        "text": "Skull, Face, Brain, Eyes, Nose, Mouth, Ears, Cheeks, Jaw, Cervical spine."
+      },
+      {
+        "chapter": "Musculoskeletal:",
+        "text": "Bones (Skull, Cervical spine), Muscles, and Connective Tissues (Neck muscles, tendons, ligaments)."
+      }
+    ]
+  },
+  {
+    "title": "UPPER EXTREMITY (Right, Left, or Both)",
+    "class": "popup-upper-extremity js-upper-extremity",
+    "target_name": "upper-extremity",
+    "list": [
+      {
+        "chapter": "Components:",
+        "text": "Shoulder, Arm (Humerus, Radius, Ulna), Elbow, Forearm, Wrist, Hand (Carpals, Metacarpals, Phalanges, Fingers)."
+      },
+      {
+        "chapter": "Musculoskeletal:",
+        "text": "Bones (Clavicle, Scapula, Humerus, Radius, Ulna, Carpals, Metacarpals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the upper limb)."
+      }
+    ]
+  },
+  {
+    "title": "TORSO",
+    "class": "popup-torso js-torso",
+    "target_name": "torso-full",
+    "list": [
+      {
+        "chapter": "Components:",
+        "text": "Thorax (Chest, Ribcage, Sternum), Abdomen (Stomach, Liver, Spleen, Pancreas, Kidneys, Intestines), Pelvis (Hips, Reproductive Organs), Diaphragm."
+      },
+      {
+        "chapter": "Musculoskeletal:",
+        "text": "Bones (Ribcage, Sternum, Pelvis), Muscles, and Connective Tissues (Abdominal muscles, pelvic muscles, diaphragm)."
+      }
+    ]
+  },
+  {
+    "title": "BACK",
+    "class": "popup-back js-back",
+    "target_name": "back",
+    "list": [
+      {
+        "chapter": "Components:",
+        "text": "Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula."
+      },
+      {
+        "chapter": "Musculoskeletal:",
+        "text": "Bones (Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula), Muscles, and Connective Tissues (Muscles and ligaments supporting the back and spinal column)."
+      }
+    ]
+  },
+  {
+    "title": "LOWER EXTREMITY (Right, Left, or Both)",
+    "class": "popup-lower-extremity js-lower-extremity",
+    "target_name": "lower-extremity",
+    "list": [
+      {
+        "chapter": "Components:",
+        "text": "Hip, Thigh (Femur), Knee (Patella), Leg (Tibia, Fibula), Ankle, Foot (Tarsals, Metatarsals, Phalanges, Toes)."
+      },
+      {
+        "chapter": "Musculoskeletal:",
+        "text": "Bones (Femur, Patella, Tibia, Fibula, Tarsals, Metatarsals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the lower limb)."
+      }
+    ]
+  },
+  {
+    "title": "INTERNAL ORGANS: Heart, Lungs, Liver, Spleen, Pancreas, Kidneys, Bladder, Stomach, Intestines, Reproductive Organs.",
+    "class": "popup-internal-organs js-internal-organs",
+    "target_name": "internal-organs"
+  },
+  {
+    "title": "SKIN: The body's largest organ, covering and protecting all external surfaces.",
+    "class": "popup-skin js-skin",
+    "target_name": "skin"
+  },
+  {
+    "title": "CIRCULATORY AND NERVOUS SYSTEMS: Includes Blood Vessels and Nerves throughout the body.",
+    "class": "popup-nerv-system js-nerv-system",
+    "target_name": "nerv-system"
+  }
+]

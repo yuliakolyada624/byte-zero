@@ -1,0 +1,52 @@
+.form-field__checkbox{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: var(--font-primary);
+  color: var(--primaryBlue);
+  font-weight: 400;
+
+  &:hover{
+    .checkbox__custom{
+      @media(min-width: 1025px){
+        border-color: var(--baseLightBlue);
+      }
+    }
+  }
+
+  .checkbox__input{
+    display: none;
+  }
+
+  .checkbox__input:checked + .checkbox__custom{
+    border-color: var((--baseLightBlue));
+    .icon{
+      opacity: 1;
+    }
+  }
+
+  .checkbox__custom{
+    transition: .3s;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--thirdGray);
+    border-radius: 4px;
+    .icon{
+      width: 10px;
+      height: 8px;
+      object-fit: contain;
+      transition: .2s;
+      fill: transparent;
+      stroke: var(--baseLightBlue);
+      stroke-width: 1.7px;
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Contact details",
+    "inputs": [
+      {
+        "label": "Work phone number, Ext.",
+        "name": "edit_personal_information_work_phone_number",
+        "type": "tel",
+        "placeholder": "",
+        "value": "3058887777, 1234",
+        "class": "col-6",
+        "error": "Phone number required",
+        "isValidation": true,
+        "macro": "telInput",
+        "selected_flag": "us",
+        "selected_code": "+1"
+      }
+    ]
+  }
+]

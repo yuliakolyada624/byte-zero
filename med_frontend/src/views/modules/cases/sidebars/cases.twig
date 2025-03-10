@@ -1,0 +1,107 @@
+<div class="offcanvas cases offcanvas-end" tabindex="-1" id="1" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">Cases</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h1 class="mb-0">Order Number: ORDZKY</h1>
+            {% include '../../../components/tags/status.twig' with {
+                class: 'ready',
+                text: 'Ready'
+            } %}
+        </div>
+        <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+            {{btn.primary({
+                inner: "Order Details",
+                icon: "order-details",
+                class: "sidebar-btn",
+                offcanvas_id: "orderDetails"
+            })}}
+            {{btn.primary({
+                inner: "View Reports",
+                icon: "reports",
+                class: "sidebar-btn",
+                offcanvas_id: "viewReports"
+            })}}
+        </div>
+        <div class="order-progress mb-4">
+            <h3 class="mb-3">Order Progress</h3>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="checkbox">{{ media.icon('checkbox') }}</div>
+                <div class="w-50">Order Received</div>
+                <div class="w-50 text-end fw-semibold">05-10-2024 <span class="separator">|</span> 18:35 EST</div>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="checkbox">{{ media.icon('checkbox') }}</div>
+                <div class="w-50">AI Processed</div>
+                <div class="w-50 text-end fw-semibold">05-10-2024 <span class="separator">|</span> 18:35 EST</div>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="checkbox">{{ media.icon('checkbox') }}</div>
+                <div class="w-50">Reviewer Analyzed</div>
+                <div class="w-50 text-end fw-semibold">05-10-2024 <span class="separator">|</span> 20:35 EST</div>
+            </div>
+            <div class="d-flex justify-content-between mb-3">
+                <div class="checkbox">{{ media.icon('checkbox') }}</div>
+                <div class="w-50">Attorney Approved</div>
+                <div class="w-50 text-end fw-semibold">05-10-2024 <span class="separator">|</span> 20:35 EST</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <div class="checkbox">{{ media.icon('checkbox') }}</div>
+                <div class="w-50">Order Ready:</div>
+                <div class="w-50 text-end fw-semibold">05-10-2024 <span class="separator">|</span> 20:35 EST</div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <h3 class="mb-3">Assignees</h3>
+            <div class="card p-4 rounded-3">
+                <button class="btn-link">
+                    {{ media.icon('plus') }}
+                    Add Report Assignees
+                </button>
+            </div>
+        </div>
+        <div>
+            <h3 class="mb-3">Payment Information</h3>
+            <div class="card p-4 bg-main-light border-0">
+                <table class="mb-4">
+                    <tbody>
+                        <tr>
+                            <td class="pb-2">Transaction ID:</td>
+                            <th class="text-end pb-2 fw-semibold" scope="row">ABD234BDI23234</th>
+                        </tr>
+                        <tr>
+                            <td class="pb-2">Payment Method:</td>
+                            <th class="text-end pb-2 fw-semibold" scope="row">Visa ending in 3241</th>
+                        </tr>
+                        <tr>
+                            <td class="pb-2">Payment Date:</td>
+                            <th class="text-end pb-2 fw-semibold" scope="row">05-11-2024 <span class="separator">|</span> 4:35 PM EST</th>
+                        </tr>
+                        <tr>
+                            <td class="pb-2">Currency:</td>
+                            <th class="text-end pb-2 fw-semibold" scope="row">USD</th>
+                        </tr>
+                        <tr>
+                            <td>Billed Amount:</td>
+                            <th class="text-end fw-semibold" scope="row">$250</th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                    {{btn.primary({
+                        inner: "Invoice",
+                        icon: "download",
+                        class: "sidebar-btn light"
+                    })}}
+                    {{btn.primary({
+                        inner: "Receipt",
+                        icon: "download",
+                        class: "sidebar-btn light"
+                    })}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

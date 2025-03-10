@@ -1,0 +1,32 @@
+{% block variables %}
+
+{% endblock variables %}
+
+<div class="sidebar__wrapper" id="{{ sidebar_id }}">
+  {% for sidebar in sidebars %}
+    <div class="sidebar{{ sidebar.class ? ' ' ~ sidebar.class : '' }}"
+      data-step="{{ sidebar.step }}"
+      {{ sidebar.attr }}>
+      <div class="sidebar__header">
+        <button class="sidebar__back-button js-slide-button"
+          type="button"
+          data-goto="{{ sidebar.back_btn_step|default('back') }}">
+          {{ media.icon('arrow') }}
+          Back
+        </button>
+
+        <div class="sidebar__row">
+          {% if sidebar.header_text %}
+            <span>{{ sidebar.header_text }}</span>
+          {% endif %}
+
+          <button class="sidebar__close-button js-sidebar-close">{{ media.icon('close') }}</button>
+        </div>
+      </div>
+
+      <div class="sidebar__content">
+        {% include sidebar.content %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

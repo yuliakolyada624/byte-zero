@@ -1,0 +1,48 @@
+<fieldset class="payment-method-radio-group{{ class ? ' ' ~ class : '' }}">
+  <ul class="payment-method-radio-group__list js-selected-top-container">
+    {% for item in items %}
+      <li class="payment-method-radio-group-item js-selected-top-item">
+        <label class="payment-method-radio-group-item__label radio-group__item">
+          <span class="radio">
+            <input class="radio__input js-radio-input"
+              type="radio"
+              name="{{ name }}"
+              value="{{ item.method }}_{{ item.ending }}"
+              {{ item.attr }} />
+            <span class="radio__custom"></span>
+          </span>
+
+          {{
+            media.img(
+              'payment-systems/' ~ item.method,
+              'png',
+              'payment-method-radio-group-item',
+              '36',
+              '22'
+            )
+          }}
+
+          <div class="payment-method-radio-group-item__details">
+            {% if item.card_name %}
+              <div class="payment-method-radio-group-item__details-item">
+                <span><b>{{ item.card_name }}</b></span>
+              </div>
+            {% endif %}
+            {% if isPersonal %}
+              <div class="payment-method-radio-group-item__details-item">
+                <span>•••• •••• •••• <b>{{ item.ending }}</b></span>
+              </div>
+            {% else %}
+              <div class="payment-method-radio-group-item__details-item">
+                <span>Ends in <b>{{ item.ending }}</b></span>
+              </div>
+            {% endif %}
+            <div class="payment-method-radio-group-item__details-item">
+              <span>Expiry: <b>{{ item.expiry }}</b></span>
+            </div>
+          </div>
+        </label>
+      </li>
+    {% endfor %}
+  </ul>
+</fieldset>

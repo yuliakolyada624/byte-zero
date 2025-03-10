@@ -1,0 +1,234 @@
+
+.profile {
+    margin: 28px 0;
+    &--section {
+        padding: 0;
+        margin-bottom: 30px;
+        &-header {
+            margin-bottom: 19px;
+        }
+        &-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 22px;
+            color: var(--main-color, #131316);
+        }
+        &-body {
+            padding: 18px;
+            border-radius: 10px;
+            background-color: var(--ligh-gray-bg, #F6F9FE);
+        }
+    }
+    & .form-field__readonly-symbol {
+        display: none;
+    }
+    & .is-readonly input {
+        background: transparent;
+    }
+    &--image {
+        &-line {
+            margin-bottom: 16px;
+        }
+        &-current {
+            position: relative;
+            overflow: hidden;
+            width: 96px;
+            height: 96px;
+            margin-right: 20px;
+            border-radius: 48px;
+            border: 1px solid var(--base-border, #D4DCE4);
+            background-color: #fff;
+            span {
+                display: block;
+                color: var(--baseLightBlue, #148BDF);
+                font-size: 30.47px;
+                font-weight: 500;
+                line-height: 36.56px;
+                text-align: center;
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 100%;
+                min-width: 100%;
+                min-height: 100%;
+            }
+        }
+        &-load {
+            position: relative;
+            width: calc(100% / 1 - 110px);
+            padding: 17px 24px;
+            background-color: white;
+            border-radius: 8px;
+            &-icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                background-color: var(--ligh-gray-bg, #F6F9FE);
+                border-radius: 20px;
+            }
+            &-disc {
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: center;
+                color: var(--main-color, #131316);
+                span {
+                    color: var(--baseLightBlue, #148BDF);
+                }
+            }
+            &-wrapper {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    &__personal-info {
+        .component__dropdown2 {
+            .form-label {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+
+    &__security {
+        // password field
+        & .password {
+            & > .form-field__input-wrap {
+                position: relative;
+                .form-field__input {
+                padding-right: 40px;
+                }
+            }
+
+            // button show password ===
+            button {
+                position: absolute;
+                top: 15px;
+                right: 14px;
+                width: 16px;
+                height: 16px;
+                cursor: pointer;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                @media (min-width: 1025px) {
+                    .icon {
+                    fill: var(--baseTextGray);
+                    }
+                }
+                }
+
+                .icon {
+                opacity: 1;
+                visibility: visible;
+                width: 16px;
+                height: 16px;
+                fill: var(--secondaryGray);
+                transition: all 0.3s ease;
+                }
+
+                &.closed {
+                .icon-eye {
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .icon-eye-closed {
+                    opacity: 1;
+                    visibility: visible;
+                    width: 16px;
+                    height: 16px;
+                }
+                }
+
+                &.showed {
+                .icon-eye-closed {
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                .icon-eye {
+                    opacity: 1;
+                    visibility: visible;
+                    width: 16px;
+                    height: 16px;
+                }
+                }
+            }
+            // button show password end ===
+
+            .password-field__error {
+                display: none;
+                line-height: 18px;
+                font-size: 14px;
+                font-family: var(--font-primary);
+                font-weight: 400;
+                color: var(--errors);
+                height: 0;
+                opacity: 0;
+                transition: all 0.3s ease;
+                margin-top: 0;
+            }
+
+            &.no-match {
+                .password-field__error {
+                height: 18px;
+                opacity: 1;
+                visibility: visible;
+                margin-top: 8px;
+                }
+
+                .form-field__input {
+                border-color: var(--errors);
+                }
+            }
+
+            &.empty {
+                .form-field__input {
+                border-color: var(--errors);
+                }
+                .form-field__error {
+                height: 18px;
+                opacity: 1;
+                visibility: visible;
+                margin-top: 8px;
+                }
+            }
+        }
+    }
+    &__my-notifications {
+        &-select-wrap {
+            width: 346px;
+        }
+    }
+    &__pass-period {
+        &-select-wrap {
+            width: 346px;
+        }
+        // .component__dropdown2 {
+        //     &.disabled {
+        //         // position: relative;
+        //         // opacity: .5;
+        //     }
+        // }
+    }
+    .component__dropdown2.has-value .select2-container--bootstrap-5 .select2-selection {
+        border: 1px solid #ced4da;
+    }
+}

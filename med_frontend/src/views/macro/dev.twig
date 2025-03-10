@@ -1,0 +1,41 @@
+{# Development pages menu #}
+{% set prettyDevMode = true %}
+
+{% macro menu() %}
+  {% if prettyDevMode %}
+    {% set menu = json('showNavigationMenu') %}
+  {% else %}
+    {% set menu = auto('menuGlobal') %}
+  {% endif %}
+  <div class="dev-menu {{ prettyDevMode ? 'specified' : '' }}">
+    <ul class="dev-menu-list">
+      {% if prettyDevMode %}
+        {% for columnLinks in menu %}
+          <div class="dev-menu-col">
+            <div class="dev-menu-col-name">{{ columnLinks["columnName"] }}</div>
+              {% for  titleLink, hrefLink in columnLinks["columnLinks"] %}
+                <li class="dev-menu-item"><a class="dev-menu-link" href="{{ hrefLink }}">{{ titleLink }}</a></li>
+              {% endfor %}
+          </div> 
+        {% endfor %}
+      {% else %}
+        {% for title, link in menu.menuLink %}
+          <li class="dev-menu-item"><a class="dev-menu-link" href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+    <button
+      type="button"
+      class="dev-menu-toggler"
+      aria-label="Developer menu"
+    ><i></i>
+    </button>
+  </div>
+  <script>
+    {% include '../../assets/dev-menu/dev-menu.js' %}
+  </script>
+  <style>
+    {% include '../../assets/dev-menu/dev-menu.css' %}
+  </style>
+{% endmacro %}
+{# Development pages menu end #}

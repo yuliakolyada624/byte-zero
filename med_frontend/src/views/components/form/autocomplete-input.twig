@@ -1,0 +1,18 @@
+{#
+  id: string,
+  class: string,
+  name: string,
+  url: string, 
+#}
+
+<div class="component__autocomplete {{ class }} " data-url="{{ url }}">
+  <input
+      id="{{ id }}"
+      name="{{ name }}"
+      class="form-control component__autocomplete-input js__autocomplete-input" 
+      type="text"
+      placeholder="{{ placeholder }}"
+      autocomplete="off"
+  >
+  <div class="component__autocomplete-list d-none"></div>
+</div>

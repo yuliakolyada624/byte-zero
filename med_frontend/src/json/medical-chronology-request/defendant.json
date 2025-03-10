@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Defendant First Name*",
+    "name": "defendant_first_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-4",
+    "fieldType": "name",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Defendant Last Name*",
+    "name": "defendant_last_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-4",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Defendant Company Name (Optional)",
+    "name": "defendant_company_name",
+    "class": "col-4",
+    "fieldType": "name",
+    "inputClass": "js-medical-chronology-request__input"
+  }
+]

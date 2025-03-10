@@ -1,0 +1,69 @@
+<header class="landing-header js-fixed-header {{header_class}}">
+  <div class="container">
+    <div class="landing-header-content">
+      <a href="./">
+        {{media.img('./content/logo', 'png', 'header', 198, 35)}}
+      </a>
+      <nav class="landing-header-nav">
+        <ul class="landing-header-nav-list">
+          <li class="landing-header-nav-item active">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="home">About</a>
+          </li>
+          <li class="landing-header-nav-item">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="steps-section">Our Process</a>
+          </li>
+          <li class="landing-header-nav-item">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="provides-section">Our Service</a>
+          </li>
+          <li class="landing-header-nav-item">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="preferences-section">Your Benefits</a>
+          </li>
+          <li class="landing-header-nav-item">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="faq-section">FAQs</a>
+          </li>
+          <li class="landing-header-nav-item">
+            <a href="#" class="landing-header-nav-item-link js-header-nav-item-link" data-target="feedback-section">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="landing-header-sign-buttons">
+        <a href="sign-up-account-registartion.html" class="header-sign-in">Sign in</a>
+        <a href="#feedback-section" class="header-register btn btn-primary">Register</a>
+      </div>
+      <button type="button" class="landing-header-burger-btn js-header-menu-trigger" aria-label="Open header menu button">
+        {{media.icon('burger')}}
+      </button>
+      <div class="landing-header-overlap-menu js-header-overlap-menu">
+        {{media.img('./content/overlap-logo', 'png', 'header-overlap-menu', 198, 35)}}
+        <ul class="landing-header-overlap-menu-nav-list">
+          <li class="landing-header-overlap-menu-nav-item active">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="home">About</a>
+          </li>
+          <li class="landing-header-overlap-menu-nav-item">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="steps-section">Process</a>
+          </li>
+          <li class="landing-header-overlap-menu-nav-item">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="provides-section">Features</a>
+          </li>
+          <li class="landing-header-overlap-menu-nav-item">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="preferences-section">Benefits</a>
+          </li>
+          <li class="landing-header-overlap-menu-nav-item">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="faq-section">FAQs</a>
+          </li>
+          <li class="landing-header-overlap-menu-nav-item">
+            <a class="landing-header-overlap-menu-nav-item-link js-header-nav-item-link" data-target="feedback-section">Contact Us</a>
+          </li>
+        </ul>
+        <div class="landing-header-overlap-menu-sign-buttons">
+          <a href="sign-up-account-registartion.html" class="landing-header-overlap-menu-sign-in btn btn-white">Sign in</a>
+          <a href="#" class="landing-header-overlap-menu-register btn btn-primary js-header-nav-item-link" data-target="feedback-section">Register</a>
+        </div>
+        <button type="button" class="landing-header-overlap-menu-close-btn js-header-overlap-menu-close-trigger">
+          {{media.icon('close')}}
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

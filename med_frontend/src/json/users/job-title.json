@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Enter Job Name",
+    "name": "job_name",
+    "class": "col-12",
+    "fieldType": "name"
+  }
+]

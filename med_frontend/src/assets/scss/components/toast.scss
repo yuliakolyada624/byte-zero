@@ -1,0 +1,241 @@
+.toast {
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  padding: 12px 16px;
+  position: absolute;
+  top: -9px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 8px;
+  z-index: 999;
+  .icon {
+    max-width: 20px;
+    height: 20px;
+    width: 100%;
+  }
+  &-body {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  &.successful {
+    background-color: var(--light-green);
+    color: var(--darker-green);
+    .icon {
+      stroke-width: 1.1px;
+      stroke: var(--darker-green);
+      fill: transparent;
+    }
+    p {
+      color: var(--darker-green);
+    }
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      margin-left: auto;
+      width: 21px;
+      height: 21px;
+      background-image: url("../svg/check-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &.error {
+    background-color: var(--light-red);
+    color: var(--errors);
+    p {
+      color: var(--errors);
+    }
+    .icon {
+      stroke: var(--errors);
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.1px;
+      transform: rotate(180deg);
+      &.icon-danger {
+        transform: rotate(0deg);
+        fill: var(--errors);
+        stroke: none;
+      }
+    }
+    &::after {
+       content: url("../svg/info-circle.svg");
+    }
+  }
+  &.primary {
+    border: 1px solid var(--base-border);
+    background: var(--ligh-gray-bg);
+    p {
+      color: var(--main-blue);
+    }
+    .icon {
+      stroke: var(--main-blue);
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.1px;
+      transform: rotate(180deg);
+    }
+  }
+  &.info {
+    width: max-content;
+    border-radius: 22px;
+    border: 1px solid var(--base-border);
+    background: var(--white);
+    padding: 3px 8px;
+    .toast-body {
+      span {
+        color: var(--main-blue);
+        font-style: italic;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+    .btn-close {
+      width: 12px;
+      height: 12px;
+      padding: 0;
+    }
+    .icon {
+      fill: none;
+      stroke: var(--icon-gray);
+    }
+  }
+  .toast-remove-btn {
+    flex-shrink: 0;
+    margin-left: auto;
+    width: 12px;
+    height: 12px;
+    background-image: url("../svg/close.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.page-toast {
+    max-width: 600px;
+    top: 10px;
+  }
+}
+/*
+.toast {
+  position: absolute;
+  top: 15px;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  font-weight: 500;
+  line-height: 18px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 509px;
+  z-index: 999;
+
+  &.common {
+    background-color: var(--gray-bg);
+    border: var(--base-border-line);
+  }
+  // icon from right
+  &.success {
+    color: var(--darker-green);
+    background-color: var(--light-green)!important;
+
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      margin-left: auto;
+      width: 21px;
+      height: 21px;
+      background-image: url("../svg/check-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  // icon from left & smaller border radius
+  &.success-alt {
+    color: var(--darker-green);
+    background-color: var(--light-green);
+    border-radius: 6px;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      background-image: url("../svg/check-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+  &.success-lg {
+    padding-block: 19px;
+    width: calc(100% - 52px);
+    max-width: unset;
+    color: var(--darker-green);
+    background-color: var(--light-green);
+    border-radius: 6px;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      background-image: url("../svg/check-circle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  // &.error {
+  //   color: var(--errors);
+  //   background-color: var(--lightRed);
+
+  //   &::after {
+  //     content: url("../svg/info-circle.svg");
+  //   }
+  // }
+
+  &._show {
+    transform: translate(-50%, 0);
+  }
+
+  &.left,
+  &.right {
+    &._show {
+      transform: translate(0, 0);
+    }
+  }
+  &.left {
+    left: 0;
+    transform: translate(0, -100%);
+  }
+  &.right {
+    left: unset;
+    right: 0;
+    transform: translate(0, -100%);
+  }
+}
+
+.toast-remove-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  width: 12px;
+  height: 12px;
+  background-image: url("../svg/close.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+*/
+

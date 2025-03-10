@@ -1,0 +1,23 @@
+.auth-page-link {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--baseLightBlue);
+  transition: .3s;
+
+  &.dark-link{
+    color: var(--primaryBlue);
+  }
+
+  &.xs-link{
+    font-size: 12px;
+  }
+
+  &:hover {
+    @media(min-width: 1025px){
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}

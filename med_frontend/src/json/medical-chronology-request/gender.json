@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Plaintiff Gender*",
+    "name": "medical_chronology_request_plaintiff_gender",
+    "is_required": true,
+    "placeholder": "Select",
+    "value": "",
+    "macro": "select",
+    "list": [
+      {
+        "text": "Male",
+        "id": "male",
+        "target": "male"
+      },
+      {
+        "text": "Female",
+        "id": "female",
+        "target": "female"
+      }
+    ]
+  }
+]

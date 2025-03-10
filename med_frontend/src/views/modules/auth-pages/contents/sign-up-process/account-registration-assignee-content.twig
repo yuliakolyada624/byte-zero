@@ -1,0 +1,32 @@
+{% import '../../macro/auth-macro.twig' as authMacro %}
+<div class="auth-page__section-header">
+  {% include '../../components/auth-progress-steps.twig' with {
+    steps: [
+      {
+        label: "User Details",
+        done: false
+      },
+      {
+        label: "2FA",
+        done: false
+      },
+      {
+        label: "Password",
+        done: false
+      },
+    ]
+  } %}
+</div>
+
+
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Account Registration</h2>
+  <p class="auth-page-subtitle">Let’s take a moment to set up your account.</p>
+  <div class="d-flex mx-auto auth-page__form-wrap">
+    <form class="form js-form auth-page__form" data-href="sign-up-email-verification.html">
+      {{form.fieldsForm('form-fields-account-registration-assignee')}}
+      <button class="btn btn-primary auth-page-btn auth-page__form-btn" type="submit" aria-label="Continue">Continue</button>
+      {{authMacro.terms('term')}}
+    </form>
+  </div>
+</div>

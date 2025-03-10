@@ -1,0 +1,49 @@
+.modal {
+  &.report {
+    .modal-dialog {
+      max-width: 789px;
+      .modal-content {
+        padding: 20px 26px 26px 26px;
+        .modal-body {
+          padding: 0;
+          .form-check {
+            margin-top: 20px;
+            &-label {
+              &__title {
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+              }
+            }
+            &-input {
+              &:checked {
+                background-color: var(--main-blue);
+                border-color: var(--main-blue);
+              }
+            }
+            .badge.status {
+              display: inline-block;
+            }
+          }
+        }
+        .btn-link {
+          .icon {
+            width: 18px;
+            height: 18px;
+            stroke: var(--main-blue);
+            fill: transparent;
+            stroke-width: 1.5px;
+          }
+        }
+      }
+      .modal-header {
+        margin-top: 0;
+        .btn-close {
+          border: 1px solid var(--baseLineGray);
+          border-radius: 100%;
+          background-size: 11px;
+        }
+      }
+    }
+  }
+}

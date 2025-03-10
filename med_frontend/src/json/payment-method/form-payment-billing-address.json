@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Billing Address*",
+    "name": "billing_address",
+    "class": "auth-page__form-field col-4",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "fieldType": "name"
+  }
+]

@@ -1,0 +1,24 @@
+{% extends 'layouts/auth/layout-auth.twig' %}
+
+{% block variables %}
+  {% set title = 'Med-Test | Login' %}
+  {% set page_class = 'auth-page login-page' %}
+  {% set content_class = 'auth-content login-content' %}
+  {% set sidebarInfoMode = true %}
+  {% set sidebarStepper = true %}
+  {% set sidebarStepperCounter = 1 %}
+  {% set header_button_text = 'Register' %}
+  {% set header_button_href = '/sign-up-company.html' %}
+{% endblock %}
+
+{% set page_modules_path = 'modules/auth-pages/' %}
+
+{% block content_auth %}
+  {% include page_modules_path ~ 'contents/login-process/login-content.twig' %}
+{% endblock %}
+
+{% block modals %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,276 @@
+.auth-page__form {
+  width: 100%;
+  display: flex;
+  row-gap: 18px;
+  column-gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &-wrap{
+    width: 440px;
+    margin-top: 32px;
+  }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 28px;
+
+    .form-field {
+      width: fit-content !important;
+      flex-basis: auto !important;
+    }
+  }
+
+  .tel-wrap{
+    .form-field__input {
+      border: 0;
+      border-radius: 0;
+      padding: 10px;
+    }
+    .icon-chevron-up{
+      fill: transparent;
+    }
+
+    .tel-input-dropdown{
+      width: calc(100% + 70px);
+      @media(max-width:576px){
+        width: 100%;
+      }
+    }
+  }
+
+  .form-field {
+    width: 100%;
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--primaryBlue);
+
+    &.col-6 {
+      flex-basis: calc(50% - 10px);
+      width: calc(50% - 10px);
+      @media(max-width:576px){
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    // invalid fields
+    &._invalid {
+      .form-field__input,
+      .checkbox__custom {
+        border-color: var(--errors);
+      }
+
+      .form-field__error {
+        opacity: 1;
+        visibility: visible;
+        height: 18px;
+        margin-top: 6px;
+      }
+    }
+
+    // readonly fields
+    &.is-readonly {
+      .form-field__input-wrap .form-field__input {
+        padding-right: 45px;
+      }
+    }
+
+    // password field
+    &.password {
+      & > .form-field__input-wrap {
+        position: relative;
+        .form-field__input {
+          padding-right: 40px;
+        }
+      }
+
+      // button show password ===
+      button {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          @media (min-width: 1025px) {
+            .icon {
+              fill: var(--baseTextGray);
+            }
+          }
+        }
+
+        .icon {
+          opacity: 1;
+          visibility: visible;
+          width: 16px;
+          height: 16px;
+          fill: var(--secondaryGray);
+          transition: all 0.3s ease;
+        }
+
+        &.closed {
+          .icon-eye {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+          }
+          .icon-eye-closed {
+            opacity: 1;
+            visibility: visible;
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        &.showed {
+          .icon-eye-closed {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+          }
+          .icon-eye {
+            opacity: 1;
+            visibility: visible;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+      // button show password end ===
+
+      .password-field__error {
+        line-height: 18px;
+        font-size: 14px;
+        font-family: var(--font-primary);
+        font-weight: 400;
+        color: var(--errors);
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        margin-top: 0;
+      }
+
+      &.no-match {
+        .password-field__error {
+          height: 18px;
+          opacity: 1;
+          visibility: visible;
+          margin-top: 8px;
+        }
+
+        .form-field__input {
+          border-color: var(--errors);
+        }
+      }
+
+      &.empty {
+        .form-field__input {
+          border-color: var(--errors);
+        }
+        .form-field__error {
+          height: 18px;
+          opacity: 1;
+          visibility: visible;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  .auth-page__form-btn {
+    margin-top: 8px;
+  }
+
+  // main field settings
+  .form-field {
+    &__title {
+      font-size: 14px;
+      line-height: 24px;
+      font-family: var(--font-primary);
+      color: var(--primaryBlue);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    &__error {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      font-family: var(--font-primary);
+      font-weight: 400;
+      color: var(--errors);
+      font-size: 14px;
+      line-height: 18px;
+      transition: all 0.3s ease;
+      margin-top: 0;
+    }
+
+    &__readonly-symbol {
+      width: 19px;
+      height: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 1.5px solid var(--secondaryGray);
+      position: absolute;
+      padding: 3px;
+      top: 13.5px;
+      right: 14px;
+      .icon {
+        width: 9px;
+        height: 9px;
+        object-fit: contain;
+        fill: var(--secondaryGray);
+      }
+    }
+  }
+
+  // orders for company information
+  .order-0 {
+    order: 1;
+  }
+  .order-1 {
+    order: 2;
+  }
+  .order-2 {
+    order: 3;
+  }
+  .order-3 {
+    order: 4;
+  }
+  .order-4 {
+    order: 5;
+  }
+  .order-5 {
+    order: 6;
+  }
+
+  .dropdown {
+    .dropdown__item {
+      text-align-last: left;
+    }
+  }
+
+  // form components
+  @import "auth-page-checkbox";
+  @import "auth-page-input-field";
+  @import './auth-page-tel.scss';
+}

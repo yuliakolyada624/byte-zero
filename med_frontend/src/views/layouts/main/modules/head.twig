@@ -1,0 +1,70 @@
+<head prefix="">
+  <meta charset="UTF-8" />
+  <title>
+    {{ title }}
+  </title>
+
+  {% if prod != true %}
+    <!-- TODO: Robots no index -->
+    <meta
+      name="robots"
+      content="noindex,nofollow"
+    />
+
+    <!-- TODO: Allow http req with no network -->
+{#    <meta#}
+{#    http-equiv="Content-Security-Policy"#}
+{#    content="script-src 'self' 'wasm-unsafe-eval' 'inline-speculation-rules'; script-src-elem 'http://localhost:3000/offline.html';"#}
+{#  />#}
+  {% endif %}
+
+  <!-- Open Graph meta -->
+  <meta property="og:site_name" content="{{ title }}">
+  <meta
+    property="og:title"
+    content="S"
+  />
+  <meta
+    property="og:description"
+    content=""
+  />
+  <meta property="og:locale" content="en">
+  <meta property="og:locale:alternate" content="uk" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:secure_url" content="" />
+  <meta property="og:image:width" content="32" />
+  <meta property="og:image:height" content="32" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="" />
+
+  <!-- Fix IOS zoom to input on focus -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no , maximum-scale=1.0, user-scalable=no" /> -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,height=device-height" />
+  <meta content="true" name="HandheldFriendly" />
+  <meta content="width" name="MobileOptimized" />
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="it-rating" content="" />
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- [if IE]>
+  <meta http-equiv="X-UA-Compatible" content="IE = edge" />
+  <![endif] -->
+
+  <link rel="canonical" href="">
+  <link rel="icon" type="image/png" href="./favicons/favicon.png" />
+  <link rel="manifest" href="./manifest.json" />
+  <!-- inject:splash screens -->
+  <!-- endinject:splash screens -->
+
+  <!-- inject:font preload -->
+  <!-- endinject:font preload -->
+
+  <link rel="stylesheet" href="./css/app.min.css" />
+  <!-- [if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <![endif]            -->
+</head>

@@ -1,0 +1,31 @@
+{% import 'ui/media.twig' as media %}
+
+{# Info modal start #}
+
+	<!-- Modal -->
+	<div class="modal fade" id="{{ id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content align-items-center">
+				{{ media.icon('exclamation-mark') }}
+				<div class="modal-header">
+					<h1 class="modal-title" id="staticBackdropLabel">{{ title }}</h1>
+				</div>
+				<div class="modal-body text-center py-0">
+					{{ text }}
+				</div>
+				<div class="modal-footer">
+					{% if buttonClose %}
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+					{% else %}
+						<button type="button" class="btn btn-primary">{{ params.btnText|default('Confirm') }}</button>
+						<button type="button" class="btn cancel" data-bs-dismiss="modal">Cancel</button>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+{# Info modal end #}
+
+
+

@@ -1,0 +1,41 @@
+//  README
+
+//  BOOTSTRAP
+@import "../node_modules/bootstrap/scss/bootstrap";
+// datepicker
+@import "node_modules/jquery-daterangepicker/lib/dist/daterangepicker.min";
+
+// Select2
+@import "../node_modules/select2/dist/css/select2.min";
+// Select2 Bootstrap 5 theme
+@import "../node_modules/select2-bootstrap-5-theme/dist/select2-bootstrap-5-theme.min";
+
+//  International Telephone Input
+@import "node_modules/intl-tel-input/build/css/intlTelInput.min";
+.iti {
+    --iti-path-flags-1x: url('../img/libs/flags.webp');
+    --iti-path-flags-2x: url('../img/libs/flags@2x.webp');
+    --iti-path-globe-1x: url('../img/libs/globe.webp');
+    --iti-path-globe-2x: url('../img/libs/globe@2x.webp');
+    --iti-hover-color: transparent
+}
+
+//  Tippy
+@import "node_modules/tippy.js/dist/tippy";
+
+//  Daterangepicker
+@import "node_modules/daterangepicker/daterangepicker";
+
+//  Swiper
+@import "node_modules/swiper/swiper";
+//  @import 'node_modules/swiper/components/pagination/pagination';
+//  @import 'node_modules/swiper/components/navigation/navigation';
+
+//  Simplebar
+//  @import 'node_modules/simplebar/dist/simplebar.min';
+
+//  Flatpickr
+// @import 'node_modules/flatpickr/dist/flatpickr.min';
+
+//  AOS
+//  @import 'node_modules/aos/dist/aos'

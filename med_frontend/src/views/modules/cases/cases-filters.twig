@@ -1,0 +1,149 @@
+<div class="cases-filters__body">
+    <div class="row cases-filters__wrap">
+
+        <div class="col col-6">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'casesFilterddStatus',
+                class: 'cases-filter__select-component cases-filter__filter-status',
+                name: 'status',
+                title: 'Progress Status',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Ready - Attorney Approved',
+                    value: 'ready',
+                    dataset: [{
+                        name: "color",
+                        value: "#088C5E",
+                    }]
+                },
+                {
+                    title: 'Reviewer Analyzed',
+                    value: 'reviewed',
+                    dataset: [{
+                        name: "color",
+                        value: "#FF7400",
+                    }]
+                },
+                {
+                    title: 'AI Processed',
+                    value: 'processed',
+                    dataset: [{
+                        name: "color",
+                        value: "#FFCE00",
+                    }]
+                },
+                {
+                    title: 'Order Received',
+                    value: 'received',
+                    dataset: [{
+                        name: "color",
+                        value: "#BBC4D9",
+                    }]
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-6">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'casesFilterddOrderedBy',
+                class: 'cases-filter__select-component',
+                name: 'ordered_by',
+                title: 'Ordered By',
+                isRequired: false,
+                hasSearch: true,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Adrian Medina, Esq.',
+                    value: '1',
+                },
+                {
+                    title: 'Isaac Ashurov',
+                    value: '2',
+                },
+                {
+                    title: 'Yoni Ashurov',
+                    value: '3',
+                },
+                {
+                    title: 'Yoni Ashurov',
+                    value: '4',
+                },
+                {
+                    title: 'Robert Graham Sr. ',
+                    value: '5',
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-6">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'casesFilterddReportType',
+                class: 'cases-filter__select-component',
+                name: 'report_type',
+                title: 'Report Type',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Medical Chronology',
+                    value: 'medical_chronology',
+                },
+                {
+                    title: 'Billing Summary',
+                    value: 'billing_summary',
+                },
+                {
+                    title: 'Medical Chronology + Billing Summary',
+                    value: 'both',
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-6">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'casesFilterddAssignee',
+                class: 'cases-filter__select-component',
+                name: 'assignee',
+                title: 'Assignee',
+                isRequired: false,
+                hasSearch: true,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Adrian Medina',
+                    value: '0',
+                },
+                {
+                    title: 'Isaac Ashurov',
+                    value: '1',
+                },
+                {
+                    title: 'Nikolay Sokolov',
+                    value: '2',
+                },
+                {
+                    title: 'John Smith, Jr.',
+                    value: '3',
+                },
+                {
+                    title: 'Yoni Ashurov',
+                    value: '4',
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+    </div>
+</div>

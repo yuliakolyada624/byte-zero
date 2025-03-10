@@ -1,0 +1,19 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--baseLightBlue);
+}
+.invalid-feedback {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 20px;
+}
+:root {
+    --bs-form-invalid-color: #bd1145;
+    --bs-form-invalid-border-color: #bd1145;
+}
+.was-validated .form-control:invalid {
+    background-image: none;
+}
+.form-control.is-invalid {
+    background-image: none;
+}

@@ -1,0 +1,48 @@
+@import "font-face";
+
+@mixin scrollbar-style-thin {
+  @-moz-document url-prefix() {
+    scrollbar-color: var(--secondary-border) var(--white);
+    scrollbar-width: 2px;
+  }
+  &::-webkit-scrollbar {
+    width: var(--custom-scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--white);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: var(--secondary-border);
+  }
+}
+
+@mixin display($display, $align, $justify: null) {
+  display: $display;
+  align-items: $align;
+  @if $justify {
+    justify-content: $justify;
+  }
+}
+
+@mixin selected-items-top-offset($start, $end: null) {
+  @if $end {
+    &:has(:nth-child(n + #{$start}):nth-child(-n + #{$end}).selected) {
+      & .global-form-field {
+        &:nth-child(n + #{$start}):nth-child(-n + #{$end}) {
+          padding-top: 9px;
+        }
+      }
+    }
+  } @else {
+    &:has(:nth-child(-n + #{$start}).selected) {
+      & .global-form-field {
+        &:nth-child(-n + #{$start}) {
+          padding-top: 9px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.transactions-heading {
+  margin-bottom: 32px;
+  .collapse {
+    .card-body {
+      background-color: var(--ligh-gray-bg);
+      border: none;
+      margin-bottom: 16px;
+    }
+  }
+  &__svg-download { 
+    width: 46px;
+    height: 46px;
+    margin-left: 14px;
+    padding: 0;
+  }
+}
+
+.transactions-filter__onlymy {
+  margin-left: auto;
+  margin-right: 14px;
+}
+.transactions-body-head {
+  padding-bottom: 16px;
+}

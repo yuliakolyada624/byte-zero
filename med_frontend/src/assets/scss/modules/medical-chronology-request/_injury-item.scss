@@ -1,0 +1,113 @@
+&.injury-item {
+  &:not(:last-child) {
+    .injury-item-label {
+      border-bottom: 1px solid var(--base-border);
+    }
+  }
+
+  .injury-item {
+    &-label {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 14px 16px 14px 40px;
+      position: relative;
+
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: var(--ligh-gray-bg);
+      }
+      &:has(.injury-item-checkbox:checked) {
+        background-color: var(--ligh-gray-bg);
+
+        .rectangle {
+          border-color: var(--main-blue);
+
+          .icon-check {
+            opacity: 1;
+          }
+        }
+      }
+
+      .rectangle {
+        position: absolute;
+        left: 16px;
+        top: 15.5px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid var(--base-border);
+        border-radius: 4px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: border-color 0.3s ease;
+
+        .icon-check {
+          width: 12px;
+          height: 12px;
+          fill: transparent;
+          stroke: var(--main-blue);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 1.67px;
+
+          opacity: 0;
+
+          transition: all 0.3s ease;
+        }
+      }
+    }
+
+    &-checkbox {
+      display: none;
+    }
+
+    &-title {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+
+      @media(max-width: 447px) {
+        &.m-w-139 {
+          max-width: 139px;
+        }
+      }
+      b {
+        font-weight: 500;
+        color: var(--main-blue);
+      }
+    }
+
+    &-description {
+      display: flex;
+      flex-direction: column;
+
+      &_item {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+
+        b {
+          font-weight: 500;
+          color: var(--main-blue);
+        }
+      }
+    }
+  }
+}
+
+&.injury-footer {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .injury-footer-btn {
+    line-height: 20px;
+    font-weight: 500;
+    padding: 9px 20px;
+  }
+}

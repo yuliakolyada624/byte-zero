@@ -1,0 +1,82 @@
+<div class="component__usersearch" data-url="/searh-user">
+    {% include '../../components/form/search-field.twig' with {
+        id: 'usersSearchesSearchUsers',
+        class: 'users-searches__user-search',
+        input_class: 'js__users-searches-user',
+        placeholder: 'User Name or Email',
+        icon: true
+    } %}
+    
+    <input id="usersSearchesSearchUsersByNameEmail" class="js__users-searches-user-input" type="hidden" name="seach user">
+
+    <div data-url="/searh-user" class="users-searches__user-search-list-wrap js__users-searches-user-list _hidden">
+        <div>
+            <ul class="users-searches__user-search-list">
+
+                <li class="user-search-item js-search-filter-item" data-name="Asari Dokumbo" data-id="1" data-email="asari@slglaw.com" data-position="Attorney">
+                    <div class="user-search-item__button">
+                        <div class="user-search-item__first-col">
+                            <div class="user-search-item__initials">AD</div>
+                            <div>
+                                <p><b>Asari Dokumbo</b></p>
+                                <p>asari@slglaw.com</p>
+                            </div>
+                        </div>
+
+                        <div class="user-search-item__second-col">
+                        <p>
+                            <b>Attorney</b>
+                        </p>
+                        <p>
+                            The Salameh Law Group, P.A.
+                        </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="user-search-item js-search-filter-item" data-name="Asari Dokumbo" data-id="2" data-email="asari@slglaw.com" data-position="Attorney">
+                    <div class="user-search-item__button">
+                        <div class="user-search-item__first-col">
+                            <div class="user-search-item__initials">AD</div>
+                            <div>
+                                <p><b>Asari Dokumbo</b></p>
+                                <p>asari@slglaw.com</p>
+                            </div>
+                        </div>
+
+                        <div class="user-search-item__second-col">
+                        <p>
+                            <b>Attorney</b>
+                        </p>
+                        <p>
+                            The Salameh Law Group, P.A.
+                        </p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="user-search-item js-search-filter-item" data-name="Asari Dokumbo" data-id="3" data-email="asari@slglaw.com" data-position="Attorney">
+                    <div class="user-search-item__button">
+                        <div class="user-search-item__first-col">
+                            <div class="user-search-item__initials">AD</div>
+                            <div>
+                                <p><b>Asari Dokumbo</b></p>
+                                <p>asari@slglaw.com</p>
+                            </div>
+                        </div>
+
+                        <div class="user-search-item__second-col">
+                        <p>
+                            <b>Attorney</b>
+                        </p>
+                        <p>
+                            The Salameh Law Group, P.A.
+                        </p>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

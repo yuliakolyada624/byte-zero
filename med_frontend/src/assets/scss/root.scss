@@ -1,0 +1,105 @@
+:root {
+  //   === Colors
+  --white: #fff;
+  --black: #000;
+  --baseLightGray: #eff3fa;
+  --baseTextGray: #596b7a;
+  --baseLineGray: #d4dce4;
+  --primaryGray: #d6dade;
+  --secondaryGray: #9aa2ac;
+  --thirdGray: #d0d5dd;
+  --lightGray: #d4dce4;
+  --defaultGray: #f7f8fb;
+  --disabledbutton: #b9bec9;
+  --summaryGray: #91999f;
+  --primaryBlue: #304659;
+  --baseLightBlue: #148bdf;
+  --lightBlue: #55b8ff;
+  --platonicBlue: #89ceff;
+  
+  //texts colors
+  --text-color: #383942;
+  --main-color: #131316;
+  --main-blue: #148bdf;
+  --light-blue: #90B7E4;
+  --navy-blue: #181e3c;
+  --errors: #bd1145;
+  --header-bold-gray: #596b7a;
+
+  --header-icon-gray: #8d939f;
+
+  --secondary-gray: #9aa2ac;
+  --svg-icon-path: #9aa0a9;
+
+  //bg colors
+  --light-blue-bg: #f7faff;
+  --super-light-blue-bg: #e6efff;
+  --gray-bg: #f7f9fe;
+  --dark-gray-bg: #576169;
+  --ligh-gray-bg: #f6f9fe;
+  --super-light-gray-bg: #f7f9fe;
+  --status-promo-bg: #f1f1f1;
+  --label-gray-bg: #f2f6ff;
+  --disabled-btn-bg: #bbc4d9;
+
+  --base-yellow: #ffce00;
+  --base-orange: #ff7400;
+  --base-red: #e0565b;
+  --light-red: #fcebed;
+  --light-green: #ecfcf0;
+  --base-green: #02af72;
+  --darker-green: #088c5e;
+  --secondary-green: #65b857;
+
+  --light-gray: #e3e7ee;
+  --dark-gray: #767677;
+  --icon-gray: #8d939f;
+
+  --base-border: #d4dce4;
+  --secondary-border: #d6dade;
+  --section-border: #e7e7e7;
+  --auth-border: #d0d5dd;
+
+  --scrollThumbGray: #eaecf0;
+
+  --base-border-line: 1px solid #d4dce4;
+
+  --base-shadow: 0px 0px 20px 0px rgba(52, 60, 71, 0.30);
+  --steps-shadow: 0px 10px 34px 0px #16204226;
+  --card-shadow: 0px 0.02px 40px 0px #172c4a0a;
+  --icon-shadow: 0px 12px 41px 0px #2525261c;
+  --tel-dropdown-shadow: 0px 11px 33px 0px #343c471c;
+  --header-profile-shadow: 0px 14px 30px 0px #343c4726;
+
+
+  --base-transition: 300ms ease;
+
+  //  === Fonts
+  --font-poppins: "Poppins", sans-serif;
+  //  === Topography
+  --font-primary: var(--font-poppins);
+  --font-size: 14px;
+
+  // === Theme settings
+  --bg-primary: var(--white);
+  --text-color-primary: var(--main-color);
+  --text-color-primary-hover: var(--black);
+
+  // === Gaps
+  --form-group-gap: 14px;
+  --header-height: 0px;
+
+  --custom-scrollbar-width: 6px;
+
+  @media (min-width: 1024px) {
+    --header-height: 73px;
+    --footer-height: 92px;
+  }
+  @media (max-width: 576px) {
+    --header-height: 73px;
+    --footer-height: 80px;
+  }
+  @media (max-width: 576px) {
+    --header-height: 66px;
+  }
+}

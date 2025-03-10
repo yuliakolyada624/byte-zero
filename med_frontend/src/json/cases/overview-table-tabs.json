@@ -1,0 +1,19 @@
+[
+    {
+        "id": "tab1",
+        "inner": "Body Injury",
+        "class": "active"
+    },
+    {
+        "id": "tab2",
+        "inner": "Disability claim"
+    },
+    {
+        "id": "tab3",
+        "inner": "Nursing Home Negligence"
+    },
+    {
+        "id": "tab4",
+        "inner": "Workers' compensation"
+    }
+]

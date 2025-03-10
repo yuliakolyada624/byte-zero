@@ -1,0 +1,289 @@
+<div class="js__profile-form js-form" action="">
+    <section class="profile--section profile__personal-info">
+        <div class="profile--section-header">
+            <h2 class="profile--section-title">Personal Information</h2>
+        </div>
+        <div class="profile--section-body">
+            <!-- TODO Dropazone -->
+            <div class="d-flex justify-content-between profile--image-line">
+                <div class="d-flex justify-content-center align-items-center profile--image-current">
+                    <span>AM</span>
+                    <img class="js__profile-current-avatar" src="./img/content/users/user-2-big.jpg" alt="">
+                </div>
+                <label class="d-flex flex-column justify-content-center align-item-center profile--image-load">
+                    <input class="js__profile-image-input" type="file" name="avatar_image" accept="image/*" hidden>
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center align-items-center profile--image-load-icon">
+                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.66797 12.3333L10.0013 9M10.0013 9L13.3346 12.3333M10.0013 9V16.5M16.668 12.9524C17.6859 12.1117 18.3346 10.8399 18.3346 9.41667C18.3346 6.88536 16.2826 4.83333 13.7513 4.83333C13.5692 4.83333 13.3989 4.73833 13.3064 4.58145C12.2197 2.73736 10.2133 1.5 7.91797 1.5C4.46619 1.5 1.66797 4.29822 1.66797 7.75C1.66797 9.47175 2.36417 11.0309 3.49043 12.1613" stroke="#148BDF" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="profile--image-load-disc">
+                            <span>Click to upload</span> or drag and drop your image file<br/> 
+                            to set as your profile picture
+                        </div>
+                        <div class="profile--image-load-wrapper"></div>
+                    </div>
+                </label>
+            </div>
+
+            <form action="account/profile" data-action="account/profile" method="POST" class="js__profile-form js--profile-action">
+                <div class="row">
+                    {{form.fieldsForm('form-fields-profile-personal-info')}}
+                    <div class="col col-4">
+                        {% include '../../components/form/form-dropdown-select2.twig' with {
+                            id: 'profileJobTitle',
+                            class: 'profile__job-title js__select-to-custom-add-job-title js__component-of-form',
+                            name: 'job_title',
+                            title: 'Job Title*',
+                            isRequired: true,
+                            placeholder: 'Select',
+                            editButton: 'Edit Options',
+                            idModal: 'job-title',
+                            options: [
+                            {
+                                title: 'Select',
+                                value: '',
+                            },
+                            {
+                                title: 'Attorney',
+                                value: 'attorney',
+                            },
+                            {
+                                title: 'Insurance Professional',
+                                value: 'insurance_professional',
+                            },
+                            {
+                                title: 'Medical Professional',
+                                value: 'medical_professional',
+                            },
+                            {
+                                title: 'Paralegal',
+                                value: 'paralegal',
+                            },
+                            {
+                                title: 'Partner',
+                                value: 'partner',
+                            }
+                            ],
+                            error: 'Required field',
+                        } %}
+                    </div>
+                    <div class="col col-6">
+                        {% include '../../components/form/form-iti-dropdown.twig' with {
+                            id: "phone",
+                            title: "Work Phone Number, Ext.*",
+                            name: "phone",
+                            class: "col col-6 js__component-of-form",
+                            isRequired: true,
+                            error: "Valid company phone required",
+                            placeholder: "000-000-0000"
+                        } %}
+                    </div>
+                    <div class="col col-6"> 
+                        {% include '../../components/form/form-iti-dropdown.twig' with {
+                            id: "mobilenumber",
+                            title: "Mobile Phone Number*",
+                            name: "phone",
+                            class: "col col-6 js__component-of-form",
+                            isRequired: true,
+                            error: "Valid company phone required",
+                            placeholder: "000-000-0000"
+                        } %}
+                    </div>
+                </div>
+            </from>
+        </div>
+    </section>
+
+    <section class="profile--section profile__company-address">
+        <div class="profile--section-header">
+            <h2 class="profile--section-title">Company Address</h2>
+        </div>
+
+        <form action="account/profile" data-action="account/profile" method="POST" class="js__profile-form js--profile-action">
+            <div class="profile--section-body">
+                <div class="row">
+                    {{form.fieldsForm('form-fields-profile-company-address')}}
+                    <div class="col col-6">
+                        {% include '../../components/form/form-dropdown-select2.twig' with {
+                            id: 'country',
+                            class: 'profile__country js__component-of-form js__profile-form-country',
+                            name: 'country',
+                            title: 'Country*',
+                            isRequired: true,
+                            placeholder: 'Select',
+                            options: [
+                            {
+                                title: 'Select',
+                                value: '',
+                            },
+                            {
+                                title: 'United States',
+                                value: 'US',
+                            },
+                            {
+                                title: 'Canada',
+                                value: 'CA',
+                            }
+                            ],
+                            error: 'Required field',
+                        } %}
+                    </div>
+
+                    {% include '../../components/form/form-field.twig' with {
+                        title: 'ZIP / Postal code*',
+                        name: 'zip_code',
+                        class: 'col col-6 js__component-of-form',
+                        type: 'text',
+                        placeholder: '',
+                        fieldType: 'text',
+                        error: 'Required field',
+                        isRequired: true
+                    } %}
+
+                    <div class="col col-6">
+                        {% include '../../components/form/form-dropdown-select2.twig' with {
+                            id: 'state',
+                            class: 'profile__state js__component-of-form js__profile-form-state',
+                            name: 'state',
+                            title: 'State / Province*',
+                            isRequired: true,
+                            placeholder: 'Select',
+                            options: [
+                            {
+                                title: 'Select',
+                                value: '',
+                            }
+                            ],
+                            error: 'Required field',
+                        } %}
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="profile--section profile__security">
+        <div class="profile--section-header">
+            <h2 class="profile--section-title">Security</h2>
+        </div>
+        <form action="account/updatepass" data-action="account/updatepass" method="POST" class="js__profile-form js--updatepass-action">
+            <div class="profile--section-body">
+                <div class="row">
+                    {{form.fieldsForm('form-fields-profile-change-password')}}
+                </div>
+
+                <div class="w-100 password-validation_list js__password-validation_list d-none">
+                    <div class="password-validation_item js-validation-item" data-collection="password" data-validation="length">
+                    <div class="password-validation_item-icon">
+                        {{ media.icon("pass-novalid") }}
+                        {{ media.icon("pass-valid") }}
+                    </div>
+                    Be at least 8 characters long
+                    </div>
+                    <div class="password-validation_item js-validation-item" data-collection="password" data-validation="uppercase">
+                    <div class="password-validation_item-icon">
+                        {{ media.icon("pass-novalid") }}
+                        {{ media.icon("pass-valid") }}
+                    </div>
+                    Contain at least one uppercase letter
+                    </div>
+                    <div class="password-validation_item js-validation-item" data-collection="password" data-validation="number">
+                    <div class="password-validation_item-icon">
+                        {{ media.icon("pass-novalid") }}
+                        {{ media.icon("pass-valid") }}
+                    </div>
+                    Contain at least 1 number 
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <section class="profile--section profile__pass-period">
+        <form action="account/profile" data-action="account/profile" method="POST" class="js__profile-form js--profile-action">
+            <div class="d-flex justify-content-between align-items-center profile--section-body">
+                <div>
+                    {% include '../../components/form/form-switch.twig' with {
+                        class: "js__profile-form-passperiod-checkbox d-flex align-items-center gap-3",
+                        message: "Require periodic password changes with reminder emails for security:",
+                        id: "profile_passperiod-input",
+                        checkedStatus: false
+                    } %}
+                </div>
+                <div class="profile__pass-period-select-wrap">
+                    {% include '../../components/form/form-dropdown-select2.twig' with {
+                        id: 'passPeriod',
+                        class: 'profile__country js__profile-form-passperiod disabled',
+                        name: 'pass_period',
+                        title: '',
+                        isRequired: true,
+                        disabled: true,
+                        placeholder: 'Select',
+                        options: [
+                        {
+                            title: 'Every 3 months',
+                            value: 'every_3_months',
+                        },
+                        {
+                            title: 'Every 6 months',
+                            value: 'every_6_months',
+                        },
+                        {
+                            title: 'Every 12 months',
+                            value: 'every_12_months',
+                        }
+                        ],
+                        error: 'Required field',
+                    } %}
+                </div>
+            </div>
+        </from>
+    </section>
+
+    <section class="profile--section profile__my-notifications">
+        <div class="profile--section-header">
+            <h2 class="profile--section-title">My Notifications</h2>
+        </div>
+        <form action="account/profile" data-action="account/profile" method="POST" class="js__profile-form js--profile-action">
+            <div class="d-flex justify-content-between align-items-center profile--section-body">
+                <div>Permanently delete notifications older than:</div>
+                <div class="profile__my-notifications-select-wrap">
+                    {% include '../../components/form/form-dropdown-select2.twig' with {
+                        id: 'deleteNotification',
+                        class: 'profile__delete-notification',
+                        name: 'country',
+                        title: '',
+                        isRequired: true,
+                        placeholder: 'Select',
+                        options: [
+                        {
+                            title: '1 Day',
+                            value: 'day',
+                        },
+                        {
+                            title: '1 Week',
+                            value: 'week',
+                        },
+                        {
+                            title: '1 Month',
+                            value: 'month',
+                        },
+                        {
+                            title: '1 Year',
+                            value: 'year',
+                        }
+                        ],
+                        error: 'Required field',
+                    } %}
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <div class="d-flex justify-content-end">
+        <button id="jsProfileSendAllForms" type="submit" class="btn btn-primary mt-3">Save</button>
+    </div>
+
+</div>    

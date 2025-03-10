@@ -1,0 +1,57 @@
+{% import 'macro/dev.twig' as dev %}
+{% import 'ui/media.twig' as media %}
+{% import 'ui/buttons.twig' as btn %}
+{% import 'ui/links.twig' as link %}
+{% import 'ui/form.twig' as form %}
+{% import 'ui/modals.twig' as modal %}
+
+{% block variables %}
+
+{% endblock variables %}
+
+{% set layout_components_path = 'layouts/main/components/' %}
+{% set layout_modules_path = 'layouts/main/modules/' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include layout_modules_path ~ 'head.twig' %}
+
+  <body class="{{ page_class }}">
+  <div class="container-fluid">
+      <div class="row gap-4">
+        <div class="col-auto bg-main-light px-0">
+          {% include layout_modules_path ~ 'sidenav.twig' %}
+        </div>
+        <main class="col {{ content_class }}">
+          {% include layout_modules_path ~ 'header.twig' %}
+
+          {% block content %}
+
+          {% endblock content %}
+          {% include layout_modules_path ~ 'footer.twig' %}
+        </main>
+      </div>
+  </div>
+  {# {% include layout_components_path ~ 'modals/modal.twig' %} #}
+
+
+  {% block modals %}
+
+  {% endblock modals %}
+
+  {% block sidebars %}
+
+  {% endblock sidebars %}
+    <script>
+      var SITEURL = "";
+    </script>
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+    {% if prod != true %}
+      {{ dev.menu() }}
+    {% endif %}
+    {% block scripts %}
+
+    {% endblock scripts %}
+  </body>
+</html>

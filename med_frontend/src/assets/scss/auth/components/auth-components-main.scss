@@ -1,0 +1,17 @@
+// UI
+@import 'auth-page-ui/auth-page-buttons.scss'; // Auth page buttons
+@import 'auth-page-ui/auth-page-links.scss'; // Auth page links
+
+// FORM
+@import 'auth-page-form/auth-page-form'; // Auth page form
+@import './auth-page-form/password-validation.scss';
+
+// PAGES
+@import 'auth-page-sections/auth-page-sidebar'; // Auth page sidebar
+@import 'auth-page-sections/auth-page-content'; // Auth page content styles 
+
+// ADDITIONAL PAGE STYLES
+@import 'auth-page-sections/additional-styles/auth-changed-password-success-section'; // Changed password success page content additional styles
+@import 'auth-page-sections/additional-styles/auth-check-email-section'; // Check email page content additional styles
+
+@import 'auth-progress-steps'

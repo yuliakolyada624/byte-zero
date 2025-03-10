@@ -1,0 +1,33 @@
+.btn-primary {
+  background-color: var(--main-blue);
+  color: var(--white);
+  border: 1px solid var(--main-blue);
+  outline: none;
+  gap: 6px;
+
+  &:focus {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+  }
+  &:hover {
+    background-color: var(--white);
+    color: var(--main-blue);
+    border-color: var(--main-blue);
+    .icon {
+      stroke: var(--main-blue);
+    }
+  }
+  .icon {
+    width: 18px;
+    height: 18px;
+    fill: transparent;
+    stroke: var(--white);
+    stroke-width: 1px;
+  }
+  &.disabled {
+    background-color: var(--disabled-btn-bg);
+    border-color: var(--disabled-btn-bg);
+  }
+}

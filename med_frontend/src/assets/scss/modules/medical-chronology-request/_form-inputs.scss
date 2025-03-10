@@ -1,0 +1,216 @@
+.medical-chronology-request-form-with-inputs {
+  display: flex;
+  column-gap: 20px;
+  row-gap: 16px;
+  flex-wrap: wrap;
+
+  &__input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-basis: 100%;
+    width: 100%;
+
+    &.col-6 {
+      flex-basis: calc(50% - 10px);
+      width: calc(50% - 8px);
+
+      @media(max-width: 605px) {
+        flex-basis: 100%;
+        width: 100%;
+      }
+    }
+
+    &_label {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      color: var(--main-color);
+    }
+    &_input {
+      padding: 12px 14px;
+      border: 1px solid var(--base-border);
+      border-radius: 8px;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      font-family: inherit;
+      color: var(--main-color);
+
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: var(--main-blue);
+        outline: none;
+      }
+
+      &::placeholder {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        font-family: inherit;
+        color: rgba(19, 19, 22, 0.4);
+      }
+    }
+  }
+
+  &__dropdown-field {
+    min-height: 0;
+    &-wrap {
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+
+      flex-basis: 100%;
+      width: 100%;
+
+      transition: grid-template-rows 0.3s ease;
+
+      &.active {
+        grid-template-rows: 1fr;
+        overflow: visible;
+        margin-top: 20px;
+      }
+    }
+
+    &_input {
+      display: none;
+    }
+
+    &_trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      padding: 12px 14px;
+      color: var(--main-color);
+
+      border: 1px solid var(--base-border);
+      border-radius: 8px;
+
+      transition: border-color 0.3s ease;
+
+      &.active {
+        border-color: var(--main-blue);
+
+        .icon-arrow-select {
+          transform: rotate(180deg);
+        }
+      }
+
+      .icon-arrow-select {
+        width: 23px;
+        height: 18px;
+        fill: transparent;
+        stroke: var(--main-color);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.5px;
+
+        transition: all 0.3s ease;
+      }
+    }
+
+    &__list-wrap {
+      position: absolute;
+      top: calc(100% + 7px);
+      width: 100%;
+
+      display: grid;
+      grid-template-rows: 0fr;
+      overflow: hidden;
+
+      background-color: var(--white);
+      border-radius: 8px;
+      box-shadow: var(--icon-shadow);
+
+      transition: grid-template-rows 0.3s ease;
+
+      &.claim-list-wrap {
+        bottom: calc(100% + 7px);
+        top: unset;
+      }
+
+      &.injury-list-wrap {
+        @media (max-width: 1025px) {
+          bottom: calc(100% + 7px);
+          top: unset;
+        }
+        @media (max-width: 577px) {
+          top: calc(100% + 7px);
+          bottom: unset;
+
+          &.active {
+            z-index: 1500;
+          }
+        }
+      }
+
+      &.active {
+        grid-template-rows: 1fr;
+        z-index: 10;
+      }
+    }
+    &__list {
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        &.claim-item {
+          &:not(:last-child) {
+            border-bottom: 1px solid var(--base-border);
+          }
+        }
+
+        @import "./injury-item";
+      }
+
+      &-trigger {
+        width: 100%;
+        text-align: left;
+        padding: 10px 16px;
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+        color: var(--main-color);
+
+        transition: background-color 0.3s ease;
+
+        @media(max-width: 1025px) {
+          padding: 14px 16px;
+        }
+
+        &:hover,
+        &.active {
+          background-color: var(--ligh-gray-bg);
+        }
+
+        &.claim-trigger {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          width: 100%;
+
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: 400;
+
+          * {
+            pointer-events: none;
+          }
+
+          .title {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  &__dropdown-wrap {
+    position: relative;
+  }
+}

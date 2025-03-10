@@ -1,0 +1,128 @@
+[
+  {
+    "label": "Claim type*",
+    "name": "medical_chronology_request_claim_type",
+    "is_required": true,
+    "placeholder": "Select",
+    "value": "",
+    "macro": "select",
+    "claim_list": true,
+    "list": [
+      {
+        "text": "A summary of medical records detailing bodily injuries, including diagnoses, treatments, and medical observations. This summary is tailored to provide insights relevant to injury claims.",
+        "id": "bodily_injury",
+        "title": "Bodily injury",
+        "target": "body",
+        "target_id": "medical_chronology_request_injury_areas"
+      },
+      {
+        "text": "A summary of medical records focusing on disability or long-term care conditions, including medical assessments, treatments, and ongoing care needs.",
+        "id": "disability_claim",
+        "title": "Disability claim",
+        "target_id": "medical_chronology_request_injury_areas"
+      },
+      {
+        "text": "A summary of medical records concerning alleged medical malpractice, including detailed accounts of medical procedures, treatments, and outcomes.",
+        "id": "medical_malpractice",
+        "title": "Medical malpractice",
+        "target_id": "medical_chronology_request_injury_areas"
+      },
+      {
+        "text": "A summary of medical records related to workers’ compensation, including the nature of the injury, treatments received, and current medical status.",
+        "id": "workers_compensation",
+        "title": "Workers’ compensation",
+        "target_id": "medical_chronology_request_injury_areas"
+      }
+    ]
+  },
+  {
+    "label": "Injury areas* (Select injury areas from the dropdown or the below diagrams)",
+    "name": "medical_chronology_request_injury_areas",
+    "is_required": true,
+    "placeholder": "Select",
+    "value": "",
+    "macro": "hiddenSelect",
+    "injury_list": true,
+    "list": [
+      {
+        "name": "injury_head_and_neck",
+        "value": "head_and_neck",
+        "title": "HEAD AND NECK",
+        "description": true,
+        "components": "Skull, Face, Brain, Eyes, Nose, Mouth, Ears, Cheeks, Jaw, Cervical spine.",
+        "musculoskeletal": "Bones (Skull, Cervical spine), Muscles, and Connective Tissues (Neck muscles, tendons, ligaments).",
+        "target": "selected_injury_head_and_neck",
+        "icon_class": "head-and-neck"
+      },
+      {
+        "name": "injury_upper_extremity",
+        "value": "upper_extremity",
+        "title": "UPPER EXTREMITY (Right, Left, or Both)",
+        "description": true,
+        "components": "Shoulder, Arm (Humerus, Radius, Ulna), Elbow, Forearm, Wrist, Hand (Carpals, Metacarpals, Phalanges, Fingers).",
+        "musculoskeletal": "Bones (Clavicle, Scapula, Humerus, Radius, Ulna, Carpals, Metacarpals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the upper limb).",
+        "target": "selected_injury_upper_extremity",
+        "icon_class": "upper-extremity",
+        "adaptive_class": "m-w-139"
+      },
+      {
+        "name": "injury_torso",
+        "value": "torso",
+        "title": "TORSO",
+        "description": true,
+        "components": "Thorax (Chest, Ribcage, Sternum), Abdomen (Stomach, Liver, Spleen, Pancreas, Kidneys, Intestines), Pelvis (Hips, Reproductive Organs), Diaphragm.",
+        "musculoskeletal": "Bones (Ribcage, Sternum, Pelvis), Muscles, and Connective Tissues (Abdominal muscles, pelvic muscles, diaphragm).",
+        "target": "selected_injury_torso",
+        "icon_class": "torso-full"
+      },
+      {
+        "name": "injury_back",
+        "value": "back",
+        "title": "BACK",
+        "description": true,
+        "components": "Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula.",
+        "musculoskeletal": "Bones (Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula), Muscles, and Connective Tissues (Muscles and ligaments supporting the back and spinal column).",
+        "target": "selected_injury_back",
+        "icon_class": "back"
+      },
+      {
+        "name": "injury_lower_extremity",
+        "value": "lower_extremity",
+        "title": "LOWER EXTREMITY (Right, Left, or Both)",
+        "description": true,
+        "components": "Hip, Thigh (Femur), Knee (Patella), Leg (Tibia, Fibula), Ankle, Foot (Tarsals, Metatarsals, Phalanges, Toes).",
+        "musculoskeletal": "Bones (Femur, Patella, Tibia, Fibula, Tarsals, Metatarsals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the lower limb).",
+        "target": "selected_injury_lower_extremity",
+        "icon_class": "lower-extremity",
+        "adaptive_class": "m-w-139"
+      },
+      {
+        "name": "injury_internal_organs",
+        "value": "internal_organs",
+        "title": "INTERNAL ORGANS",
+        "description": true,
+        "components": "Heart, Lungs, Liver, Spleen, Pancreas, Kidneys, Bladder, Stomach, Intestines, Reproductive Organs.",
+        "target": "selected_injury_internal_organs",
+        "icon_class": "internal-organs"
+      },
+      {
+        "name": "injury_skin",
+        "value": "skin",
+        "title": "SKIN",
+        "description": true,
+        "components": "The body's largest organ, covering and protecting all external surfaces.",
+        "target": "selected_injury_skin",
+        "icon_class": "skin"
+      },
+      {
+        "name": "injury_circulatory_and_nervous_systems",
+        "value": "circulatory_and_nervous_systems",
+        "title": "CIRCULATORY AND NERVOUS SYSTEMS",
+        "description": true,
+        "components": "Includes Blood Vessels and Nerves throughout the body.",
+        "target": "selected_injury_circulatory_and_nervous_systems",
+        "icon_class": "nerv-system"
+      }
+    ]
+  }
+]

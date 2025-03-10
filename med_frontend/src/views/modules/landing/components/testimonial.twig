@@ -1,0 +1,24 @@
+<div class="swiper-slide">
+	<div class="testimonial-slide-wrap">
+		<div class="testimonial-slide-img-wrap">
+			{{ media.img('./content/homepage/' ~ img, 'jpg', 'testimonial-slide', 120, 120) }}
+		</div>
+		<div class="testimonial-slide-content">
+			<div class="testimonial-slide-content-stars">
+				{% for i in 1..5 %}
+					{{ media.icon('star', 'filled') }}
+				{% endfor %}
+			</div>
+			<div class="testimonial-slide-content-text">
+				{{ text }}
+			</div>
+			<div class="testimonial-slide-content-footer">
+				{{ media.img('./content/homepage/testimonials/' ~ icon, icon_format, 'testimonial-slide-content-footer', icon_width, icon_height, icon) }}
+				<div class="testimonial-slide-content-footer-info">
+					<div class="testimonial-slide-content-footer-name">{{ name }}</div>
+					<div class="testimonial-slide-content-footer-role">{{ role }}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

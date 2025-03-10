@@ -1,0 +1,226 @@
+.steps-section {
+  background-image: url("../img/content/homepage/steps-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+
+  z-index: -3;
+  min-height: 631px;
+
+  @media (min-width:1361px) {
+    background-image: url("../img/content/homepage/steps-bg-big.png");
+  }
+ .container {
+   max-width: 1176px;
+   &.with-flex {
+     display: flex;
+     flex-direction: column;
+     width: 100%;
+     flex: 1 0 auto;
+   }
+ }
+  &-wrap {
+    position: relative;
+    padding-block: 43px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &-title {
+    max-width: 520px;
+  }
+
+  &-image {
+    position: absolute;
+
+    width: 940px;
+    height: 365px;
+    top: 56px;
+    left: -15px;
+    z-index: -2;
+  }
+
+  &__steps-list {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    padding-left: 44px;
+    z-index: -1;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      z-index: 2;
+
+      &.m-w-337 {
+        max-width: 337px;
+        margin-right: 77px;
+        margin-top: 300px;
+      }
+      &.m-w-283 {
+        max-width: 283px;
+        margin-right: 46px;
+        margin-top: 220px;
+      }
+      &.m-w-321 {
+        max-width: 321px;
+        margin-top: 40px;
+      }
+
+      .circle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 74px;
+        height: 74px;
+        background-color: var(--white);
+        border-radius: 60px;
+
+        font-size: 36px;
+        line-height: 73px;
+        letter-spacing: -0.04em;
+        font-weight: 600;
+        text-align: center;
+
+        color: var(--main-blue);
+
+        box-shadow: var(--steps-shadow);
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-title {
+          font-size: 22px;
+          line-height: 28px;
+          letter-spacing: -0.04em;
+          font-weight: 600;
+          color: var(--main-color);
+        }
+        &-text {
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 400;
+          color: var(--main-color);
+
+          &.m-w-264 {
+            max-width: 264px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1150px) {
+    &-wrap {
+      padding-block: 30px;
+    }
+
+    &-title {
+      width: 100%;
+      max-width: 588px;
+      font-size: 28px;
+      line-height: 33px;
+    }
+    &-image {
+      display: none;
+    }
+    &__steps-list {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 42px;
+      margin-top: 23px;
+      z-index: unset;
+      padding-left: 0;
+      &-item {
+        flex-direction: row;
+        align-items: baseline;
+        position: relative;
+        &.m-w-337,
+        &.m-w-283,
+        &.m-w-321 {
+          max-width: unset;
+          margin-right: 0;
+          margin-top: 0;
+        }
+
+        &:not(:last-child) {
+          &::before {
+            content: "";
+            display: block;
+            width: 4px;
+            height: calc(100% + 42px);
+            background-color: var(--main-blue);
+            position: absolute;
+            top: 24px;
+            left: 22px;
+          }
+        }
+
+        .circle {
+          position: relative;
+          width: 48px;
+          height: 48px;
+          min-width: 48px;
+          font-size: 22px;
+          line-height: 28px;
+          font-weight: 600;
+        }
+
+        &__content {
+          &-title {
+            br {
+              display: none;
+            }
+          }
+          &-text {
+            br {
+              display: none;
+            }
+            &.m-w-264 {
+              max-width: unset;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 577px) {
+    position: relative;
+    z-index: 10;
+    &__steps-list-item {
+      gap: 15px;
+      &:not(:last-child)::before {
+        left: 18px;
+      }
+      &__content-title {
+        font-size: 20px;
+        line-height: 23px;
+      }
+      .circle {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        font-size: 18px;
+        line-height: 23px;
+        font-weight: 600;
+      }
+    }
+  }
+}

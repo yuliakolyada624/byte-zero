@@ -1,0 +1,18 @@
+{
+  "name": "Med-Test.ai",
+  "short_name": "Med-Test.ai",
+  "start_url": ".",
+  "id": "/h/test",
+  "display": "fullscreen",
+  "background_color": "#88BCF9",
+  "theme_color": "#B458EC",
+  "description": "Med-Test.AI, an AI-powered platform where you can quickly and efficiently access and review medical and billing summaries for your assigned cases. ",
+  "related_applications": [],
+  "permissions": ["gcm"],
+  "gcm_sender_id": "",
+  "gcm_user_visible_only": true,
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "scope": "/"
+}

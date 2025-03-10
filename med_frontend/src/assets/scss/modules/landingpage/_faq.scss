@@ -1,0 +1,122 @@
+.faq-section {
+  background-image: url("../img/content/homepage/faq-bg.png");
+  background-position: top center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1025px) {
+    background-image: unset;
+  }
+
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-block: 45px 85px;
+  }
+
+  &-title {
+    margin-bottom: 12px;
+  }
+  &-subtitle {
+    margin-bottom: 40px;
+  }
+
+  &-accordion {
+    max-width: 914px;
+    width: 100%;
+
+    display: grid;
+    row-gap: 22px;
+
+    &-item {
+      background-color: var(--white);
+      box-shadow: var(--icon-shadow);
+
+      border-radius: 12px;
+      padding: 18px 24px;
+
+      overflow: hidden;
+
+      &.active {
+        .faq-section-accordion-item-heading {
+          margin-bottom: 18px;
+        }
+        .faq-section-accordion-item-body {
+          grid-template-rows: 1fr;
+        }
+
+        .icon-arrow {
+          transform: rotate(180deg);
+        }
+      }
+
+      &-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 18px;
+        line-height: 28.8px;
+        font-weight: 500;
+        color: var(--main-color);
+
+        transition: margin 0.3s ease-in-out;
+
+        .icon-arrow {
+          width: 30px;
+          min-width: 30px;
+          height: 25.5px;
+          fill: transparent;
+          stroke: currentColor;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-width: 2.25px;
+
+          transition: all 0.3s ease;
+        }
+      }
+
+      &-body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.3s ease-in-out;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+
+        &__content {
+          min-height: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1025px) {
+    &-wrap {
+      padding-block: 0 56px;
+    }
+
+    &-subtitle {
+      margin-bottom: 24px;
+    }
+
+    .faq-section-accordion-item {
+      padding-block: 14px;
+      &-body {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+    .faq-section-accordion-item-heading {
+      .text {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+        text-align: left;
+      }
+    }
+  }
+}

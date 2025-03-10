@@ -1,0 +1,38 @@
+[
+  {
+    "columnName": "Home page:",
+    "columnLinks": {
+      "Homepage": "index.html",
+      "Elements": "elements.html"
+    }
+  },
+  {
+    "columnName": "Sign up:",
+    "columnLinks": {
+      "Company Registration": "sign-up-company.html",
+      "Email Verification": "sign-up-email-verification.html",
+      "Phone Verification(phone)": "sign-up-phone-verification--phone.html",
+      "Phone Verification(code)": "sign-up-phone-verification--code.html",
+      "Create Password": "sign-up-create-password.html",
+      "Account Holder Details": "sign-up-account-holder-details.html"
+    }
+  },
+  {
+    "columnName": "Log in:",
+    "columnLinks": {
+      "Log In": "log-in.html",
+      "Reset Password": "reset-password.html",
+      "Check Your Email": "check-your-email.html",
+      "PW Changed Successfully": "password-changed-successfully.html"
+    }
+  },
+  {
+    "columnName": "Pages",
+    "columnLinks": {
+      "Cases": "cases.html",
+      "Transactions": "transactions.html",
+      "Users": "users.html",
+      "Profile": "profile.html"
+    }
+  }
+]

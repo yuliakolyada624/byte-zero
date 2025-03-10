@@ -1,0 +1,59 @@
+
+<div class="offcanvas job-title offcanvas-end" tabindex="-1" id="job-title" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#add-user" aria-controls="offcanvasRight">{{ media.icon('arrow') }}</button>
+            Back
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <h1 class="mb-1">Edit Job Titles</h1>
+        <p class="fs-16">Refer to the table below to modify options.</p>
+        <div class="card bg-main-light border-0 p-4 mb-4 mt-4">
+            <form class="js-toast" data-toast="New job title saved in the system!" data-toast-status="successful">
+                {{form.fieldsForm('users/job-title')}}
+                <div class="d-flex justify-content-end">
+                    {{btn.link({
+                        inner: "Add to List",
+                        class: "mt-3 js-toast-btn"
+                    })}}
+                </div>
+            </form>
+            <div class="card p-3 mb-2 rounded-3 mt-4">
+                <table class="table table-borderless mb-0">
+                    <tbody>
+                        <tr>
+                            <td>Attorney</td>
+                            <td class="text-end"><button class="ms-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="sidebar-tooltip" data-bs-title="System job title cannot be deleted">{{ media.icon('block') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Insurance Professional</td>
+                            <td class="text-end"><button class="ms-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="sidebar-tooltip" data-bs-title="System job title cannot be deleted">{{ media.icon('block') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Managing Partner</td>
+                            <td class="text-end"> unassigned <button class="ms-2" type="button" data-bs-target="#delete-job-title" data-bs-toggle="modal">{{ media.icon('delete') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Medical Professional</td>
+                            <td class="text-end"> <button class="ms-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="sidebar-tooltip" data-bs-title="System job title cannot be deleted">{{ media.icon('block') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Paralegal</td>
+                            <td class="text-end"> <button class="ms-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="sidebar-tooltip" data-bs-title="System job title cannot be deleted">{{ media.icon('block') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Partner</td>
+                            <td class="text-end"> <button class="ms-2" type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="sidebar-tooltip" data-bs-title="System job title cannot be deleted">{{ media.icon('block') }}</button></td>
+                        </tr>
+                        <tr>
+                            <td>Senior Partner</td>
+                            <td class="text-end"> 2 users assigned <button class="ms-2 full" type="button" data-bs-target="#delete-job-title" data-bs-toggle="modal">{{ media.icon('delete') }}</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

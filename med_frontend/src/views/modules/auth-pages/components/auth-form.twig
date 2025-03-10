@@ -1,0 +1,17 @@
+{% import '../macro/auth-macro.twig' as auth_macro %}
+
+<form class="auth-form js-auth-form {{class}}" data-href={{ href }} data-type="{{ type }}" autocompelte="on">
+	{% for input in data %}
+		{% set macro_name = input.macro %}
+		{% include './auth-input.twig' with {
+      inputData: input
+    } %}
+	{% endfor %}
+	<button type="submit" class="auth-form-submit-btn btn btn-primary">{{ btn_text }}</button>
+	{% if is_terms is defined %}
+		{{ auth_macro.terms('account_registration_company_terms') }}
+	{% endif %}
+  {% if password_rules is defined %}
+    {% include './password-rules.twig' %}
+  {% endif %}
+</form>

@@ -1,0 +1,30 @@
+.medical-chronology-request {
+  .medical-chronology-request-form-group {
+    padding: 18px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--base-border);
+    margin-top: 16px;
+    margin-bottom: 10px;
+    .component__dropdown2.col-6 {
+      width: 50%;
+    }
+    input[type='date']::-webkit-calendar-picker-indicator {
+      background: transparent;
+      bottom: 0;
+      color: transparent;
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+    }
+    input[readonly] {
+      background-color: var(--ligh-gray-bg);
+    }
+    .form-field__readonly-symbol {
+      display: none;
+    }
+  }
+}

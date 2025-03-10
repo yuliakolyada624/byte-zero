@@ -1,0 +1,19 @@
+footer {
+ /* margin-left: 203px;
+  margin-right: 1.5rem ;*/
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  padding: 10px 0;
+  border-top: 1px solid var(--base-border);
+  background-color: var(--white);
+  .footer-links {
+    display: flex;
+    gap: 25px;
+    a {
+      &:hover {
+        color: var(--main-blue);
+      }
+    }
+  }
+}

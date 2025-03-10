@@ -1,0 +1,25 @@
+{% macro telInput(inputData) %}
+	<div class="input-tel-field {{ inputData.class }}">
+		{% if inputData.label is defined %}
+			<label for="{{ inputData.name }}">{{ inputData.label }}</label>
+		{% endif %}
+
+		<div class="tel-wrap">
+			<div class="code-section">
+				{% if inputData.selected_flag is defined %}
+					<img src="./svg/flags/{{ inputData.selected_flag }}.svg" alt="phone-btn" class="flag-container">
+					<span class="dial-code">{{ inputData.selected_code }}</span>
+				{% else %}
+					<img src="./svg/phone.svg" alt="phone-btn" class="phone-icon flag-container">
+					<span class="dial-code"></span>
+					{{ media.icon('chevron-up') }}
+				{% endif %}
+			</div>
+			<input type="{{ inputData.type }}" name="{{ inputData.name }}" id="{{ inputData.name }}" placeholder="{{ inputData.placeholder | default('') }}" value="{{ inputData.value | default('') }}" class="system-settings-form__group-field__input" {{ inputData.isValidation ? 'data-validation="true"' : '' }}/>
+			{% include '../../auth-pages/components/tel-input-dropdown.twig' with { items: inputData.countriesList} %}
+
+		</div>
+
+		<span class="field__error">{{ inputData.error }}</span>
+	</div>
+{% endmacro %}

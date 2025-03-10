@@ -1,0 +1,94 @@
+.header {
+  position: relative;
+  border-bottom: 1px solid var(--base-border);
+  padding: 11px 0;
+  .icon-bell {
+    width: 26px;
+    height: 26px;
+    fill: var(--icon-gray);
+  }
+  .user {
+    &__btn {
+      width: 44px;
+      height: 44px;
+      color: var(--main-blue);
+      font-weight: 500;
+      line-height: 1.375;
+      border: 1px solid var(--main-blue);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dropdown-menu {
+      li {
+        display: flex;
+        gap: 8px;
+        a {
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        &:first-child {
+          padding-bottom: 0;
+          font-weight: 500;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        &:nth-child(2) {
+          padding-top: 0;
+          font-size: 12px;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+        &:nth-child(3) {
+          display: block;
+        }
+        &:nth-child(4) {
+          .icon {
+            fill: transparent;
+            stroke: var(--icon-gray);
+          }
+        }
+        .icon {
+          width: 19px;
+          height: 19px;
+          fill: var(--icon-gray);
+        }
+        hr {
+          margin: 6px 0;
+          border-top: 1px solid var(--base-border);
+        }
+      }
+    }
+  }
+  .dropdown-toggle {
+    &:after {
+      content: none;
+    }
+  }
+  @import "./logined-header";
+}
+
+.users-heading {
+  &__svg-download { 
+    width: 46px;
+    height: 46px;
+    margin-left: 14px;
+    padding: 0;
+  }
+  &__user-invite-btn {
+    margin-left: 14px;
+    padding: 8px 17px;
+    gap: 4px;
+    height: 46px;
+    svg path {
+      stroke: white;
+    }
+    &:hover svg path {
+      stroke: var(--baseLightBlue, #148bdf);
+    }
+  }
+}

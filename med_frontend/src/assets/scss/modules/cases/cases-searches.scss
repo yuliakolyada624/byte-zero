@@ -1,0 +1,60 @@
+.cases-searches {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 14px;
+    gap: 14px;
+    &__orderid {
+        width: 142px;
+        &-input {
+            padding: 12px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            background-repeat: no-repeat;
+            background-position: 15px center;
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.25 15.125L12.4792 12.3542M14.4583 7.60417C14.4583 11.3206 11.4456 14.3333 7.72917 14.3333C4.01275 14.3333 1 11.3206 1 7.60417C1 3.88775 4.01275 0.875 7.72917 0.875C11.4456 0.875 14.4583 3.88775 14.4583 7.60417Z' stroke='%238D939F' stroke-width='1.58333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+            &.has-value {
+                border-color: var(--baseLightBlue);
+            }
+        }
+    }
+
+    &__names {
+        width: 237px;
+        & .component__autocomplete-input {
+            padding: 12px;
+            padding-bottom: 10px;
+            padding-left: 40px;
+            background-repeat: no-repeat;
+            background-position: 15px center;
+            background-image: url("data:image/svg+xml,%3Csvg width='17' height='16' viewBox='0 0 17 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.25 15.125L12.4792 12.3542M14.4583 7.60417C14.4583 11.3206 11.4456 14.3333 7.72917 14.3333C4.01275 14.3333 1 11.3206 1 7.60417C1 3.88775 4.01275 0.875 7.72917 0.875C11.4456 0.875 14.4583 3.88775 14.4583 7.60417Z' stroke='%238D939F' stroke-width='1.58333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+            font-family: Poppins;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: left;
+            &.has-value {
+                border-color: var(--baseLightBlue);
+            }
+        }
+    }
+    &__search-btn {
+        width: 44px;
+        height: 44px;
+        padding: 12px !important;
+        &--hover {
+            display: none;
+        }
+        &:hover &--default {
+            display: none;
+        }
+        &:hover &--hover {
+            display: block;
+        }
+    }
+}

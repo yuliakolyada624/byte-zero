@@ -1,0 +1,25 @@
+{% set inputData = {
+    label: inputConfig.label,
+    name: inputConfig.name,
+    type: inputConfig.type,
+    placeholder: inputConfig.placeholder,
+    value: inputConfig.value,
+    class: inputConfig.class,
+    icon: inputConfig.icon,
+    disabled: inputConfig.disabled,
+    classInput: inputConfig.classInput,
+    read_only: inputConfig.read_only,
+    countriesList: json('phone-data'),
+    error: inputConfig.error,
+    isValidation: inputConfig.isValidation,
+    selected_flag: inputConfig.selected_flag,
+    selected_code: inputConfig.selected_code
+} %}
+
+{% if macroName is defined and attribute(formMacro, macroName) is defined %}
+    {{ formMacro[macroName](inputData) }}
+{% else %}
+    <p>
+        Macro '{{ macroName }}' not found or not defined!
+    </p>
+{% endif %}

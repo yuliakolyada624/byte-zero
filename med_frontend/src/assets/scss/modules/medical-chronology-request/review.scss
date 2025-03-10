@@ -1,0 +1,26 @@
+.medical-chronology-review {
+  .details {
+    .separator-table {
+      padding-left: 34px;
+      margin-left: 34px;
+      border-left: 1px solid var(--base-border);
+    }
+    table {
+      width: 49%;
+      td {
+        white-space: nowrap;
+      }
+    }
+  }
+  .human-body-areas_male, .human-body-areas_female {
+    pointer-events: none;
+  }
+  .btn-link {
+    color: var(--main-color);
+    &:hover span{
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

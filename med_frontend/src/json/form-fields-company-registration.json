@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Firm or Company Name",
+    "name": "company_name",
+    "class": "auth-page__form-field",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Valid company name required",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Firm or Company Email",
+    "name": "company_email",
+    "class": "auth-page__form-field",
+    "type": "email",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Valid company email required",
+    "placeholder": "e.g. name@yourcompany.com",
+    "fieldType": "email"
+  }
+]

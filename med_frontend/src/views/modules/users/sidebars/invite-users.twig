@@ -1,0 +1,167 @@
+{% set tab_triggers = json('users/users-tabs') %}
+
+<div class="offcanvas invite-users offcanvas-end" tabindex="-1" id="add-user" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">{{ media.icon('arrow') }}</button>
+            Back
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <h1 class="mb-1">Invite Users</h1>
+        <p class="fs-16">Follow the steps below to invite colleagues.</p>
+            <form class="js-toast" data-toast="2 new users invited! Monitor their status on the Users page." data-toast-status="successful">
+                <div class="card bg-main-light border-0 p-4 mb-4 mt-4">
+                    <div class="row">
+                        {{form.fieldsForm('users/invite-users')}}
+                        {{
+                        form.email({
+                            name: "email",
+                            title: "Work Email*",
+                            type: "email",
+                            class: "col-12",
+                            isRequired: true,
+                            error: "Required field"
+                        })
+                        }}
+                        {% include '../../../components/form/form-dropdown-select2.twig' with {
+                            id: 'role',
+                            class: 'col-6',
+                            name: 'service_industry',
+                            title: 'Role*',
+                            hasSearch: false,
+                            clearSelectionBtn: true,
+                            isRequired: true,
+                            placeholder: 'Select',
+                            options: [
+                                {
+                                    title: 'Administrator',
+                                    value: 'administrator',
+                                },
+                                {
+                                    title: 'Assignee',
+                                    value: 'assignee',
+                                }
+                            ],
+                            error: 'Required field',
+                        } %}
+                        {% include '../../../components/form/form-dropdown-select2.twig' with {
+                            id: 'job-title',
+                            class: 'col-6',
+                            name: 'service_industry',
+                            title: 'Job Title*',
+                            hasSearch: false,
+                            clearSelectionBtn: true,
+                            isRequired: true,
+                            placeholder: 'Select',
+                            editButton: 'Edit Options',
+                            idModal: 'job-title',
+                            backBtnReturn: '#add-user',
+                            options: [
+                                {
+                                    title: 'Attorney',
+                                    value: 'attorney',
+                                },
+                                {
+                                    title: 'Insurance Professional',
+                                    value: 'insurance_professional',
+                                },
+                                {
+                                    title: 'Medical Professional',
+                                    value: 'medical_professional',
+                                },
+                                {
+                                    title: 'Paralegal',
+                                    value: 'paralegal',
+                                },
+                                {
+                                    title: 'Partner',
+                                    value: 'partner',
+                                }
+                            ],
+                            error: 'Required field',
+                        } %}
+                    </div>
+                    {{btn.link({
+                        inner: "Delete Invitee",
+                        icon: "delete",
+                        class: "delete"
+                    })}}
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="">+ Invite additional user</a>
+                        <p class="ms-2">(Limit of 10 invites at a time)</p>
+                    </div>
+                    <div>
+                        {{btn.primary({
+                            inner: "Invite Users",
+                            class: "js-toast-btn"
+                        })}}
+                    </div>
+                </div>
+            </form>
+        <div class="card bg-main-light border-0 p-4 mb-4 mt-5">
+            <div class="d-flex align-items-center justify-content-between">
+                <h3>Last 10 Registered Users</h3>
+                <ul class="nav nav-tabs" id="tab" role="tablist">
+                    {% for trigger in tab_triggers %}
+                        {{ btn.tab_trigger(trigger) }}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-content" id="tabContent">
+                <div class="tab-pane fade show active" id="tab1-pane" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+                    <div class="card p-3 mb-2 rounded-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                {{media.img('users/user-1', 'png', 'photo', 52, 52)}}
+                                <div>
+                                    <p class="fw-medium">Yoni Ashurov</p>
+                                    <p class="fs-12">yoni@slglaw.com</p>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <p class="fs-12 fw-medium">Partner</p>
+                                <p class="fs-12">The Salameh Law Group, P.A.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-3 mb-2 rounded-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                {{media.img('users/user-1', 'png', 'photo', 52, 52)}}
+                                <div>
+                                    <p class="fw-medium">Yoni Ashurov</p>
+                                    <p class="fs-12">yoni@slglaw.com</p>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <p class="fs-12 fw-medium">Partner</p>
+                                <p class="fs-12">The Salameh Law Group, P.A.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="tab2-pane" role="tabpanel" aria-labelledby="tab2" tabindex="0">
+                    <div class="card p-3 mb-2 rounded-3">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center gap-2">
+                                {{media.img('users/user-1', 'png', 'photo', 52, 52)}}
+                                <div>
+                                    <p class="fw-medium">Yoni Ashurov</p>
+                                    <p class="fs-12">yoni@slglaw.com</p>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <p class="fs-12 fw-medium">Partner</p>
+                                <p class="fs-12">The Salameh Law Group, P.A.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

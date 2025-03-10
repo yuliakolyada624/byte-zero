@@ -1,0 +1,13 @@
+[
+  {
+    "id": "tab1",
+    "inner": "Registered Users",
+    "class": "active",
+    "counter": "2"
+  },
+  {
+    "id": "tab2",
+    "inner": "Invited Users",
+    "counter": "1"
+  }
+]

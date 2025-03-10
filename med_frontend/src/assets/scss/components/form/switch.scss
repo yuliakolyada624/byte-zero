@@ -1,0 +1,9 @@
+input[role="switch"] {
+  width: 38px!important;
+  height: 21px;
+  margin-top: 0;
+  &:checked {
+    background-color: var(--main-blue);
+    border-color: var(--main-blue);
+  }
+}

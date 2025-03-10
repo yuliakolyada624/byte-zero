@@ -1,0 +1,52 @@
+[
+  {
+    "img": "testimonial-1",
+    "icon": "airbnb",
+    "icon_format": "png",
+    "icon_width": 32,
+    "icon_height": 34.5,
+    "name": "Brian Smith",
+    "role": "Founder & CEO",
+    "text": "Using Med-Test.ai has been a game-changer for our firm, Smith & Wesson LLP. It's streamlined our case preparation process, allowing us to easily organize and analyze medical records. Our team can now quickly identify pertinent medical events, saving us countless hours. It's undeniably boosted our efficiency and effectiveness in handling medical malpractice cases."
+  },
+  {
+    "img": "testimonial-2",
+    "icon": "icon-2",
+    "icon_format": "png",
+    "icon_width": 32,
+    "icon_height": 32,
+    "name": "Samuel Dane",
+    "role": "Managing Director",
+    "text": "At Carter & Dane Legal, we've found Med-Test.ai to be an invaluable tool. It has significantly improved our ability to manage complex personal injury cases by providing a clear, chronological overview of medical events. This clarity has enhanced our negotiation power, leading to more favorable settlements for our clients."
+  },
+  {
+    "img": "testimonial-3",
+    "icon": "icon-3",
+    "icon_format": "png",
+    "icon_width": 27,
+    "icon_height": 33,
+    "name": "Michael Levine",
+    "role": "Senior Partner",
+    "text": "The integration of Med-Test.ai into our practice at Levine Law Group has transformed how we approach litigation. Being able to swiftly sift through extensive medical data and establish a timeline has empowered us to build stronger cases. Our clients have benefitted immensely, and we've seen a noticeable improvement in our case outcomes."
+  },
+  {
+    "img": "testimonial-4",
+    "icon": "icon-4",
+    "icon_format": "png",
+    "icon_width": 32,
+    "icon_height": 32,
+    "name": "James Hughes",
+    "role": "Senior Partner",
+    "text": "Gibson & Hughes Associates highly recommends Med-Test.ai. It's not just a tool but a vital asset for any law firm handling cases with extensive medical records. The software's ability to organize and present data has made our legal arguments more compelling, directly contributing to our high success rate."
+  },
+  {
+    "img": "testimonial-5",
+    "icon": "icon-5",
+    "icon_format": "jpg",
+    "icon_width": 42,
+    "icon_height": 32,
+    "name": "Robert Klein",
+    "role": "Partner",
+    "text": "Med-Test.ai has been a remarkable addition to our resources at Apollo & Merrick Solicitors. Its intuitive design and functionality have made it incredibly easy to train staff and integrate into our daily operations. It has significantly reduced the time needed to prepare for trials, allowing us to focus more on our clients. Our team can't imagine working without it."
+  }
+]

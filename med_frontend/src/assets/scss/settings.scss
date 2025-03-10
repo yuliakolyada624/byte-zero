@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size);
+  font-weight: normal;
+  line-height: 20px;
+  color: var(--text-color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-right: var(--current-scrollbar-width);
+  background-color: var(--bg-primary);
+  font-family: var(--font-primary);
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h1 {
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 18px;
+}
+h4 {
+  font-size: 16px;
+}
+ul,
+ol,
+li {
+  padding: 0;
+  margin: 0;
+
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+main {
+  padding-right: 30px!important;
+  display: flex;
+  flex-direction: column;
+}
+button {
+  padding: 0;
+
+  cursor: pointer;
+
+  background-color: initial;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: none;
+}
+
+section {
+  position: relative;
+  padding: 28px 0;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  margin: 0;
+
+  appearance: none;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+fieldset {
+  min-inline-size: min-content;
+  padding: 0;
+  margin: 0;
+
+  border-color: transparent;
+  border-style: none;
+  border-width: 0;
+  border-image: none;
+}
+.bg-main-light {
+  background-color: var(--ligh-gray-bg);
+}
+.bg-success, .success {
+  background-color: var(--darker-green)!important;
+}
+.bg-warning, .warning {
+  background-color: var(--base-orange)!important;
+}
+.bg-yellow, .start {
+  background-color: var(--base-yellow)!important;
+}
+.bg-dark-grey {
+  background-color: var(--dark-gray-bg);
+}
+.text-main-blue {
+  color: var(--main-blue);
+}
+.fs-16 {
+  font-size: 16px;
+}
+.fs-14 {
+  font-size: 14px;
+}
+.fs-12 {
+  font-size: 12px;
+}
+.separator {
+  color: var(--base-border);
+}
+
+

@@ -1,0 +1,266 @@
+.medical-chronology-request-form-upload-file {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--base-border);
+  border-radius: 10px;
+  padding: 35px 24px 20px;
+  margin-bottom: 26px;
+
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-bottom: 24px;
+
+
+  }
+
+  &__input {
+    display: none;
+  }
+  &__loadicon {
+    width: 46px;
+    height: 46px;
+    background-color: var(--gray-bg);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    .icon-upload {
+      width: 26px;
+      height: 27px;
+      fill: transparent;
+      stroke: var(--main-blue);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8px;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+
+    text-align: center;
+
+    b {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+
+      color: var(--main-blue);
+    }
+  }
+
+  &__loadbox {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+
+    transition: grid-template-rows 0.3s ease;
+
+    &._show {
+      grid-template-rows: 1fr;
+
+
+      .medical-chronology-request-form-upload-file__loadbox-inner-wrap {
+        padding-top: 24px;
+        border-top: 1px solid var(--base-border);
+
+      }
+    }
+  }
+
+  &__loadbox-inner-wrap {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+
+    transition: padding 0.3s ease;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  &__item-main {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-icon {
+    width: 38px;
+    min-width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--super-light-blue-bg);
+
+    .icon-document {
+      width: 19px;
+      height: 19px;
+      fill: transparent;
+      stroke: var(--main-blue);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.58px;
+    }
+  }
+
+  &__item-info-heading {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+  }
+
+  &__item-name {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  &__item-size {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  &__item-delete {
+    margin-left: auto;
+
+    * {
+      pointer-events: none;
+    }
+    .icon-trash {
+      width: 20px;
+      height: 20px;
+      fill: transparent;
+      stroke: var(--main-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.67px;
+    }
+    &:hover .icon-trash{
+      stroke: var(--errors);
+    }
+  }
+
+  &__progress {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+
+    transition: grid-template-rows 0.3s ease;
+
+    &._show {
+      grid-template-rows: 1fr;
+      .medical-chronology-request-form-upload-file__progress-wrap {
+        margin-top: 14px;
+      }
+    }
+  }
+
+  &__progress-wrap {
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    transition: margin 0.3s ease;
+  }
+
+  &__progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    border-radius: 4px;
+
+    background-color: var(--base-border);
+
+    margin-left: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+  &__progress-bar-filled {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    border-radius: 4px;
+    background-color: var(--main-blue);
+
+    transition: width 1s linear;
+  }
+
+  &__progress-count {
+    min-width: 33px;
+  }
+
+  .files-counter-wrap {
+    margin-top: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: var(--ligh-gray-bg);
+    padding: 10px 12px;
+
+    @media(max-width: 577px) {
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
+
+    .costs {
+      color: rgba(19, 19, 22, 0.6);
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 500;
+
+      .mobile {
+        display: none;
+      }
+      @media(max-width: 577px) {
+        .mobile {
+          display: block;
+        }
+      }
+      .cost-amount {
+        color: var(--main-color);
+      }
+    }
+
+    .files-counter {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .icon-link-external {
+      width: 18px;
+      height: 18px;
+      stroke: var(--main-blue);
+      fill: transparent;
+    }
+    a {
+      color: var(--main-blue);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .counter {
+      font-weight: 600;
+    }
+    .separator {
+      margin: 0 18px;
+    }
+  }
+}

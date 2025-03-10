@@ -1,0 +1,111 @@
+{% import '../../../ui/media.twig' as media %}
+{% set countriesList = json('phone-data') %}
+
+{% macro input(data) %}
+	<div class="auth-form-field js-auth-form-field {{data.field_class}}">
+		<label for='{{ data.name }}' class="auth-form-field-title">
+			{{ data.title }}
+		</label>
+		<input type='{{ data.type }}' data-type='{{ data.validation_type }}' placeholder='{{ data.placeholder }}' value='{{ data.value }}' class="auth-form-field-input {% if data.is_validation is defined %}js-auth-form-field-input{% endif %}" name='{{ data.name }}' id='{{ data.name }}' {% if data.autocomplete is defined %} autocomplete="{{data.autocomplete}}" {% endif %}>
+		<span class="auth-form-field-error">
+			<span class="auth-form-field-error-content">
+				{{ data.error }}
+			</span>
+		</span>
+	</div>
+{% endmacro %}
+
+{% macro terms(name) %}
+	<div class="form-check form-terms-checkbox form-terms-checkbox-wrap is-required">
+        <input class="form-check-input auth-form-terms-checkbox js__terms-checkbox" type="checkbox" name="{{ name }}" value="" id="termsCheckbox{{name}}" >
+        <label class="form-check-label form-terms" for="termsCheckbox{{name}}">
+            By creating an account, I agree to Med-Test.ai’s
+            <a href="#" class="auth-page-link">Terms and Conditions</a> and 
+            <a href="#" class="auth-page-link">Privacy Policy.</a>
+        </label>
+    </div>
+{% endmacro %}
+
+{% macro telInput(inputData) %}
+	<div class="auth-form-field js-auth-form-field input-tel-field {{ inputData.class }}">
+		{% if inputData.label is defined %}
+			<label for="{{ inputData.name }}" class="auth-form-field-title">{{ inputData.label }}</label>
+		{% endif %}
+
+		<div class="auth-form-field-wrap tel-wrap">
+			<div class="code-section">
+				{% if inputData.selected_flag is defined %}
+					<img src="./svg/flags/{{ inputData.selected_flag }}.svg" alt="phone-btn" class="flag-container">
+					<span class="dial-code">{{ inputData.selected_code }}</span>
+				{% else %}
+					<img src="./svg/phone.svg" alt="phone-btn" class="flag-container">
+					<span class="dial-code"></span>
+				{% endif %}
+				{{ media.icon('chevron-up') }}
+			</div>
+			<input type="{{ inputData.type }}" name="{{ inputData.name }}" id="{{ inputData.name }}" placeholder="{{ inputData.placeholder | default('') }}" value="{{ inputData.value | default('') }}" class="auth-form-field-input js-auth-form-field-input" {{ inputData.isValidation ? 'data-validation="true"' : '' }}/>
+			{% include '../components/tel-input-dropdown.twig' with { items: countriesList} %}
+
+		</div>
+
+		<span class="auth-form-field-error">
+			<span class="auth-form-field-error-content">
+				{{ inputData.error }}
+			</span>
+		</span>
+	</div>
+{% endmacro %}
+
+
+{% macro passwordInput(inputData) %}
+	<div class="auth-form-field js-auth-form-field {{ inputData.class }}">
+		{% if inputData.title is defined %}
+			<label for="{{ inputData.name }}">
+				{{ inputData.title }}
+				{{}}
+			</label>
+		{% endif %}
+
+		<div class="auth-form-field__input-wrap password-input-wrap">
+			<input type="{{ inputData.type }}" name="{{ inputData.name }}" id="{{ inputData.name }}" placeholder="{{ inputData.placeholder | default('') }}" value="{{ inputData.value | default('') }}" class="auth-form-field-input js-auth-form-field-input" data-type='{{ inputData.validation_type }}' {% if inputData.confirm is defined %} data-confirm="true" {% endif %}  />
+			<button type="button" class="auth-form-field__password-input-button">
+				{{media.icon('eye')}}
+				{{media.icon('eye-closed', 'active')}}
+			</button>
+		</div>
+		<span class="auth-form-field-error">
+			<span class="auth-form-field-error-content">
+				{{ inputData.error }}
+			</span>
+		</span>
+	</div>
+{% endmacro %}
+
+{% macro keep_login(data) %}
+	<div class="auth-form-field keep_login-field">
+		<label class="keep-login-wrap" for="{{data.name}}">
+			<input type="checkbox" name="{{data.name}}" id="{{data.name}}" value="keep_logged">
+			<div class="rectangle">
+				{{media.icon('check')}}
+			</div>
+			<div class="text">
+				Keep me logged in
+			</div>
+		</label>
+		<a href="/log-in-reset-password.html" class="forgot-password">Forgot password</a>
+	</div>
+{% endmacro %}
+
+{% macro closedInput(data) %}
+	<div class="auth-form-field js-auth-form-field {{data.field_class}}">
+		<label for='{{ data.name }}' class="auth-form-field-title">
+			{{ data.title }}
+		</label>
+		<div class="auth-form-field__input-wrap">
+			<input type='{{ data.type }}' data-type='{{ data.validation_type }}' placeholder='{{ data.placeholder }}' value='{{ data.value }}' class="auth-form-field-input js-auth-form-field-input" name='{{ data.name }}' id='{{ data.name }}' disabled>
+			<div class="icon-wrap">
+				{{ media.icon('lock') }}
+			</div>
+		</div>
+	</div>
+{% endmacro %}

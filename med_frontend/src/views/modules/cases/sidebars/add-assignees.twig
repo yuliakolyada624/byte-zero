@@ -1,0 +1,100 @@
+{% set users = json('report-ordering/sidebar/search-users') %}
+
+<div class="offcanvas assignees offcanvas-end" tabindex="-1" id="viewAssignees" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+            <button type="button" data-bs-toggle="offcanvas" data-bs-target="#viewReports" aria-controls="offcanvasRight">{{ media.icon('arrow') }}</button>
+            Order Reports
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+            <h1 class="mb-0">Add Assignees</h1>
+        </div>
+        <p class="mb-3">The below report can only be shared with registered users.</p>
+        <ul class="mb-4">
+            <li>Name: <b>Henry Jones vs. Ivy Davis_ORIGNAL.pdf</b></li>
+            <li>Type: <b>Medical Chronology</b></li>
+            <li>Claim: <b>5946P527F</b></li>
+        </ul>
+       {# <div class="bg-main-light p-4 rounded-3 select-user js-select-user js-search-filter">
+            <h3 class="mb-1">Assignees</h3>
+            <div class="d-flex align-items-center justify-content-between">
+                <p>Select users to share the report.</p>
+                {{
+                btn.link({
+                    inner: 'Remove Users (1)',
+                    icon: 'dash',
+                    class: 'btn-link--thin js-user-selected-remove-all'
+                })
+                }}
+            </div>
+            {% include 'components/form/search-field.twig' with {
+                id: 'report-ordering-dashboard-assignees-search',
+                class: 'w-full',
+                input_class: 'js-search-filter-input',
+                placeholder: 'Search assignee by name or work email',
+                icon: true
+            } %}
+            <ul class="report-ordering-dashboard-forward-report-sidebar-assignees__list js-search-filter-list _hidden">
+                {% for user in users %}
+                    {% include 'components/form/user-search-item.twig' with user %}
+                {% endfor %}
+            </ul>
+            <div class="report-ordering-dashboard-forward-report-sidebar-selected-assignees mb-20 js-select-user-container _hidden">
+                <div class="report-ordering-dashboard-forward-report-sidebar-selected-assignees__list-wrapper block-gray">
+                    <ul class="report-ordering-dashboard-forward-report-sidebar-selected-assignees__list js-select-user-list"></ul>
+                </div>
+            </div>
+        </div>
+        {{ btn.primary({ class: 'js-select-user-submit', inner: 'Add Now' }) }}#}
+        <div class="report-ordering-dashboard-forward-report-sidebar-assignees js-select-user js-search-filter">
+            <div class="bg-main-light p-4 rounded-3">
+                <div class="report-ordering-dashboard-forward-report-sidebar-assignees__search-block">
+                    <h3 class="mb-1">Assignees</h3>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <p>Select users to share the report.</p>
+                        {{
+                        btn.link({
+                            inner: 'Remove(1)',
+                            class: 'btn-link--thin js-user-selected-remove-all'
+                        })
+                        }}
+                    </div>
+
+                    {% include 'components/form/search-field.twig' with {
+                        id: 'report-ordering-dashboard-assignees-search',
+                        class: 'w-full',
+                        input_class: 'js-search-filter-input',
+                        placeholder: 'Search by name or work email',
+                        icon: true
+                    } %}
+
+                    <ul class="report-ordering-dashboard-forward-report-sidebar-assignees__list js-search-filter-list _hidden">
+                        {% for user in users %}
+                            {% include 'components/form/user-search-item.twig' with user %}
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="report-ordering-dashboard-forward-report-sidebar-selected-assignees mt-3 js-select-user-container _hidden">
+                    <div class="report-ordering-dashboard-forward-report-sidebar-selected-assignees__list-wrapper block-gray">
+
+                        <ul class="report-ordering-dashboard-forward-report-sidebar-selected-assignees__list js-select-user-list"></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="report-ordering-dashboard-forward-report-sidebar-selected-assignees__footer mt-4">
+                <span class="js-user-selected-quantity _hidden">1 Users Selected</span>
+                {#{{ btn.primary({ class: 'js-select-user-submit', inner: 'Add Now' }) }}#}
+                <button class="btn btn-primary js-select-user-submit" type="button" data-bs-toggle="offcanvas" data-bs-target="#viewReports" aria-controls="offcanvasRight">
+                    Add Now
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="offcanvas-footer">
+        <p>Can't find a specific user? <a href="#">Invite new users here {{ media.icon('share') }}</a></p>
+    </div>
+</div>

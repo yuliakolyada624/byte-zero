@@ -1,0 +1,9 @@
+{% set inputData = inputData %}
+
+{% if macro_name is defined and attribute(auth_macro, macro_name) is defined %}
+	{{ auth_macro[macro_name](inputData) }}
+{% else %}
+	<p>
+		Macro '{{ macro_name }}' not found or not defined!
+	</p>
+{% endif %}

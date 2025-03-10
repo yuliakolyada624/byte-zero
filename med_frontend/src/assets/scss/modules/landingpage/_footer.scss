@@ -1,0 +1,137 @@
+.landing-footer {
+  // height: var(--footer-height);
+  background-color: var(--main-color);
+  margin: 0;
+  color: var(--white);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 500;
+
+  &._logged-in {
+    background-color: var(--navy-blue);
+  }
+
+  &-wrap {
+    padding-block: 16px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &-rights {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &-text {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &-text-mobile {
+      display: none;
+    }
+
+    &__image {
+      width: 183px;
+      aspect-ratio: 5.7 / 1;
+    }
+  }
+
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 300px;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    column-gap: 29px;
+    row-gap: 10px;
+    margin-left: auto;
+  }
+  &-link {
+    color: var(--white);
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    position: relative;
+
+    &:nth-child(odd)::before {
+      content: "|";
+      position: absolute;
+      right: -15px;
+    }
+  }
+
+  @media (max-width: 1025px) {
+    &-wrap {
+      column-gap: 10px;
+      align-items: end;
+      flex-wrap: wrap;
+    }
+
+    &-rights {
+      gap: 2px;
+      &-text {
+        font-size: 10px;
+      }
+    }
+
+    &-links {
+      row-gap: 2px;
+      column-gap: 25px;
+      max-width: 216px;
+    }
+    &-link {
+      font-size: 10px;
+
+      &:nth-child(odd)::before {
+        right: -14px;
+      }
+    }
+    .footer-hippa__image,
+    .footer-hippa__img {
+      aspect-ratio: 1.9 / 1;
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-aicpa__image,
+    .footer-aicpa__img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+ @media (max-width: 577px) {
+    &-wrap {
+      justify-content: center;
+    }
+    &-rights {
+      &-text {
+        display: none;
+        &-mobile {
+          display: block;
+          font-size: 13px;
+          line-height: 18px;
+          font-weight: 500;
+          flex-basis: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    &-links {
+      max-width: 250px;
+      margin-inline: auto;
+      justify-content: center;
+      font-size: 13px;
+    }
+   .footer-hippa__image,
+   .footer-hippa__img {
+     width: 100%;
+   }
+  }
+}
+

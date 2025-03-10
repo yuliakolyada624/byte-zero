@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Billing ZIP/Postal Code",
+    "name": "billing_code",
+    "class": "auth-page__form-field col-4",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "fieldType": "name"
+  }
+]

@@ -1,0 +1,37 @@
+<div class="auth-page__section-header">
+  {% include '../../components/component-backbtn.twig' %}
+  {% include '../../components/auth-progress-steps.twig' with {
+    steps: [
+      {
+        label: "Email Confirmation",
+        done: false
+      },
+      {
+        label: "2FA",
+        done: false
+      },
+      {
+        label: "Password",
+        done: false
+      },
+      {
+        label: "Account Details ",
+        done: false
+      }
+    ]
+  } %}
+</div>
+
+<div class="auth-page__section-content">
+  <div class="auth-page__content-wrap">
+    <h2 class="auth-page-title">Email verification</h2>
+    <p class="auth-page-subtitle">Review and verify the email for this account.</p>
+    <p class="auth-page-infolink">
+      A verification link has been sent to: <a href="mailto:hello@med-test.ai" class="auth-page-link">adrian@slglaw.com</a>
+    </p>
+    <button type="button" class="auth-page-btn auth-page__close-btn auth-page-time-trigger" aria-label="Resend verification email">Resend verification email</button>
+    <div class="auth-page-time-message ">
+      <p>Please check your email.<br>A new verification email has been set to you.</p>
+    </div>
+  </div>
+</div>

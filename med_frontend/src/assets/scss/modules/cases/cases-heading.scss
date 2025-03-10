@@ -1,0 +1,19 @@
+.cases-heading {
+  margin-bottom: 32px;
+  .collapse {
+    .card-body {
+      background-color: var(--ligh-gray-bg);
+      border: none;
+      margin-bottom: 16px;
+    }
+  }
+  &__svg-download {
+    width: 46px;
+    height: 46px;
+    margin-left: 14px;
+    padding: 0;
+  }
+  .btn-primary {
+    height: 46px;
+  }
+}

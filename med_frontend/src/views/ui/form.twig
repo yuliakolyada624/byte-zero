@@ -1,0 +1,296 @@
+{% import 'ui/media.twig' as media %}
+
+{% macro fieldsForm(jsonFile) %}
+  {% set items = json(jsonFile) %}
+  {% for idx, item in items %}
+    {% include '../components/form/form-field.twig' with {
+      title: item.title,
+      name: item.name,
+      class: item.class,
+      type: item.type,
+      placeholder: item.placeholder,
+      fieldType: item.fieldType,
+      error: item.error,
+      isRequired: item.isRequired,
+      validateOnBlur: item.validateOnBlur,
+      defaultValue: item.defaultValue,
+      isReadOnly: item.isReadOnly,
+      inputClass: item.inputClass,
+      maxlength: item.maxlength,
+      popup:item.popup
+    } %}
+  {% endfor %}
+{% endmacro %}
+
+{% macro input(data) %}
+  {% if data.isInForm %}<div class="global-form-field js-field js__textinput{{ data.isRequired ? ' is-required' : '' }}{{ data.formFieldClass ? ' ' ~ data.formFieldClass : '' }}" data-type="{{ data.fieldType }}">{% endif %}
+  {% if data.label and not data.isNeedOverLabel %}
+    <label class="global-form-field-label{{ data.labelClass ? ' ' ~ data.labelClass : '' }}" for="{{ data.name }}">
+      {{ data.label }}
+      {% if data.popup %}
+        {% include "components/info-popup.twig" with data.popup %}
+      {% endif %}
+    </label>
+  {% endif %}
+  {% if data.type == 'email' %}
+    <div class="input-email__wrapper">
+      <input
+              class="input-email field__input js-field-input{{ data.inputClass ? ' ' ~ data.inputClass : '' }}"
+              id="{{ data.name }}"
+              type="email"
+              name="{{ data.name }}"
+              value="{{ data.defaultValue }}"
+              placeholder="{{ data.holder }}"
+              data-email="@slglaw.com"
+              {{ data.inputAttr }}
+      />
+      <span class="input-email__holder">@slglaw.com</span>
+    </div>
+  {% elseif data.type == 'card' %}
+    <div class="input-card__wrapper form-field__input-wrap">
+      <input
+              class="input-base form-control field__input js-field-input{{ data.inputClass ? ' ' ~ data.inputClass : '' }}"
+              id="{{ data.name }}"
+              type="text"
+              name="{{ data.name }}"
+              validateOnBlur="{{ validateOnBlur }}"
+              value="{{ data.defaultValue }}"
+              placeholder="{{ data.holder }}"
+              {{ data.inputAttr }}
+      />
+      <img class="input-card__icon" src="./svg/circle-lock.svg" alt="Lock icon" width="20" height="20">
+    </div>
+  {% else %}
+    <input
+            class="input-base form-control field__input js-field-input{{ data.inputClass ? ' ' ~ data.inputClass : '' }}"
+            id="{{ data.name }}"
+            type="{{data.type|default('text')}}"
+            name="{{ data.name }}"
+            value="{{ data.defaultValue }}"
+            placeholder="{{ data.holder }}"
+            {{ data.inputAttr }}
+    />
+  {% endif %}
+  {% if data.error %}
+    <div class="global-form-field-error js-field-error">
+      <span class="global-form-field-error__message">{{ data.error }}</span>
+    </div>
+  {% endif %}
+  {% if data.isInForm %}</div>{% endif %}
+{% endmacro %}
+
+{% macro card_type(data) %}
+  <div class="global-form-field {{ data.formFieldClass }}">
+    {% if data.label is defined %}
+      <label class="global-form-field-label" for="{{ data.name }}">{{ data.label }}</label>
+    {% endif %}
+
+    <div class="input-base form-control input-card-type js-input-card-type">
+      <div class="input-card-type__item input-card-type__item--visa">
+        <span class="card-text">Visa</span>
+        {{ media.img('/payment-systems/visa', 'png', 'input-card-type', "28", "16") }}
+      </div>
+      <div class="input-card-type__item input-card-type__item--mastercard">
+        <span class="card-text">Mastercard</span>
+        {{ media.img('/payment-systems/mastercard', 'png', 'input-card-type', "28", "16") }}
+      </div>
+      <div class="input-card-type__item input-card-type__item--amex">
+        <span class="card-text">American Express</span>
+        {{ media.img('/payment-systems/american-express', 'png', 'input-card-type', "28", "16") }}
+      </div>
+      {# <div class="input-card-type__item input-card-type__item--jcb">
+				<span class="card-text">JCB</span>
+				{{ media.img('content/payment-systems/jcb', 'png', 'input-card-type', "28", "16") }}
+			</div> #}
+
+      <input class="field__input js-card-type-input"
+             type="hidden"
+             name="{{ data.name }}"
+             id="{{ data.name }}"
+             placeholder="{{ data.holder|default('') }}"
+             value="{{ data.value|default('') }}"
+              {% if data.data_type is defined %} data-type="{{ data.data_type }}" {% endif %} />
+    </div>
+  </div>
+{% endmacro %}
+
+{% macro email(data) %}
+<div class="form-field {{ data.class }} {{ data.isReadOnly == true ? 'is-readonly' : '' }} {{ data.isRequired == true ? 'is-required' : '' }} js-field js__textinput"
+     data-type="{{ data.fieldType ? data.fieldType : 'empty' }}">
+  <label for="{{ data.name }}" class="form-label form-field__title">{{ data.title }}</label>
+  <div class="input-email__wrapper">
+    <input
+            class="form-field__input js-field-input form-control"
+            id="{{ data.name }}"
+            type="email"
+            name="{{ data.name }}"
+            value="{{ data.defaultValue }}"
+            placeholder="{{ data.holder }}"
+            data-email="@slglaw.com"
+            {{ data.inputAttr }}
+    />
+    <span class="input-email__holder">@slglaw.com</span>
+  </div>
+  {% if data.isRequired %}
+    <span class="form-field__error js-field-error">{{ data.error }}</span>
+  {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro checkbox(params) %}
+  <label class="checkbox__label js-field {{ params.class }}" for="{{ params.name }}" data-type="checkbox">
+    <span class="checkbox">
+      <input
+              class="checkbox__input sr-only js-checkbox-input"
+              type="checkbox"
+              name="{{ params.name }}"
+              id="{{ params.name }}"
+              value="{{ params.value }}" />
+      <span class="checkbox__custom">
+        {{ media.icon("check") }}
+      </span>
+    </span>
+    {{ params.text }}
+  </label>
+{% endmacro %}
+
+{% macro radio(params) %}
+  <span class="checkbox {{ params.class }}">
+    <input
+            class="checkbox__input js-checkbox-input"
+            type="radio"
+            name="{{ params.name }}"
+            value="{{ params.value }}" />
+    <span class="checkbox__custom"></span>
+  </span>
+{% endmacro %}
+
+{% macro select(data) %}
+  {% if data.isInForm %}<div class="global-form-field js-field{{ data.isRequired ? " is-required" : '' }}{{ data.formFieldClass ? ' ' ~ data.formFieldClass : '' }}" data-type="{{ data.fieldType }}">{% endif %}
+  {# label #}
+  {% if data.label and not data.isNeedOverLabel %}
+    <label class="global-form-field-label{{ data.labelClass ? ' ' ~ data.labelClass : '' }}" for="{{ data.name }}">{{ data.label }}</label>
+  {% endif %}
+
+  {# trigger wrapper #}
+  <div class="dropdown js-select{{ data.defaultValue ? ' selected' : '' }} {{ data.class }}">
+    {# hidden input #}
+    <input
+            class="field__input js-field-input js-select-input{{ data.inputClass ? ' ' ~ data.inputClass : '' }}"
+            id="{{ data.name }}"
+            type="hidden"
+            name="{{ data.name }}"
+            value="{{ data.defaultValue }}"
+            {{ data.inputAttr }}
+    />
+
+    {# trigger #}
+    <button
+            class="dropdown__trigger js-select-trigger"
+            type="button"
+            aria-label="{{ data.holder | striptags }}"
+    >
+      {# if additional icon #}
+      {% if data.icon %}
+        {{ media.icon(data.icon, 'dropdown__trigger-left-icon') }}
+      {% endif %}
+      {# trigger value #}
+      <span class="dropdown__trigger-value js-select-trigger-value">
+        {% if data.defaultValue %}
+          {{ data.defaultValue }}
+        {% else %}
+          {{ data.holder }}
+        {% endif %}
+      </span>
+      <span class="dropdown__trigger-arrow">{{media.icon("arrow-select")}}</span>
+      {% if data.holder and data.isNeedOverLabel %}
+        <span class="global-form-select-overlabel">{{ data.holder }}</span>
+      {% endif %}
+    </button>
+    {# options menu #}
+    <div class="dropdown__item js-select-dropdown{{ data.searchField ? ' js-search-filter' : '' }}">
+      {# if searchfield #}
+      {% if data.searchField %}
+        <div class="dropdown__search">
+          <input class="input-base js-search-filter-input"
+                 type="search"
+                 id="{{ data.searchField.name }}_search"
+                 name="{{ data.searchField.name }}_search"
+                 placeholder="{{ data.searchField.placeholder }}" />
+          {{ media.icon('search') }}
+        </div>
+      {% endif %}
+
+      {# options menu list #}
+      <ul class="{{ data.searchField ? 'js-search-filter-list' : '' }}">
+        {# select option li item #}
+        {% for option in data.options %}
+          <li class="{{ data.searchField ? 'js-search-filter-item' : '' }}">
+            {# if extended option #}
+            {% if option.extendedOptions %}
+              <div class="dropdown__option dropdown-extended-option js-select-extended-option">
+                {{ option.holder }}
+                {{ media.icon('arrow-select') }}
+                {# extended option list #}
+                <ul class="dropdown-extended-option__list">
+                  {# extended option list item #}
+                  {% for extendedOption in option.extendedOptions %}
+                    <li>
+                      {# extended option with datepicker #}
+                      {% if extendedOption.isRange %}
+                        <div class="dropdown__option dropdown-extended-option js-date-trigger">
+                          {{ extendedOption.value }}
+                          {{ media.icon('arrow-select') }}
+                        </div>
+                      {% else %}
+                        {# common extended option #}
+                        <button class="dropdown__option js-select-option js-select-nested-option" type="button"
+                                aria-label="{{ extendedOption.value | striptags }}"
+                                data-value="{{ extendedOption.value }}"
+                                {% if extendedOption.id_value %}
+                          data-id="{{ extendedOption.id_value }}"
+                                {% endif %}>
+                          {{ extendedOption.value }}
+                        </button>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              {# select option #}
+              <button
+                      class="dropdown__option js-select-option{{ data.defaultValue == option.value ? ' active' : '' }}{{ option.class ? ' ' ~ option.class : '' }}"
+                      type="button"
+                      data-value="{{ option.value }}"
+                      aria-label="{{ option.value | striptags }}"
+                      {% if option.id_value %}
+                data-id="{{ option.id_value }}"
+                      {% endif %}>
+                {# if option status value #}
+                {% if option.status %}
+                  <span class="status status--{{ option.status }}"></span>
+                  {{ option.value }}
+                  {# common option value #}
+                {% else %}
+                  {{ option.value }}
+                  {% if data.searchField %}
+                    <span class="dropdown__checkbox">
+                      {{ media.icon('check-alt') }}
+                    </span>
+                  {% endif %}
+                {% endif %}
+              </button>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% if data.error %}
+    <div class="global-form-field-error js-field-error">
+      <span class="global-form-field-error__message">{{ data.error }}</span>
+    </div>
+  {% endif %}
+  {% if data.isInForm %}</div>{% endif %}
+{% endmacro %}

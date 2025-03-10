@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Firm or Company Email",
+    "name": "email",
+    "class": "auth-page__form-field",
+    "type": "email",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "isReadOnly": true,
+    "defaultValue": "yoni@slglaw.com",
+    "error": "Required field",
+    "fieldType": "email"
+  },
+  {
+    "title": "First name",
+    "name": "first_name",
+    "class": "col-6 auth-page__form-field",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "defaultValue": "Yoni",
+    "error": "Required field",
+    "fieldType": "name"
+  },
+  {
+    "title": "Last name",
+    "name": "last_name",
+    "class": "col-6 auth-page__form-field",
+    "type": "text", 
+    "validateOnBlur": true,
+    "isRequired": true,
+    "defaultValue": "Ashurov",
+    "error": "Required field",
+    "fieldType": "name"
+  }
+]

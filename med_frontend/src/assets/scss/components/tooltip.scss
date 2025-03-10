@@ -1,0 +1,111 @@
+.tooltip-popup {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  width: 430px;
+  background-color: var(--white);
+  box-shadow: 0px 0px 20px 0px rgba(52, 60, 71, 0.50);
+  border-radius: 8px;
+  border: 1px solid #B5BEC6;
+  transition: all 250ms ease-in-out;
+  transform: translate(-50%, -3%);
+  transform-origin: top;
+  z-index: 10;
+
+  opacity: 0;
+  scale: 0.5;
+  visibility: hidden;
+  pointer-events: none;
+  &::after {
+    content: "";
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--white);
+    bottom: -7px;
+    left: calc(50% - 8px);
+    position: absolute;
+  }
+  &::before {
+    content: "";
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 9px solid #B5BEC6;
+    bottom: -9px;
+    left: calc(50% - 9px);
+    position: absolute;
+  }
+  .tooltip-popup__header {
+    border-radius: 10px 10px 0px 0px;
+    background: var(--ligh-gray-bg);
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px;
+    align-items: center;
+    font-weight: 500;
+    span {
+      border-radius: 6px;
+      border: 1px solid var(--base-border);
+      background: var(--white);
+      padding: 2px 8px;
+      font-size: 12px;
+      font-weight: 500;
+      &.successful {
+        border: 1px solid var(--darker-green);
+        color: var(--darker-green);
+      }
+    }
+  }
+  .tooltip-popup__body {
+    padding: 12px 14px;
+    text-wrap: nowrap;
+    div:last-child {
+      .checkbox {
+        &:after {
+          content: none;
+        }
+      }
+    }
+    .icon-checkbox {
+      width: 16px;
+      height: 16px;
+      stroke-width: 1.1px;
+      stroke: var(--darker-green);
+      fill: transparent;
+      margin-right: 7px;
+    }
+    .icon-checkbox-empty {
+      width: 16px;
+      height: 16px;
+      stroke-width: 1.1px;
+      stroke: var(--icon-gray);
+      margin-right: 7px;
+      fill: transparent;
+    }
+    .separator {
+      color: var(--base-border);
+      margin: 0 10px;
+    }
+    .checkbox {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 55%;
+        background-color: var(--darker-green);
+        left: 8px;
+        top: 23px;
+      }
+    }
+  }
+}
+.tooltip-trigger {
+  position: relative;
+  &:hover {
+    .tooltip-popup {
+      opacity: 1;
+      scale: 1;
+      visibility: visible;
+    }
+  }
+}

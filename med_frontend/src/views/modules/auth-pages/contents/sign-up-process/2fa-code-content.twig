@@ -1,0 +1,39 @@
+<div class="auth-page__section-header">
+  {% include '../../components/component-backbtn.twig' %}
+  {% include '../../components/auth-progress-steps.twig' with {
+    steps: [
+      {
+        label: "Email Confirmation",
+        done: true
+      },
+      {
+        label: "2FA",
+        done: false
+      },
+      {
+        label: "Password",
+        done: false
+      },
+      {
+        label: "Account Details ",
+        done: false
+      }
+    ]
+  } %}
+</div>
+
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Two-Factor Authentication (2FA)</h2>
+  <p class="auth-page-subtitle">An SMS with your verification code has been sent to your personal phone. </br> <a href="mailto:hello@med-test.ai" class="auth-page-link">Change your phone number</a></p>
+  <div class="d-flex flex-column justify-content-center align-items-center mx-auto auth-page__form-wrap">
+    <form class="form col-4 js-form auth-page__form" data-href="sign-up-email-verification.html">
+      {% include '../../../../components/form/form-security-code.twig' with {
+        id : 'phoneSC',
+        class: 'auth-page__security-code',
+        name: 'security-code',
+        leight: 6,
+        error: '<div class="invalid-feedback mt-2">Security code is incorrect. <a href="#" class="auth-page-link js__resend-2fa-btn">Send another code</a></div>',
+      } %}
+    </form>
+  </div>
+</div>

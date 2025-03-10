@@ -1,0 +1,51 @@
+{% import 'macro/dev.twig' as dev %}
+{% import 'ui/media.twig' as media %}
+{% import 'ui/buttons.twig' as btn %}
+{% import 'ui/links.twig' as link %}
+{% import 'ui/form.twig' as form %}
+{% import 'ui/modals.twig' as modal %}
+
+{% block variables %}
+
+{% endblock variables %}
+{% set layout_modules_path = 'layouts/report-mode/modules/' %}
+{% set modules_path = 'modules/report-mode/' %}
+{% set page_class = 'report-mode' %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include layout_modules_path ~ 'head.twig' %}
+
+<body class="{{ page_class }}">
+<div class="container-fluid px-0">
+    {% include layout_modules_path ~ 'header.twig' %}
+        <main class="{{ content_class }}">
+                {% include layout_modules_path ~ 'title.twig' %}
+                {% block content %}
+
+                {% endblock content %}
+                {% include layout_modules_path ~ 'sidenav.twig' %}
+        </main>
+
+</div>
+{# {% include layout_components_path ~ 'modals/modal.twig' %} #}
+
+
+{% block modals %}
+
+{% endblock modals %}
+
+{% block sidebars %}
+
+{% endblock sidebars %}
+
+<script src="./js/vendor.js"></script>
+<script src="./js/main.js"></script>
+{% if prod != true %}
+    {{ dev.menu() }}
+{% endif %}
+{% block scripts %}
+
+{% endblock scripts %}
+</body>
+</html>

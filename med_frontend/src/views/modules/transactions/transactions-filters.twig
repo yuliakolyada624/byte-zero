@@ -1,0 +1,186 @@
+<div class="transactions-filters__body">
+    <div class="row transactions-filters__wrap">
+
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsFilterClient',
+                class: 'transactions-filter__select-component',
+                name: 'client',
+                title: 'Client',
+                isRequired: false,
+                hasSearch: true,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'The Salameh Law Group, P.A.',
+                    value: '1',
+                },
+                {
+                    title: 'Eve Wilson vs. Henry Martinez',
+                    value: '2',
+                },
+                {
+                    title: 'Frank Jones vs. Jack Taylor',
+                    value: '3',
+                },
+                {
+                    title: 'Henry Jones vs. Ivy Davis',
+                    value: '4',
+                },
+                {
+                    title: 'Robert Graham vs. Matthew Fillips',
+                    value: '5',
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsFilterddOrderedBy',
+                class: 'transactions-filter__select-component',
+                name: 'ordered_by',
+                title: 'Ordered By',
+                isRequired: false,
+                hasSearch: true,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Adrian Medina, Esq.',
+                    value: '1',
+                },
+                {
+                    title: 'Isaac Ashurov',
+                    value: '2',
+                },
+                {
+                    title: 'Yoni Ashurov',
+                    value: '3',
+                },
+                {
+                    title: 'Yoni Ashurov',
+                    value: '4',
+                },
+                {
+                    title: 'Robert Graham Sr. ',
+                    value: '5',
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsPaymentMethod',
+                class: 'transactions-filter__select-component',
+                name: 'payment_method',
+                title: 'Payment Method',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Visa',
+                    value: 'visa'
+                },
+                {
+                    title: 'Mastercard',
+                    value: 'mastercard'
+                },
+                {
+                    title: "American Express",
+                    value: 'american_express'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsTransactionType',
+                class: 'transactions-filter__select-component',
+                name: 'transaction_type',
+                title: 'Transaction Type',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Purchase',
+                    value: 'purchase'
+                },
+                {
+                    title: 'Refund',
+                    value: 'refund'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsCaseType',
+                class: 'transactions-filter__select-component',
+                name: 'case_type',
+                title: 'Case Type',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Purchase',
+                    value: 'body_injury'
+                },
+                {
+                    title: 'Disability Claim',
+                    value: 'disability_claim'
+                },
+                {
+                    title: 'Nursing Home Negligence',
+                    value: 'nursing_home_negligence'
+                },
+                {
+                    title: "Workers' Compensation",
+                    value: 'workers_compensation'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'transactionsProduct',
+                class: 'transactions-filter__select-component',
+                name: 'product',
+                title: 'Product',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Medical Chronology',
+                    value: 'medical_chronology'
+                },
+                {
+                    title: 'Billing Summary',
+                    value: 'billing_summary'
+                },
+                {
+                    title: "Medical Chronology and Billing Summary",
+                    value: 'medical_chronology_and_billing_summary'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+    </div>
+</div>

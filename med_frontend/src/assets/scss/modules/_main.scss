@@ -1,0 +1,47 @@
+
+//  Header
+@import "header";
+// sidenav
+@import "sidenav";
+
+// Report Ordering
+@import "report-ordering/main";
+
+//Cases page
+@import "cases/cases-heading";
+@import "cases/cases-filters";
+@import "cases/cases-searches";
+@import "cases/cases-body";
+@import "cases/sidebar/cases";
+@import "cases/sidebar/order-reports";
+@import "cases/sidebar/order-details";
+@import "cases/sidebar/add-assignees";
+
+//Transactions page
+@import "transactions/filters.scss";
+@import "transactions/heading.scss";
+@import "transactions/searches.scss";
+
+//Users page
+@import "users/filters.scss";
+@import "users/heading.scss";
+@import "users/searches.scss";
+@import "users/sidebar.scss";
+
+//Profile page 
+@import "profile/heading.scss"; 
+@import "profile/body.scss";
+
+//Overview page 
+@import "overview/heading.scss"; 
+@import "overview/body.scss";
+
+// medical chronology request imports
+@import "./medical-chronology-request/main";
+
+ //landingpage
+@import "landingpage/main";
+
+//  Footer
+@import "footer";
+

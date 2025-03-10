@@ -1,0 +1,27 @@
+<div class="transactions-searches">
+    <div class="transactions-searches__orderid">
+        <input 
+            id="transactionsSearchByOrderId"
+            name="search_by_order_id"
+            class="form-control transactions-searches__orderid-input" 
+            type="text"
+            placeholder="Order ID"
+            autocomplete="off"
+        >
+    </div>
+    {% include '../../components/form/autocomplete-input.twig' with {
+        id: "transactionsFilterNames",
+        class: "transactions-searches__names",
+        name: "search_by_names",
+        url: "/get-names",
+        placeholder: "Plaintiff/Defendant Name",
+    } %}
+    <button id="transactionsSearchSubmit" class="btn btn-primary transactions-searches__search-btn">
+        <svg class="transactions-searches__search-btn--default" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.0977 19.1875L15.5978 15.6875M18.0977 9.6875C18.0977 14.3819 14.2921 18.1875 9.59766 18.1875C4.90324 18.1875 1.09766 14.3819 1.09766 9.6875C1.09766 4.99308 4.90324 1.1875 9.59766 1.1875C14.2921 1.1875 18.0977 4.99308 18.0977 9.6875Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg class="transactions-searches__search-btn--hover" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.0977 19.1875L15.5978 15.6875M18.0977 9.6875C18.0977 14.3819 14.2921 18.1875 9.59766 18.1875C4.90324 18.1875 1.09766 14.3819 1.09766 9.6875C1.09766 4.99308 4.90324 1.1875 9.59766 1.1875C14.2921 1.1875 18.0977 4.99308 18.0977 9.6875Z" stroke="#148BDF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+</div>

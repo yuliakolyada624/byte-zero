@@ -1,0 +1,137 @@
+<div class="offcanvas persolnal-info offcanvas-end" tabindex="-1" id="user1" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close">{{ media.icon('arrow') }}</button>
+            Back
+        </h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h3 class="mb-0">Personal Information</h3>
+            <button class="btn edit" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasEditUserDetails" aria-controls="offcanvasEditUser">Edit Details</button>
+        </div>
+        <div class="card bg-main-light border-0 p-4 mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="me-3 position-relative">
+                        <span class="status suspended" data-bs-toggle="tooltip" data-bs-placement="top"
+                            data-bs-custom-class="sidebar-tooltip"
+                            data-bs-title="Registered">
+                        </span>
+                        {{media.img('users/user-1', 'png', 'photo', 52, 52)}}
+                    </div>
+                    <div>
+                        <h2>Adrian Medina</h2>
+                        <span class="email">adrian@slglaw.com</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="role">Super Administrator</span>
+                </div>
+            </div>
+            <hr>
+            <table class="table table-borderless mb-0">
+                <tbody>
+                    <tr>
+                        <td>Work number, extension:</td>
+                        <td class="text-end fw-semibold"><img src="./svg/flags/us.svg" alt="phone" class="phone-icon"> +1 239-277-0087</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile number:</td>
+                        <td class="text-end fw-semibold"><img src="./svg/flags/us.svg" alt="phone" class="phone-icon"> +1 415-315-5453</td>
+                    </tr>
+                    <tr>
+                        <td>Job title:</td>
+                        <td class="text-end fw-semibold"> Senior Partner</td>
+                    </tr>
+                    <tr>
+                        <td>Office:</td>
+                        <td class="text-end fw-semibold"> The Salameh Law Group Building</td>
+                    </tr>
+                    <tr>
+                        <td>Last password update:</td>
+                        <td class="text-end fw-semibold"> 02-15-2023</td>
+                    </tr>
+                    <tr>
+                        <td>Password change frequency:</td>
+                        <td class="text-end fw-semibold"> Every 3 Months</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3 class="mb-3">My Cases</h3>
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>Bodily Injury:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        5 <span class="separator"> | </span>
+                        <span data-bs-toggle="tooltip" data-bs-placement="top"
+                              data-bs-custom-class="sidebar-tooltip"
+                              data-bs-title="View Case List">{{btn.link({
+                            icon: "document"
+                        })}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Disablity Claim:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        2 <span class="separator"> | </span>
+                        <span data-bs-toggle="tooltip" data-bs-placement="top"
+                              data-bs-custom-class="sidebar-tooltip"
+                              data-bs-title="View Case List">{{btn.link({
+                            icon: "document"
+                            })}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Medical Malpractice:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        0 <span class="separator"> | </span>
+                        {{btn.link({
+                            icon: "document",
+                            class: "empty"
+                        })}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Workers’ Compensation:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        1 <span class="separator"> | </span>
+                        <span data-bs-toggle="tooltip" data-bs-placement="top"
+                              data-bs-custom-class="sidebar-tooltip"
+                              data-bs-title="View Case List">
+                        {{btn.link({
+                            icon: "document"
+                        })}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <hr class="mt-4 mb-4">
+        <h3 class="mb-3">Activites</h3>
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>Last login:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        06-10-2024<span class="separator"> | </span>10:35 AM EST
+                    </td>
+                </tr>
+                <tr>
+                    <td>Last updated:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        05-22-2024<span class="separator"> | </span>3:45 PM EST
+                    </td>
+                </tr>
+                <tr>
+                    <td>Registered on:</td>
+                    <td class="text-end fw-semibold d-flex align-items-center justify-content-end gap-2">
+                        01-10-2024<span class="separator"> | </span>6:35 PM EST
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+.main-title,
+.global-title,
+.global-subtitle,
+.section-title,
+.block-title,
+.block-secondary-title {
+  color: var(--main-color);
+}
+
+.main-title {
+  font-size: 42px;
+  line-height: 47px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.global-title {
+  font-size: 36px;
+  line-height: 43px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.global-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.section-title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.block-title,
+.block-secondary-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.block-title {
+  font-size: 18px;
+}
+
+.block-secondary-title {
+  font-size: 16px;
+}
+
+.hidden-title {
+  display: none;
+}

@@ -1,0 +1,66 @@
+<section class="global-section feedback-section global-section-with-bg-reverse" id="feedback-section">
+	<div class="container">
+		<div class="feedback-section-wrap js-section-wrap">
+			<h3 class="feedback-section-title global-title">Get in touch</h3>
+			<h3 class="feedback-section-subtitle global-subtitle">Have questions? We’re ready to assist!</h3>
+			<div class="feedback-section-form-wrap">
+				<form action="POST" class="feedback-section-form js-feedback-section-form">
+					<div class="feedback-section-form-field form-field radio-group-field">
+						<div class="feedback-section-form-field__title">Select topic of interest (optional):</div>
+						<div class="feedback-section-form__radio-group">
+							<label class="feedback-section-form__radio-label">
+								<input type="radio" value="schedule_a_demo" name="topic_of_interest" id="schedule_a_demo" class="js-feedback-target">
+								Schedule a demo
+							</label>
+							<label class="feedback-section-form__radio-label">
+								<input type="radio" value="sales" name="topic_of_interest" id="sales">
+								Sales
+							</label>
+							<label class="feedback-section-form__radio-label">
+								<input type="radio" value="onboarding" name="topic_of_interest" id="onboarding">
+								Onboarding
+							</label>
+							<label class="feedback-section-form__radio-label">
+								<input type="radio" value="billing" name="topic_of_interest" id="billing">
+								Billing
+							</label>
+							<label class="feedback-section-form__radio-label">
+								<input type="radio" value="support" name="topic_of_interest" id="support">
+								Support
+							</label>
+						</div>
+					</div>
+					<div class="feedback-section-form-field form-field col-6">
+						<label for="first_name">First name*</label>
+						<input type="text" name="first_name" id="first_name" class="js-feedback-input" data-validation="true">
+					</div>
+					<div class="feedback-section-form-field form-field col-6">
+						<label for="last_name">Last name*</label>
+						<input type="text" name="last_name" id="last_name" class="js-feedback-input" data-validation="true">
+					</div>
+					<div class="feedback-section-form-field form-field">
+						<label for="email">Your email*</label>
+						<input type="email" name="email" id="email" class="js-feedback-input" data-validation="true">
+					</div>
+					<div class="feedback-section-form-field form-field">
+						<label for="message">Write message*</label>
+						<textarea name="message" id="message" class="js-feedback-input" data-validation="true"></textarea>
+					</div>
+
+					<div class="feedback-section-form-footer">
+						<div class="note">*Mandatory field</div>
+						<button type="submit" class="btn btn-primary">Send message</button>
+					</div>
+				</form>
+				<div class="feedback-section-form-backface">
+					{{media.icon('check-success')}}
+					<h3 class="feedback-section-form-backface-title">Thank you!
+						<br>Your form has been successfully submitted.
+					</h3>
+					<p class="feedback-section-form-backface-subtitle">A member of our support team will contact you within one business day.</p>
+					<button type="button" class="feedback-section-form-backface-btn btn btn-primary">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

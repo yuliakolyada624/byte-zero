@@ -1,0 +1,59 @@
+.search-field {
+  --_input-icon-size: 20px;
+  position: relative;
+  display: flex;
+  gap: 14px;
+  width: 100%;
+
+  &:has(> .icon) {
+    & input {
+      padding-left: calc(14px + var(--_input-icon-size));
+      border-radius: 8px;
+      border: 1px solid var(--baseLineGray);
+      background: var(--white);
+      height: 44px;
+    }
+  }
+
+  & > .icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: var(--_input-icon-size);
+    height: var(--_input-icon-size);
+    fill: none;
+    stroke: var(--icon-gray);
+    stroke-linecap: round;
+    stroke-width: 2px;
+  }
+
+  &__button {
+    padding: 10px;
+    border-radius: 10px;
+
+    & .icon {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--white);
+      stroke-linecap: round;
+      stroke-width: 2px;
+    }
+  }
+}
+.select-user {
+  position: relative;
+}
+._hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

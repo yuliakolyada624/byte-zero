@@ -1,0 +1,27 @@
+.primary-link {
+  position: relative;
+  color: var(--main-blue);
+  font-size: 14px;
+  line-height: 20px;
+
+  &:hover {
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: var(--main-blue);
+    opacity: 0;
+    transition: all var(--base-transition);
+  }
+}

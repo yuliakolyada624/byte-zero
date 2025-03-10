@@ -1,0 +1,59 @@
+.modal {
+  &.payment-method {
+    .modal-dialog {
+      max-width: 789px;
+      .modal-content {
+        padding: 20px 26px 26px 26px;
+        .modal-header {
+          margin-top: 0;
+          margin-bottom: 7px;
+          .btn-close {
+            border: 1px solid var(--baseLineGray);
+            border-radius: 100%;
+            background-size: 11px;
+          }
+        }
+        .modal-body {
+          padding: 0;
+          .radio-group__list {
+            display: flex;
+            gap: 18px;
+          }
+          hr {
+            border-top: 1px solid var(--base-border);
+          }
+          .form-field__title {
+            color: var(--main-color);
+          }
+          .col-4 {
+            width: 33.33333%;
+            flex-basis: inherit;
+          }
+          .info-popup__credit-card__img  {
+            max-width: 291px;
+            max-height: 165px;
+            object-fit: cover;
+          }
+          .auth-page__form {
+            column-gap: 0;
+            width: auto;
+            row-gap: 0;
+          }
+          .info {
+            .icon {
+              width: 16px;
+              height: 18px;
+            }
+          }
+          .form-footer {
+            label {
+              a {
+                color: var(--main-blue);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

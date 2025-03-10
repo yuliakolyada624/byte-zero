@@ -1,0 +1,17 @@
+{
+  "name": "medical_chronology_payment_method",
+  "title": "Personal Credit Cards",
+  "isPersonal": true,
+  "items": [
+    {
+      "method": "american-express",
+      "ending": "5435",
+      "expiry": "12/24"
+    },
+    {
+      "method": "mastercard",
+      "ending": "1234",
+      "expiry": "12/24"
+    }
+  ]
+}

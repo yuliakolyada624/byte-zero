@@ -1,0 +1,50 @@
+{% set buttonList = json('navigation') %}
+
+<aside class="sticky-top sticky-offset vh-100 overflow-auto py-2 sidenav-nav">
+  <a href="./" class="sidenav-nav__header">
+    {{media.img('/logo', 'png', 'header', 146, 28)}}
+  </a>
+  <ul class="sidenav-nav__content">
+    {% for button in buttonList %}
+      <li class="sidenav-nav__item mb-1 {% if button.active %}active{% endif %}">
+        {% if button.href %}
+          <a href="{{button.href}}" class="sidenav-nav__link" aria-label="{{button.title}}">
+            <span class="sidenav-nav__link-icon">
+              {{media.icon(button.icon, button.icon_style)}}
+            </span>
+            <span class="sidenav-nav__link-value">{{button.title}}</span>
+            {% if button.counter %}
+              <span class="sidenav-nav__link-counter">{{button.counter}}</span>
+            {% endif %}
+          </a>
+        {% else %}
+          <button type="button" class="sidenav-nav__link {{button.button_class}}" aria-label="{{button.title}}">
+            <span class="sidenav-nav__link-icon">
+              {{media.icon(button.icon, button.icon_style)}}
+            </span>
+            <span class="sidenav-nav__link-value">{{button.title}}</span>
+            {% if button.counter %}
+              <span class="sidenav-nav__link-counter">{{button.counter}}</span>
+            {% endif %}
+          </button>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="sidenav-nav__bottom">
+    <div class="card">
+      {{media.img('/juris', 'png', 'icon', 35, 35)}}
+      <div class="card-body">
+        <p>Meet <b>Juris</b><br> Your Data Expert!</p>
+        <hr>
+        <a href="">Start Now</a>
+      </div>
+    </div>
+    {{btn.primary({
+      inner: "Logout",
+      icon: "log-out"
+    })}}
+    <p>Med-Test.AI © 2024</p>
+  </div>
+</aside>

@@ -1,0 +1,47 @@
+{% import 'macro/dev.twig' as dev %}
+{% import 'ui/media.twig' as media %}
+{% import 'ui/buttons.twig' as btn %}
+{% import 'ui/links.twig' as link %}
+{% import 'ui/form.twig' as form %}
+
+{% block variables %}
+  {% set header_button_text = {{ header_button_text }} %}
+  {% set header_button_href = {{ header_button_href }} %}
+{% endblock variables %}
+
+{% set layout_components_path = 'layouts/auth/components/' %}
+{% set layout_modules_path = 'layouts/auth/modules/' %}
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include layout_modules_path ~ 'head.twig' %}
+
+  <body class="{{ page_class }}">
+    <div class="wrapper">
+      {% include layout_modules_path ~ 'header.twig' %}
+
+      <div class="container {{ content_class }}">
+        {% block content_auth %}
+        {% endblock content_auth %}
+      </div>
+
+      {# {% include layout_components_path ~ 'modals/modal.twig' %} #}
+      {% include layout_modules_path ~ 'footer.twig' %}
+
+      {% block modals %}
+
+      {% endblock modals %}
+    </div>
+
+
+    <script src="./js/vendor.js"></script>
+    <script src="./js/main.js"></script>
+
+    {% if prod != true %}
+      {{ dev.menu() }}
+    {% endif %}
+    {% block scripts %}
+
+    {% endblock scripts %}
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<div class="users-filters__body">
+    <div class="row users-filters__wrap">
+
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'usersFilterRole',
+                class: 'users-filter__select-component',
+                name: 'role',
+                title: 'Role',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Super Administrator',
+                    value: 'super_admin'
+                },
+                {
+                    title: 'Administrator',
+                    value: 'admin'
+                },
+                {
+                    title: 'Assignee',
+                    value: 'assignee'
+                },
+                {
+                    title: 'Reviewer',
+                    value: 'refund'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'usersFilterJob',
+                class: 'users-filter__select-component',
+                name: 'job_title',
+                title: 'Job title',
+                isRequired: false,
+                hasSearch: false,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Attorney',
+                    value: 'Attorney'
+                },
+                {
+                    title: 'Associate Attorney',
+                    value: 'Associate Attorney'
+                },
+                {
+                    title: 'Senior Associate Attorney',
+                    value: 'Senior Associate Attorney'
+                },
+                {
+                    title: 'Of Counsel',
+                    value: 'Of Counsel'
+                },
+                {
+                    title: 'Paralegal',
+                    value: 'Paralegal'
+                },
+                {
+                    title: 'Partner',
+                    value: 'Partner'
+                },
+                {
+                    title: 'Senior Partner',
+                    value: 'Senior Partner'
+                },
+                {
+                    title: 'Managing Partner',
+                    value: 'Managing Partner'
+                },
+                {
+                    title: "Other",
+                    value: 'other'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+        <div class="col col-4">
+            {% include '../../components/form/form-dropdown-select2.twig' with {
+                id: 'usersFilterPlantiffName',
+                class: 'users-filter__select-component',
+                name: 'plaintiff_name',
+                title: 'Plaintiff Name',
+                isRequired: false,
+                hasSearch: true,
+                clearSelectionBtn: true,
+                placeholder: 'Select',
+                options: [
+                {
+                    title: 'Alexander Phillips',
+                    value: '1'
+                },
+                {
+                    title: 'Asari Dokumbo Maron',
+                    value: '2'
+                },
+                {
+                    title: 'Jennifer Thomas Smith',
+                    value: '3'
+                },
+                {
+                    title: 'John Simmons',
+                    value: '4'
+                }
+                ],
+                error: '',
+            } %}
+        </div>
+    </div>
+</div>

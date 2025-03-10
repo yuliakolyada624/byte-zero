@@ -1,0 +1,29 @@
+.btn-white {
+  background-color: var(--white);
+  color: var(--main-blue);
+  border: 1px solid var(--white);
+}
+
+.btn-white-lg {
+  gap: 5px;
+  padding: 10px;
+  width: 100%;
+  color: var(--main-color);
+  line-height: 18px;
+  background-color: var(--white);
+  border: var(--base-border-line);
+
+  &:hover {
+    border-color: var(--main-color);
+  }
+
+  & .icon-download {
+    width: 14px;
+    height: 16px;
+    stroke-width: 1.5px;
+    fill: none;
+    stroke: var(--main-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}

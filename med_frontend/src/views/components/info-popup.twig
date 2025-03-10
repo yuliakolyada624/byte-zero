@@ -1,0 +1,33 @@
+<div class="info-popup{{ direction ? ' ' ~ direction : null }}{{
+  status
+    ? ' table-status table-status--' ~ status
+    : null
+  }}">
+  {% if status == 'review-required' %}
+    {{ media.icon('exclamation-mark') }}
+  {% endif %}
+
+  {% if status == null %}
+    {{ media.icon('info-circle') }}
+  {% endif %}
+
+  <div class="info-popup__content">
+    {% if status %}
+      <div class="info-popup__status info-popup__status--{{ status }}">
+        {% if status == 'review-required' %}
+          {{ media.icon('exclamation-mark') }} Review required
+        {% elseif status == 'failed' %}
+          Payment failed
+        {% else %}
+          Booking {{ status }}
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% if image %}
+      {{ media.img(image.path, image.type, image.class) }}
+    {% else %}
+      {{ text }}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Dashboard",
+    "href": "index.html",
+    "icon": "nav-home",
+    "icon_style": "stroke",
+    "active": true
+  },
+  {
+    "title": "Cases",
+    "href": "cases.html",
+    "icon": "nav-cases",
+    "icon_style": "stroke"
+  },
+  {
+    "title": "Transactions",
+    "href": "transactions.html",
+    "icon": "nav-billing",
+    "icon_style": "fill"
+  },
+  {
+    "title": "Users",
+    "href": "users.html",
+    "icon": "nav-management",
+    "icon_style": "stroke"
+  },
+  {
+    "title": "Preferences",
+    "href": "preferences.html",
+    "icon": "nav-settings",
+    "icon_style": "stroke"
+  },
+  {
+    "title": "Support",
+    "href": "support.html",
+    "icon": "nav-support",
+    "icon_style": "fill"
+  }
+]

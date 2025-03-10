@@ -1,0 +1,15 @@
+<div class="search-field{{ class ? ' ' ~ class : '' }}" {{ attr }}>
+  <input class="form-control{{ input_class ? ' ' ~ input_class : '' }}"
+    name="{{ id }}"
+    id="{{ id }}"
+    type="search"
+    placeholder="{{ placeholder|default('Search') }}"
+    {{ attr }} />
+  {% if icon %}
+    {{ media.icon('search') }}
+  {% endif %}
+
+  {% if isButton %}
+    {{ btn.primary({ class: 'search-field__button', icon: 'search' }) }}
+  {% endif %}
+</div>

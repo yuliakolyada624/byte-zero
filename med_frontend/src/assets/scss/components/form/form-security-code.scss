@@ -1,0 +1,65 @@
+.component__scode {
+  width: 100%;
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--primaryBlue);
+  &-label {
+    margin-bottom: 12px;
+  }
+  &-line {
+    display: flex;
+    width: 100%;
+  }
+  &-wrap {
+    width: 42px;
+    height: 42px;
+  }
+  &-input {
+    display: block;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+  }
+  &.is-invalid &-input {
+    border-color: var(--errors);
+  }
+  &-btn {
+    margin-top: 18px;
+  }
+  &-error {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--errors) !important;
+    .auth-page-link {
+      text-decoration: underline;
+      color: var(--errors) !important;
+    }
+  }
+  &-resend {
+    &-btn {
+      margin-top: 18px;
+      text-decoration: underline;
+      border: none !important;
+      outline: none !important;
+      line-height: 20px;
+      color: var(--text-color);
+      &:hover {
+        color: var(--baseTextGray);
+        opacity: 0.8;
+      }
+    }
+    &-status {
+      margin-top: 18px;
+      color: var(--text-color);
+    }
+  }
+  &.is-invalid &-resend-btn{
+    display: none;
+  }
+}

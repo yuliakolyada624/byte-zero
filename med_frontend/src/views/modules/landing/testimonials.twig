@@ -1,0 +1,34 @@
+<section class="global-section testimonials-section">
+	<div class="container">
+		<div class="testimonials-section-wrap">
+			<h2 class="testimonials-section-title global-title">Our Client Testimonials: Real Stories, Real Results!</h2>
+
+			{% set testimonialsData = json('testimonials') %}
+			<div
+				class="swiper">
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+
+					{% for item in testimonialsData %}
+						{% include './components/testimonial.twig' with {
+              img: item.img,
+              icon: item.icon,
+              icon_format: item.icon_format,
+              name: item.name,
+              role: item.role,
+              text: item.text,
+            } %}
+					{% endfor %}
+
+				</div>
+
+				<div class="swiper-buttons">
+					<div class="swiper-button-prev">{{media.icon('slide-arrow')}}</div>
+					<div class="swiper-button-next">{{media.icon('slide-arrow')}}</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</section>

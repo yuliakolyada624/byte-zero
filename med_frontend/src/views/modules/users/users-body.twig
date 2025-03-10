@@ -1,0 +1,55 @@
+{% set table = json('users/users-table') %}
+<div class="table-responsive users">
+    <table class="table">
+        <thead>
+        <tr>
+            <th> <input name="select-all" id="select-all" class="form-check-input" type="checkbox" value=""></th>
+            <th scope="col">
+                Name/Status
+                {{ media.icon('info-circle') }}
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">
+                Email
+            </th>
+            <th scope="col">
+                Phone
+            </th>
+            <th scope="col">
+                Role
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">
+                Job Title
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">
+                Last Sign-In
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in table %}
+            {% include './table-item.twig' with {
+                item: item
+            } %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include '../../components/pagination.twig' with {
+    pages: 5,
+    active_page: 1,
+    count_from: 1,
+    count_to: 10,
+    count_total: 25
+} %}

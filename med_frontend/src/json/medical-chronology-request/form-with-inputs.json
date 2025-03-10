@@ -1,0 +1,68 @@
+[
+  {
+    "title": "Claim number*",
+    "name": "medical_chronology_request_claim_number",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "fieldType": "number",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Case name",
+    "name": "medical_chronology_request_case_name",
+    "class": "col-6",
+    "fieldType": "name",
+    "isReadOnly": true,
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "DOI (Date of Incident)*",
+    "name": "medical_chronology_request_plaintiff_date_of_incident",
+    "type": "date",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6 doi",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "LOA (Location of Accident)*",
+    "name": "medical_chronology_request_plaintiff_location_of_accident",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Plaintiff First name*",
+    "name": "medical_chronology_request_plaintiff_first_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Plaintiff Last name*",
+    "name": "medical_chronology_request_plaintiff_last_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "inputClass": "js-medical-chronology-request__input"
+  },
+  {
+    "title": "Plaintiff DOB (Date of Birth)*",
+    "name": "medical_chronology_request_plaintiff_date_of_birth",
+    "type": "date",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "inputClass": "js-medical-chronology-request__input"
+  }
+]

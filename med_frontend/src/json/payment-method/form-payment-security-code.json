@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Security Code*",
+    "name": "password",
+    "class": "auth-page__form-field col-4",
+    "type": "password",
+    "isRequired": true,
+    "placeholder": "CVV/CVC",
+    "error": "Required field",
+    "fieldType": "password",
+    "maxlength": "3",
+    "popup": {
+      "direction": "left",
+      "image": {
+        "path": "cc-popup",
+        "type": "png",
+        "class": "info-popup__credit-card"
+      }
+    }
+  }
+]

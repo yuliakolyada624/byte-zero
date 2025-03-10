@@ -1,0 +1,62 @@
+[
+  {
+    "title": "First Name*",
+    "name": "first_name",
+    "class": "col col-4 js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "defaultValue": "Adrian",
+    "error": "Valid company name required",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Last Name*",
+    "name": "last_name",
+    "class": "col col-4 js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "defaultValue": "Medina",
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Employee ID",
+    "name": "employee_id",
+    "class": "col col-4 js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": false,
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "text"
+  },
+  {
+    "title": "Company Email",
+    "name": "email",
+    "class": "col col-4 js__component-of-form",
+    "type": "email",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "isReadOnly": true,
+    "defaultValue": "adrian@slglaw.com",
+    "error": "Required field",
+    "fieldType": "email"
+  },
+  {
+    "title": "Role",
+    "name": "role",
+    "class": "col col-4 js__component-of-form",
+    "type": "text",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "isReadOnly": true,
+    "defaultValue": "Super Administrator",
+    "error": "Required field",
+    "placeholder": "",
+    "fieldType": "email"
+  }
+]

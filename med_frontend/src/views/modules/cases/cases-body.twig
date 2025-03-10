@@ -1,0 +1,75 @@
+{% set tab_triggers = json('cases/table-tabs') %}
+{% set table = json('cases/cases-table') %}
+
+<div class="d-flex align-items-center justify-content-between cases-body-head">
+    <ul class="nav nav-tabs mb-0" id="tab" role="tablist">
+        {% for trigger in tab_triggers %}
+            {{ btn.tab_trigger(trigger) }}
+        {% endfor %}
+    </ul>
+    <div class="form-check form-check-reverse cases-filter__onlymy">
+        <label class="form-check-label" for="flexCheckDefault">
+            My Orders
+        </label>
+        <input name="onlymyorders" class="form-check-input" type="checkbox" value="" id="casesFilterOnlyMy">
+    </div>
+    {% include '../../components/filter-daterange.twig' with {
+        id: "casesFilterDateRange",
+        class: "cases-filter_daterange",
+    }%}
+</div>
+<div class="tab-content" id="tabContent">
+    <div class="tab-pane fade show active" id="tab1-pane" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Order No./<br> Claim No.</th>
+                    <th scope="col">
+                        Order Date
+                        <button type="button" class="table-btn">
+                            {{ media.icon('arrows-sort') }}
+                        </button>
+                    </th>
+                    <th scope="col">
+                        Case Name
+                        <button type="button" class="table-btn">
+                            {{ media.icon('arrows-sort') }}
+                        </button>
+                    </th>
+                    <th scope="col">Report Type</th>
+                    <th scope="col">Submitted</th>
+                    <th scope="col" colspan="2">
+                        Progress Tracker
+                        <button type="button" class="table-btn">
+                            {{ media.icon('arrows-sort') }}
+                        </button>
+                    </th>
+                    <th scope="col" class="text-center">Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in table %}
+                    {% include '../../components/table-item.twig' with {
+                        item: item
+                    } %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% include '../../components/pagination.twig' with {
+            pages: 5,
+            active_page: 1,
+            count_from: 1,
+            count_to: 10,
+            count_total: 25
+        } %}
+    </div>
+    <div class="tab-pane fade" id="tab2-pane" role="tabpanel" aria-labelledby="tab2" tabindex="0">
+        {% include '../../components/empty-table.twig' %}
+    </div>
+    <div class="tab-pane fade" id="tab3-pane" role="tabpanel" aria-labelledby="tab3" tabindex="0"></div>
+    <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+</div>
+
+

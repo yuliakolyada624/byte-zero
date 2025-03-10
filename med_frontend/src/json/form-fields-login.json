@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Firm or Company Email",
+    "name": "email",
+    "class": "auth-page__form-field",
+    "type": "email",
+    "isRequired": true,
+    "error": "Valid company email required",
+    "fieldType": "email"
+  },
+  {
+    "title": "Password",
+    "name": "password",
+    "class": "auth-page__form-field",
+    "type": "password",
+    "isRequired": true,
+    "error": "Required field",
+    "fieldType": "password"
+  }
+]

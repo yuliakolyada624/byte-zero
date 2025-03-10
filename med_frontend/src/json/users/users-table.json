@@ -1,0 +1,35 @@
+[
+  {
+    "id": "user1",
+    "icon": "users/user-1",
+    "name": "Adrian Medina",
+    "email": "adrian@slglaw.com",
+    "phone": "+1 239-277-0087",
+    "role": "Super Administrator",
+    "job": "Senior Partner",
+    "date": "06-10-2023",
+    "status": "invited"
+  },
+  {
+    "id": "user2",
+    "icon": "users/user-2",
+    "name": "Asari Dokumbo",
+    "email": "aasari@slglaw.com",
+    "phone": "+1 239-277-0087",
+    "role": "Administrator",
+    "job": "Partner",
+    "date": "01-10-2023",
+    "status": "registered"
+  },
+  {
+    "id": "user3",
+    "icon": "users/user-3",
+    "name": "Zachary Phillips",
+    "email": "zachary@slglaw.com",
+    "phone": "+1 239-277-0087",
+    "role": "Assignee",
+    "job": "Paralegal",
+    "date": "01-10-2023",
+    "status": "suspended"
+  }
+]

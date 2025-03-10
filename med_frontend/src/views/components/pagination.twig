@@ -1,0 +1,24 @@
+<nav aria-label="pagination" class="pagination-wrapper">
+    <ul class="pagination">
+        <li class="page-item disabled">
+            <a class="page-link">
+                {{media.icon('arrow-pagination', 'prev')}}
+                <span class="text">Previous</span>
+            </a>
+        </li>
+        {% for page in 1..pages %}
+            <li class="page-item page" {% if active_page == page %} aria-current="page"{% endif %}>
+                <a class="page-link {% if active_page == page %} active{% endif %}" href="#">{{page}}</a>
+            </li>
+        {% endfor %}
+        <li class="page-item">
+            <a class="page-link" href="#">
+                <span class="text">Next</span>
+                {{media.icon('arrow-pagination', 'next')}}
+            </a>
+        </li>
+    </ul>
+    <div class="pagination-info">
+        Showing <span class="active-items">{{count_from}} - {{count_to}}</span> of {{count_total}}
+    </div>
+</nav>

@@ -1,0 +1,19 @@
+[
+  {
+    "title": "First Name*",
+    "name": "user_first_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6",
+    "fieldType": "name"
+  },
+  {
+    "title": "Last Name*",
+    "name": "user_last_name",
+    "validateOnBlur": true,
+    "isRequired": true,
+    "error": "Required field",
+    "class": "col-6"
+  }
+]

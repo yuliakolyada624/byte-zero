@@ -1,0 +1,66 @@
+[
+    {
+        "id": "1",
+        "status": "Ready in approx",
+        "order": "ORDZKY",
+        "claim": "5946P527F",
+        "date": "05-10-2023 <br>5:35 PM EST",
+        "case": "Henry Jones<br> vs. Ivy Davis",
+        "report": "Medical<br> Chronology",
+        "submitted": "12 Exhibits<br> 250 Pages",
+        "tracker": "0",
+        "new": false
+    },
+    {
+        "id": "2",
+        "status": "Ready in approx",
+        "order": "ORDZKY",
+        "claim": "5946P527F",
+        "date": "05-10-2023 <br>5:35 PM EST",
+        "case": "Henry Jones<br> vs. Ivy Davis",
+        "report": "Medical<br> Chronology",
+        "submitted": "12 Exhibits<br> 250 Pages",
+        "tracker": "20",
+        "start": true,
+        "new": false
+    },
+    {
+        "id": "3",
+        "status": "Ready in approx",
+        "order": "ORDZKY",
+        "claim": "5946P527F",
+        "date": "05-10-2023 <br>5:35 PM EST",
+        "case": "Henry Jones<br> vs. Ivy Davis",
+        "report": "Medical<br> Chronology",
+        "submitted": "12 Exhibits<br> 250 Pages",
+        "tracker": "70",
+        "warning": true,
+        "new": false
+    },
+    {
+        "id": "4",
+        "status": "Ready",
+        "order": "ORDZKY",
+        "claim": "5946P527F",
+        "date": "05-10-2023 <br>5:35 PM EST",
+        "case": "Henry Jones<br> vs. Ivy Davis",
+        "report": "Medical<br> Chronology",
+        "submitted": "12 Exhibits<br> 250 Pages",
+        "tracker": "100",
+        "success": true,
+        "new": true
+    },
+    {
+        "id": "5",
+        "status": "Ready in approx",
+        "order": "ORDZKY",
+        "claim": "5946P527F",
+        "date": "05-10-2023 <br>5:35 PM EST",
+        "case": "Frank Jones    <br> vs. Ivy Davis",
+        "report": "Medical<br> + Billing",
+        "submitted": "73 Exhibits<br> 2,523 Pages",
+        "tracker": "100",
+        "success": true,
+        "new": false
+    }
+]

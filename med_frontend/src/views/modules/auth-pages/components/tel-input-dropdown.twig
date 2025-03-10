@@ -1,0 +1,10 @@
+<div class="tel-input-dropdown">
+  <ul class="tel-input-dropdown__list">
+    {% for item in items %}
+      <li class="tel-input-dropdown__list-item {{ item.class }}" data-country_code="{{ item.country_code }}" data-dial_code="{{ item.dial_code }}" data-country_name="{{ item.country_name }}">
+        <img src="./svg/flags/{{ item.country_code }}.svg" alt="{{item.country_name}}" />
+        <span>{{item.country_name}} {{item.dial_code}}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

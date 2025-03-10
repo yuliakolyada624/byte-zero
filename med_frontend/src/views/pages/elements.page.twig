@@ -1,0 +1,364 @@
+{% extends 'layouts/main/layout-main.twig' %}
+{% set options = [
+    {
+        title: 'Something else here',
+        href: '#',
+    },
+    {
+        title: 'Something else here',
+        href: '#',
+    },
+    {
+        title: 'Something else here',
+        href: '#',
+    }
+] %}
+{% set tab_triggers = json('tab-triggers') %}
+{% set table = json('table') %}
+{% set formDataFile = 'input-tel'%}
+
+{% block variables %}
+    {% set title = 'Elements page' %}
+{% endblock variables %}
+{% set modals_path = 'layouts/main/components/modals/' %}
+{% set content_components_path = 'modules/form/' %}
+{% set formData = json(formDataFile) %}
+{% block content %}
+<section>
+    <h1>Buttons</h1>
+    <div class="row">
+        <div class="col">
+            {{btn.primary({
+                inner: "new Report",
+            })}}
+        </div>
+        <div class="col">
+            {{btn.primary({
+                inner: "new Report",
+                class: "disabled"
+            })}}
+        </div>
+        <div class="col">
+            {{btn.primary({
+                inner: "Logout",
+                icon: "log-out"
+            })}}
+        </div>
+        <div class="col">
+            {% include '../components/dropdown.twig' with {
+                devaultValue: 'Actions',
+                iconName: 'arrow-select',
+                options: options
+            } %}
+        </div>
+        <div class="col">
+            {% include '../components/dropdown.twig' with {
+                class: 'disabled',
+                devaultValue: 'Actions',
+                iconName: 'arrow-select',
+                options: options
+            } %}
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Tabs</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        {% for trigger in tab_triggers %}
+            {{ btn.tab_trigger(trigger) }}
+        {% endfor %}
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="tab1-pane" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order No./<br> Claim No.</th>
+                            <th scope="col">
+                                Order Date
+                                <button type="button" class="table-btn">
+                                    {{ media.icon('arrows-sort') }}
+                                </button>
+                            </th>
+                            <th scope="col">
+                                Case Name
+                                <button type="button" class="table-btn">
+                                    {{ media.icon('arrows-sort') }}
+                                </button>
+                            </th>
+                            <th scope="col">Report Type</th>
+                            <th scope="col">Submitted</th>
+                            <th scope="col" colspan="2">
+                                Progress Tracker
+                                <button type="button" class="table-btn">
+                                    {{ media.icon('arrows-sort') }}
+                                </button>
+                            </th>
+                            <th scope="col" class="text-center">Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in table %}
+                        {% include '../components/table-item.twig' with {
+                            item: item
+                        } %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% include '../components/pagination.twig' with {
+                pages: 5,
+                active_page: 1,
+                count_from: 1,
+                count_to: 10,
+                count_total: 25
+            } %}
+        </div>
+        <div class="tab-pane fade" id="tab2-pane" role="tabpanel" aria-labelledby="tab2" tabindex="0">
+            {% include '../components/empty-table.twig' %}
+        </div>
+        <div class="tab-pane fade" id="tab3-pane" role="tabpanel" aria-labelledby="tab3" tabindex="0">3</div>
+        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+    </div>
+    <br>
+    <br>
+    {#<h1>Notifications</h1>
+    <div class="row">
+        <div class="col-6 mb-4">
+            {% include '../components/toast.twig' with {
+                class: 'successful',
+                text: 'Your new medical chronology and billing summary report has been submitted successfully! Kindly allow a turnaround time of 24-48 hours.',
+                iconNameLeft: 'checkbox',
+                buttonClose: true
+            } %}
+        </div>
+        <div class="col-6 mb-4">
+            {% include '../components/toast.twig' with {
+                class: 'error',
+                text: 'Error adding your credit card. Please try again later or use a different card.',
+                iconNameLeft: 'danger',
+                buttonClose: true
+            } %}
+        </div>
+        <div class="col-6 mb-4">
+            {% include '../components/toast.twig' with {
+                class: 'successful',
+                text: 'Exhibit(s) uploaded successfully!',
+                iconName: 'checkbox'
+            } %}
+        </div>
+        <div class="col-6 mb-4">
+            {% include '../components/toast.twig' with {
+                class: 'error',
+                text: 'Error adding your credit card. Please try again later or use a different card.',
+                iconNameLeft: 'danger',
+                buttonClose: true
+            } %}
+        </div>
+        <div class="col-6">
+            {% include '../components/toast.twig' with {
+                class: 'primary',
+                text: 'Nightly rates above $266 are out of policy',
+                iconNameLeft: 'info-circle'
+            } %}
+        </div>
+        <div class="col-6">
+            {% include '../components/toast.twig' with {
+                class: 'error',
+                text: 'Error adding your credit card. Please try again later or use a different card.',
+                iconName: 'info-circle',
+            } %}
+        </div>
+    </div>#}
+    <br>
+    <br>
+    <h1>Phone input</h1>
+    <div class="row">
+        <div class="col">
+                {% for group in formData %}
+                    {% include content_components_path ~ 'form-group.twig' with {
+                        inputs: group.inputs,
+                    } %}
+                {% endfor %}
+        </div>
+        <div class="col">
+            {% include '../components/form/form-switch.twig' with {
+                class: "d-flex align-items-center gap-2",
+                message: "Default switch checkbox input",
+                id: "default",
+                checkedStatus: true
+            } %}
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Phone input ITI and Inputmack</h1>
+    <div class="row">
+        <div class="col col-3">
+            {% include '../components/form/form-iti-dropdown.twig' with {
+                id: "phone",
+                title: "Phone Number",
+                name: "phone",
+                class: "auth-page__form-field",
+                isRequired: true,
+                error: "Valid company phone required",
+                placeholder: "000-000-0000"
+            } %}
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Dropdonw with Select2</h1>
+    <div class="rom">
+        <div class="col col-3">
+        {% include '../components/form/form-dropdown-select2.twig' with {
+            id: 'ddServiceIndustry',
+            class: 'auth-page__dropdown',
+            name: 'service_industry',
+            title: 'Service Industry',
+            isRequired: true,
+            placeholder: 'Please select',
+            options: [
+            {
+                title: 'Healthcare Services',
+                value: 'healthcare_services',
+            },
+            {
+                title: 'Insurance Services',
+                value: 'insurence_services',
+            },
+            {
+                title: 'Legal Services',
+                value: 'legal_services',
+            }
+            ],
+            error: 'Required field',
+        } %}
+        </div>
+    </div>
+    <br>
+    <br>
+    <h1>Tags/Statuses</h1>
+    <div class="row">
+        <div class="col-3">
+            {% include '../components/tags/step.twig' with {
+                class: 'review',
+                text: 'Step 1 of 3',
+                subtext: 'Needs to review'
+            } %}
+            <br>
+            {% include '../components/tags/step.twig' with {
+                class: 'bg-success',
+                text: 'Required step',
+                iconName:'info-circle'
+            } %}
+            <br>
+            {% include '../components/tags/step.twig' with {
+                class: 'bg-dark-grey',
+                text: 'Required step',
+                iconName:'info-circle'
+            } %}
+            <br>
+            {% include '../components/tags/step.twig' with {
+                class: 'light-green',
+                text: 'Required step'
+            } %}
+            <br>
+            {% include '../components/tags/step.twig' with {
+                class: 'info',
+                text: 'Required step'
+            } %}
+        </div>
+        <div class="col-3">
+            {% include '../components/tags/status.twig' with {
+                class: 'reject',
+                text: 'Reject'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'light-green',
+                text: 'Approve'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'info',
+                text: 'Approve'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'ready',
+                text: 'Ready'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'in-progress',
+                text: 'In Progres'
+            } %}
+        </div>
+        <div class="col-3">
+            {% include '../components/tags/status.twig' with {
+                class: 'reject',
+                text: '-10%'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'light-green',
+                text: '+10%'
+            } %}
+            <br>
+            {% include '../components/tags/status.twig' with {
+                class: 'light-green',
+                text: 'new'
+            } %}
+        </div>
+        <div class="col-3">
+            {% include '../components/tags/tag.twig' with {
+                class: 'info',
+                text: 'Yoni Ashurov',
+                status: 'primary',
+                buttonClose: true
+            } %}
+            <br>
+            {% include '../components/tags/tag.twig' with {
+                class: 'info',
+                text: 'Eric Aubin',
+                iconName: 'dots-grid'
+            } %}
+        </div>
+    </div>
+    <br>
+    <br>
+</section>
+{% endblock content %}
+
+{% block modals %}
+
+    {% include modals_path ~ 'modal.twig' with {
+        id:'exampleModal',
+        title: 'Finalize and Update Report?',
+        text: 'The PDF report will be updated at your Order Reports list, where you can download or view it online.'
+    }%}
+
+{% endblock modals %}
+
+{% block sidebars %}
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="1" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            ...
+        </div>
+    </div>
+{% endblock sidebars %}
+
+{% block scripts %}
+{% endblock scripts %}

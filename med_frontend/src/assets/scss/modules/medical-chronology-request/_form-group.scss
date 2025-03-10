@@ -1,0 +1,38 @@
+.medical-chronology-request-form-group {
+  padding: 18px 24px;
+  border-radius: 10px;
+  border: 1px solid var(--base-border);
+
+  margin-top: 16px;
+  margin-bottom: 10px;
+
+  @media(max-width: 1025px) {
+    margin-top: 26px;
+    margin-bottom: 30px;
+  }
+
+  &_title {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 21px;
+
+    br {
+      display: none;
+    }
+
+    @media (max-width: 577px) {
+      br {
+        display: block;
+      }
+    }
+  }
+
+  &_info {
+    margin-top: 16px;
+
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  @import "./body/body-areas";
+}

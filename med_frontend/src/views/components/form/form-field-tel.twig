@@ -1,0 +1,47 @@
+{#
+title: string,
+name: string,
+
+class?: string,
+type?: string, - options is "text"
+fieldType?: string, - options is "empty"
+isRequired?: boolean, - options is "false"
+error: string, - required if "isRequired" is true
+placeholder?: string,
+fieldAttr?: string,
+inputAttr?: string
+#}
+<div class="form-field {{ class }}{{ isRequired == true ? ' is-required' : '' }} js-field {{
+  type == 'password'
+    ? type
+    : null
+  }}"
+  data-type="{{ fieldType ? fieldType : 'empty' }}">
+  <label for="{{ name }}" class="form-field__title">{{ title }}</label>
+  <div class="tel-wrap">
+    <div class="code-section">
+      {% if inputData.selected_flag is defined %}
+        <img src="./svg/flags/{{ inputData.selected_flag }}.svg" alt="phone-btn" class="flag-container">
+        <span class="dial-code">{{ inputData.selected_code }}</span>
+      {% else %}
+        <img src="./svg/phone.svg" alt="phone-btn" class="phone-icon flag-container">
+        <span class="dial-code"></span>
+        {{ media.icon('chevron-up') }}
+      {% endif %}
+    </div>
+    <input type="{{ inputData.type }}"
+      name="{{ inputData.name }}"
+      id="{{ inputData.name }}"
+      placeholder="{{ inputData.placeholder|default('') }}"
+      value="{{ inputData.value|default('') }}"
+      class="form-field__input form-control js-field-input {{ inputData.class }}"
+      {{ inputData.isValidation ? 'data-validation="true"' : '' }}
+    />
+    {% include './tel-input-dropdown.twig' with {
+      items: inputData.countriesList
+    } %}
+  </div>
+  {% if isRequired %}
+    <span class="form-field__error js-field-error">{{ error }}</span>
+  {% endif %}
+</div>

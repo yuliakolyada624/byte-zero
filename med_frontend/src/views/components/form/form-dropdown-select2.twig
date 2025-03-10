@@ -1,0 +1,47 @@
+{#
+  id: string, In order to have unique elements identifiers
+  class: string,
+  name: string,
+  options: array,
+  disabled: boolean,
+
+  isRequired?: boolean
+  placeholder?: string
+#}
+
+<div class="component__dropdown2 {{ class }} {{ isRequired == true ? 'is-required' : '' }} {{ disabled == true ? 'disabled' : ''}}" 
+  data-search="{{ hasSearch == true ? 'true' : 'false' }}">
+  {% if title is not empty %}
+    <label for="{{ id }}" class="form-label">{{ title }}
+      {% if editButton is not empty %}
+        <button type="button" class="btn-link" {% if backBtnReturn is not empty %} data-bs-return="{{ backBtnReturn }}" {% endif %} data-bs-toggle="offcanvas" data-bs-target="#{{ idModal }}" aria-controls="offcanvasRight">
+          {{ editButton }}
+        </button>
+      {% endif %}
+    </label>
+  {% endif %}
+  <select
+    id="{{ id }}"
+    class="form-select js__select2 w-100"
+    name="{{ name }}"
+    placeholder="{{ placeholder }}"
+    {{ disabled == true ? 'disabled' : ''}}
+    data-placeholder="{{ placeholder }}">
+    {% if clearSelectionBtn is not empty %}
+      <option value="">{{ placeholder }}</option>
+      <option value="clear">Clear Selection</option>
+    {% endif %}
+    {% for option in options %}
+      <option
+        {% if option.dataset is not empty %}
+          {% for dataitem in option.dataset %}
+            data-{{dataitem.name}}="{{dataitem.value}}"
+          {% endfor %}
+        {% endif %}
+        value="{{option.value}}" >{{option.title}}</option>
+    {% endfor %}
+  </select>
+  <div class="invalid-feedback js-field-error">
+    {{error}}
+  </div>
+</div>

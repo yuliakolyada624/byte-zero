@@ -1,0 +1,48 @@
+{% set table = json('transactions/transactions-table') %}
+<div class="table-responsive transactions">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Order ID/<br> Transaction ID</th>
+            <th scope="col">
+                Case Name
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">
+                Case Type
+            </th>
+            <th scope="col">Product</th>
+            <th scope="col">
+                Date/<br>Time
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">
+                Amount
+                <button type="button" class="table-btn">
+                    {{ media.icon('arrows-sort') }}
+                </button>
+            </th>
+            <th scope="col">Payment Method</th>
+            <th scope="col" class="text-center">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in table %}
+            {% include './table-item.twig' with {
+                item: item
+            } %}
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% include '../../components/pagination.twig' with {
+    pages: 5,
+    active_page: 1,
+    count_from: 1,
+    count_to: 10,
+    count_total: 25
+} %}

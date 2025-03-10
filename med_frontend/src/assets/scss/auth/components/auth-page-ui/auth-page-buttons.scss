@@ -1,0 +1,35 @@
+.auth-page-btn {
+  background-color: var(--baseLightBlue);
+  border-radius: 8px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 9px 18px;
+  font-family: var(--font-primary);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  transition: all .3s ease;
+
+  &:hover {
+    @media(min-width: 1025px){
+      color: var(--baseLightBlue);
+      background-color: var(--white);
+      border-color: var(--baseLightBlue);
+      border-width: 1px;
+      border-style: solid;
+    }
+  }
+
+  &:disabled {
+    background-color: var(--disabledbutton);
+    pointer-events: none;
+    cursor: default;
+  }
+}

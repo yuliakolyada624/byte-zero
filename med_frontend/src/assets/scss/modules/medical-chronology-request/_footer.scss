@@ -1,0 +1,61 @@
+.medical-chronology-request-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+
+  @media(max-width: 577px) {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @media(max-width:1025px) {
+      max-width: 404px;
+    }
+
+    .icon-shield {
+      flex-basis: 16px;
+      width: 16px;
+      min-width: 16px;
+      height: 18px;
+      fill: var(--main-blue);
+
+      @media(max-width:1025px) {
+        align-self: baseline;
+      }
+    }
+    &-text {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: auto;
+  }
+
+  &__reset-btn {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &__submit-btn {
+    padding: 9.5px 20px;
+    line-height: 20px;
+
+    &:disabled {
+      background-color: var(--disabled-btn-bg);
+      border: none;
+      pointer-events: none;
+    }
+  }
+}

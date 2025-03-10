@@ -1,0 +1,10 @@
+{
+  "isRequired": true,
+  "class": "add-payment-method-modal__radio-group",
+  "name": "type_of_credit_card",
+  "title": "",
+  "items": [
+    { "title": "Corporate credit card", "value": "company-card" },
+    { "title": "Personal credit card", "value": "personal-card" }
+  ]
+}

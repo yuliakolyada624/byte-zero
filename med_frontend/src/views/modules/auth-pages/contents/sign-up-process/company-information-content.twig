@@ -1,0 +1,75 @@
+{% set countriesList = json('phone-data') %}
+
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">
+    Company Information
+  </h2>
+  <p class="auth-page-subtitle">
+    Final step to complete your account registration.
+
+  </p>
+  <form class="form js-form auth-page__form" data-validation="company" data-href="index.html">
+    {% include '../../../../components/form/form-field.twig' with {
+      title: 'Company name',
+      name: 'company-name',
+      class: 'auth-page__form-field order-0',
+      type: 'text',
+      placeholder: 'Enter legal name',
+      fieldType: 'text',
+      isRequired: item.isRequired
+    } %}
+
+    {% set items = json('form-fields-company-information') %}
+    {% for item in items %}
+      {% include '../../../../components/dropdowns/select.twig' with {
+        class: item.class,
+        name: item.name,
+        holder: item.holder,
+        title: item.title,
+        options: item.options,
+        direction: item.direction,
+        order: item.order,
+      } %}
+    {% endfor %}
+
+    <div class="tel-inputs-wrap order-2">
+      {% include '../../../../components/form/form-field-tel.twig' with {
+        class: 'auth-page__form-field col-6',
+        name: 'tel_country_1',
+        title: 'Work phone number, Ext.',
+        inputData: {
+          type: "tel",
+          name: "tel_country_1",
+          placeholder: "",
+          value: "",
+          isValidation: true,
+          countriesList: countriesList,
+          class: "js-company-input",
+          selected_flag: "us",
+          selected_code: "+1"
+        }
+      } %}
+
+      {% include '../../../../components/form/form-field-tel.twig' with {
+        class: 'auth-page__form-field col-6',
+        name: 'tel_country_2',
+        title: 'Mobile phone number',
+        inputData: {
+          type: "tel",
+          name: "tel_country_2",
+          placeholder: "",
+          value: "",
+          isValidation: true,
+          countriesList: countriesList,
+          class: "js-company-input",
+          selected_flag: "us",
+          selected_code: "+1"
+        }
+      } %}
+    </div>
+
+    
+
+    <button class="auth-page-btn auth-page__form-btn order-5 js-company-btn" type="submit" disabled>Create Account</button>
+  </form>
+</div>

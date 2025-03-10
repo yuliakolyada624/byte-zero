@@ -1,0 +1,24 @@
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Welcome Back</h2>
+  <p class="auth-page-subtitle">Let’s log in to your account</p>
+  <div class="d-flex flex-column justify-content-center align-items-center mx-auto auth-page__form-wrap">
+    <form class="form js-form auth-page__form" data-href="index.html">
+      {{form.fieldsForm('form-fields-login')}}
+      <div class="d-flex w-100 justify-content-between">
+        {% include '../../../../components/form/form-checkbox.twig' with {
+          class: "auth-page__form-field",
+          message: "Keep me logged in",
+          name: "keep_login",
+          checkedStatus: false
+        } %} 
+        <a href="reset-password.html" class="auth-page-link">Forgot password</a>
+      </div>
+      <button class="btn btn-primary mt-0 auth-page-btn auth-page__form-btn" type="submit" aria-label="Sign in">Sign in</button>
+    </form>
+    <div class="hr"></div>
+    <p class="auth-page__bottom-content">
+      Don’t have an account?
+      <a href="sign-up-registration.html" class="auth-page-link">Register here</a>
+    </p>
+  </div>
+</div>

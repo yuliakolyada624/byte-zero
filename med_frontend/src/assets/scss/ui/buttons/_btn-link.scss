@@ -1,0 +1,72 @@
+.btn-link {
+  gap: 4px;
+  padding: 0;
+  color: var(--main-blue);
+  font-weight: 500;
+  line-height: 22px;
+  text-decoration: none;
+  border: none;
+
+  &:hover {
+    & span::after {
+      width: 100%;
+      opacity: 1;
+    }
+    border: none;
+    color: var(--main-blue);
+  }
+
+  & .icon {
+    &-plus {
+      width: 13px;
+      height: 13px;
+      stroke: var(--main-blue);
+      stroke-width: 2px;
+      stroke-linecap: round;
+    }
+    &-dash {
+      width: 8px;
+      height: 2px;
+      fill: none;
+      stroke: var(--main-blue);
+      stroke-linecap: round;
+      stroke-width: 1.5px;
+    }
+    &-arrow {
+      width: 20px;
+      height: 17px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2px;
+    }
+  }
+
+  &--thin {
+    font-weight: 400;
+
+    & .icon-plus {
+      stroke-width: 1.5px;
+    }
+  }
+
+  & span {
+    position: relative;
+    line-height: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 0;
+      height: 1px;
+      background-color: var(--main-blue);
+      opacity: 0;
+      transition: all var(--base-transition);
+    }
+  }
+}

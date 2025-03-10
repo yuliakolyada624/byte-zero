@@ -1,0 +1,17 @@
+<div class="component__itidropdown {{ class }} {{ isRequired == true ? 'is-required' : '' }}" data-type="phone">
+  <label for="{{ id }}" class="form-label">{{ title }}</label>
+  <input class="form-control component__itidropdown-input js__itidropdown-input" 
+    id="{{ id }}"
+    type="phone"
+    name="{{ name }}"
+    value="" 
+    autocomplete="off" 
+    placeholder="{{ placeholder }}"
+    aria-describedby="{{ id }}Feedback" 
+    data-placeholder="{{ placeholder }}"
+    data-country="{{ country }}"
+    >
+  <div id="{{ id }}Feedback" class="invalid-feedback component__itidropdown-error js-field-error">
+    {{error}}
+  </div>
+</div>

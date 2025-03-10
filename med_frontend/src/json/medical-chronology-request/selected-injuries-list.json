@@ -1,0 +1,65 @@
+[
+  {
+    "name": "selected_injury_head_and_neck",
+    "data_name": "injury_head_and_neck",
+    "title": "HEAD AND NECK",
+    "description": true,
+    "components": "Skull, Face, Brain, Eyes, Nose, Mouth, Ears, Cheeks, Jaw, Cervical spine.",
+    "musculoskeletal": "Bones (Skull, Cervical spine), Muscles, and Connective Tissues (Neck muscles, tendons, ligaments).",
+    "icon_class": "head-and-neck"
+  },
+  {
+    "name": "selected_injury_upper_extremity",
+    "data_name": "injury_upper_extremity",
+    "title": "UPPER EXTREMITY (Right, Left, or Both)",
+    "description": true,
+    "components": "Shoulder, Arm (Humerus, Radius, Ulna), Elbow, Forearm, Wrist, Hand (Carpals, Metacarpals, Phalanges, Fingers).",
+    "musculoskeletal": "Bones (Clavicle, Scapula, Humerus, Radius, Ulna, Carpals, Metacarpals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the upper limb).",
+    "icon_class": "upper-extremity"
+  },
+  {
+    "name": "selected_injury_torso",
+    "data_name": "injury_torso",
+    "title": "TORSO",
+    "description": true,
+    "components": "Thorax (Chest, Ribcage, Sternum), Abdomen (Stomach, Liver, Spleen, Pancreas, Kidneys, Intestines), Pelvis (Hips, Reproductive Organs), Diaphragm.",
+    "musculoskeletal": "Bones (Ribcage, Sternum, Pelvis), Muscles, and Connective Tissues (Abdominal muscles, pelvic muscles, diaphragm).",
+    "icon_class": "torso-full"
+  },
+  {
+    "name": "selected_injury_back",
+    "data_name": "injury_back",
+    "title": "BACK",
+    "description": true,
+    "components": "Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula.",
+    "musculoskeletal": "Bones (Thoracic Spine, Lumbar Spine, Coccyx, Sacrum, Clavicle, Scapula), Muscles, and Connective Tissues (Muscles and ligaments supporting the back and spinal column).",
+    "icon_class": "back"
+  },
+  {
+    "name": "selected_injury_lower_extremity",
+    "data_name": "injury_lower_extremity",
+    "title": "LOWER EXTREMITY (Right, Left, or Both)",
+    "description": true,
+    "components": "Hip, Thigh (Femur), Knee (Patella), Leg (Tibia, Fibula), Ankle, Foot (Tarsals, Metatarsals, Phalanges, Toes).",
+    "musculoskeletal": "Bones (Femur, Patella, Tibia, Fibula, Tarsals, Metatarsals, Phalanges), Muscles, and Connective Tissues (Muscles, tendons, and ligaments of the lower limb).",
+    "icon_class": "lower-extremity"
+  },
+  {
+    "name": "selected_injury_internal_organs",
+    "data_name": "injury_internal_organs",
+    "title": "INTERNAL ORGANS: Heart, Lungs, Liver, Spleen, Pancreas, Kidneys, Bladder, Stomach, Intestines, Reproductive Organs.",
+    "icon_class": "internal-organs"
+  },
+  {
+    "name": "selected_injury_skin",
+    "data_name": "injury_skin",
+    "title": "SKIN: The body's largest organ, covering and protecting all external surfaces.",
+    "icon_class": "skin"
+  },
+  {
+    "name": "selected_injury_circulatory_and_nervous_systems",
+    "data_name": "injury_circulatory_and_nervous_systems",
+    "title": "CIRCULATORY AND NERVOUS SYSTEMS: Includes Blood Vessels and Nerves throughout the body.",
+    "icon_class": "nerv-system"
+  }
+]

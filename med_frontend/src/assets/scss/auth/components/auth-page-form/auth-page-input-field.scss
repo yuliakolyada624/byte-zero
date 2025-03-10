@@ -1,0 +1,29 @@
+.form-field {
+  &__input-wrap{
+    position: relative;
+  }
+  &__input {
+    width: 100%;
+    padding: 9px 14px;
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--baseTextGray);
+    border: 1px solid var(--lightGray);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+    appearance: none;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 24px;
+      color: var(--secondaryGray);
+      font-weight: 400;
+      font-family: inherit;
+    }
+
+    &:focus {
+      border-color: var(--baseTextGray);
+      outline: none;
+    }
+  }
+}

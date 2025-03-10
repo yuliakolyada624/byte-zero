@@ -1,0 +1,6 @@
+<span class="badge {{ class }}">
+    {% if iconName %}
+        {{ media.icon(iconName) }}
+    {% endif %}
+    {{ text }}{% if subtext %} <span class="separator">|</span> {{ subtext }}{% endif %}
+</span>

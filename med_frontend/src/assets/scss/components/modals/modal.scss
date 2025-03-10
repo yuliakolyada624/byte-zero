@@ -1,0 +1,27 @@
+
+.modal {
+  &-dialog {
+    max-width: 537px;
+    .modal-header {
+      border: none;
+      padding: 0;
+      margin: 21px 0 6px;
+      .modal-title {
+        font-size: 22px;
+        font-weight: 500;
+      }
+    }
+    .modal-footer {
+      border: none;
+      gap: 17px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+      fill: var(--main-blue);
+    }
+    .modal-content {
+      padding: 44px 56px;
+    }
+  }
+}

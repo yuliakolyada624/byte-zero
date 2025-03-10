@@ -1,0 +1,42 @@
+<div class="auth-page__section-header">
+  {% include '../../components/component-backbtn.twig' %}
+  {% include '../../components/auth-progress-steps.twig' with {
+    steps: [
+      {
+        label: "Email Confirmation",
+        done: true
+      },
+      {
+        label: "2FA",
+        done: false
+      },
+      {
+        label: "Password",
+        done: false
+      },
+      {
+        label: "Account Details ",
+        done: false
+      }
+    ]
+  } %}
+</div>
+
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Verify your phone number with a code</h2>
+  <p class="auth-page-subtitle">It helps us keep your account secure.</p>
+  <div class="d-flex mx-auto auth-page__form-wrap">
+    <form class="form col-4 js-form auth-page__form" data-href="sign-up-email-verification.html">
+      {% include '../../../../components/form/form-iti-dropdown.twig' with {
+        id: "phone",
+        title: "Phone Number",
+        name: "phone",
+        class: "auth-page__form-field",
+        isRequired: true,
+        error: "Valid company phone required",
+        placeholder: "000-000-0000"
+      } %}
+      <button class="btn btn-primary auth-page-btn auth-page__form-btn" type="submit" aria-label="Continue">Continue</button>
+    </form>
+  </div>
+</div>

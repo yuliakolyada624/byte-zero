@@ -1,0 +1,31 @@
+{% set options = [
+    {
+        icon: 'download',
+        title: 'Invoice',
+        href: '#',
+    },
+    {
+        icon: 'download',
+        title: 'Receipt',
+        href: '#',
+    }
+] %}
+<tr>
+    <td> <span class="order-id">{{ item.orderid }}</span>{% if item.status %} <span class="status">{{ item.status }}</span>{% endif %}<br>{{ item.transactionid }}</span></td>
+    <td>{{ item.case }}</td>
+    <td>{{ item.casetype }}</td>
+    <td>{{ item.product }}</td>
+    <td>{{ item.date }}</td>
+    <td>
+        {{ item.amount }}
+    </td>
+    <td>
+        <img src="./img/content/payment-systems/visa.png" alt="visa" width="30" height="18"> Ends in:{{ item.payment }}
+    </td>
+    <td class="text-center">
+        {% include '../../components/dropdown.twig' with {
+            iconName: 'dots-vertical',
+            options: options
+        } %}
+    </td>
+</tr>

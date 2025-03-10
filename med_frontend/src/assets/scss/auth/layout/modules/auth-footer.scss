@@ -1,0 +1,27 @@
+.auth-page-footer{
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--primaryBlue);
+  font-family: var(--font-primary);
+  font-weight: 400;
+}
+
+.auth-footer-copyrigths{
+  line-height: 22px;
+}
+
+.auth-footer{
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  &-wrap{
+    padding-top: 1.8rem;
+    padding-bottom: 2.1rem;
+  }
+}

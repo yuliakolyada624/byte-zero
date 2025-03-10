@@ -1,0 +1,19 @@
+{% import '../../macro/auth-macro.twig' as authMacro %}
+<div class="auth-page__section-content">
+  <h2 class="auth-page-title">Account Registration</h2>
+  <p class="auth-page-subtitle">Let’s take a moment to set up your account.</p>
+  <div class="d-flex flex-column justify-content-center align-items-center mx-auto auth-page__form-wrap">
+    <form class="form js-form auth-page__form" data-href="sign-up-email-verification.html">
+      {{form.fieldsForm('form-fields-company-registration')}}
+      <button class="btn btn-primary auth-page-btn auth-page__form-btn" type="submit" aria-label="Continue">Continue</button>
+      {{authMacro.terms('term')}}
+    </form>
+
+    <div class="hr auth-page__separate-line"></div>
+
+    <p class="auth-page__form-footer">
+      Already have an account? <a href="login.html" class="auth-page-link">Sign in</a>
+    </p>
+  </div>
+
+</div>

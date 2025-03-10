@@ -1,0 +1,8 @@
+<div>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h4>{{ title }}</h4>
+    {{ btn.link({  inner: '+ New Card' }) }}
+  </div>
+
+  {% include 'components/form/payment-method-radio-group.twig' with payment_methods %}
+</div>

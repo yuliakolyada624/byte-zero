@@ -1,0 +1,19 @@
+{
+  "name": "medical_chronology_payment_method",
+  "title": "Company Credit Cards",
+  "items": [
+    {
+      "card_name": "Chase Business Visa",
+      "method": "visa",
+      "ending": "3241",
+      "expiry": "09/26",
+      "attr": "checked"
+    },
+    {
+      "card_name": "Chase Business Visa",
+      "method": "mastercard",
+      "ending": "3241",
+      "expiry": "09/26"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "tab1",
+    "inner": "Body Injury",
+    "class": "report-ordering-dashboard-tabs__trigger active"
+  },
+  {
+    "id": "tab2",
+    "inner": "Disability claim",
+    "class": "report-ordering-dashboard-tabs__trigger"
+  },
+  {
+    "id": "tab3",
+    "inner": "Medical malpractice",
+    "class": "report-ordering-dashboard-tabs__trigger"
+  },
+  {
+    "id": "disabled-tab",
+    "inner": "Workers' compensation",
+    "class": "report-ordering-dashboard-tabs__trigger",
+    "disabled": true
+  }
+]

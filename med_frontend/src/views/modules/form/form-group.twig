@@ -1,0 +1,9 @@
+{% import '../form/macro/form.twig' as formMacro %}
+
+{% for inputConfig in inputs %}
+    {% set macroName = inputConfig.macro %}
+    {% include './form-group-partials/_input.twig' with {
+        inputData: inputConfig,
+        formMacro: formMacro
+    } %}
+{% endfor %}
