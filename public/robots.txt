@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /
+
+Disallow: /assets/js/pages/reviews/
+
+Disallow: /*?sort=*
+Disallow: /?gclid=
+Disallow: /?utm_source=
+
+#Host: med-test.test
+#Sitemap: http://med-test.test/sitemap.xml
